@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bblo1fsa8ksnt"]
+
+[ext_resource type="PackedScene" uid="uid://ci56xvd5f72us" path="res://Scenes/LevelSelectScreen/LevelSelectButton.tscn" id="1_8dx8h"]
+
+[node name="Level4" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 491.0
+offset_top = 249.0
+offset_right = 531.0
+offset_bottom = 272.0
+text = "Level4"
+
+[node name="LevelSelectButton" parent="." instance=ExtResource("1_8dx8h")]
+levelPath = NodePath("res://Scenes/LevelSelectScreen/LevelSelectScene.tscn")
