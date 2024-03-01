@@ -1,8 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://buwt6ljlkp7c2"]
+[gd_scene load_steps=4 format=3 uid="uid://buwt6ljlkp7c2"]
 
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_lpi2i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffpd2"]
+
+[sub_resource type="GDScript" id="GDScript_5lems"]
+script/source = "extends CharacterBody2D
+
+
+func _physics_process(delta):
+	look_at(get_global_mouse_position())
+	#print(get_angle_to(get_global_mouse_position()))
+"
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_lpi2i")
@@ -15,3 +24,11 @@ offset_bottom = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ffpd2")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = SubResource("GDScript_5lems")
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D"]
+offset_top = -2.0
+offset_right = 40.0
+offset_bottom = 1.0

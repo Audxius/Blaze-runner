@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
+var kulka = preload("res://laser.tscn")
 
-const SPEED = 300.0
+const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -17,8 +18,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	# Zaidejo vaiksciojimas
 	var direction
 	if Input.is_key_pressed(KEY_A):
 		direction = -1;
@@ -30,5 +30,19 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		
 	move_and_slide()
+	
+	# Saudymas
+	
+	if Input.is_action_pressed("mouse_left"):
+		bullet()
+		
+		
+func bullet():
+	var instance = kulka.instantiate()
+	instance.position.x = position.x
+	instance.position.y = position.y
+	add_sibling(instance)
+	
+	
