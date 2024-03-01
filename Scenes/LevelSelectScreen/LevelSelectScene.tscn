@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpo75klo2nn18"]
+
+[ext_resource type="PackedScene" uid="uid://ci56xvd5f72us" path="res://Scenes/LevelSelectScreen/LevelSelectButton.tscn" id="1_i7pu7"]
+
+[node name="LevelSelectScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00793485, 0.284178, 0.188802, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 200
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+columns = 5
+
+[node name="LevelSelectButton" parent="MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("1_i7pu7")]
+layout_mode = 2
+text = "Level 1"
+levelPath = NodePath("res://Scenes/Level1.tscn")
+
+[node name="LevelSelectButton2" parent="MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("1_i7pu7")]
+layout_mode = 2
+text = "Level 2"
+levelPath = NodePath("res://Scenes/Levels/Level2.tscn")
+
+[node name="LevelSelectButton3" parent="MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("1_i7pu7")]
+layout_mode = 2
+text = "Level 3"
+levelPath = NodePath("res://Scenes/Levels/Level3.tscn")
+
+[node name="LevelSelectButton4" parent="MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("1_i7pu7")]
+layout_mode = 2
+text = "Level 4"
+levelPath = NodePath("res://Scenes/Levels/Level4.tscn")
+
+[node name="LevelSelectButton5" parent="MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("1_i7pu7")]
+layout_mode = 2
+text = "Level 5"
+levelPath = NodePath("res://Scenes/Levels/Level5.tscn")
