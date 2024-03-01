@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhmdjs54mty1j"]
+[gd_scene load_steps=3 format=3 uid="uid://dhmdjs54mty1j"]
 
 [ext_resource type="Script" path="res://Scenes/laser.gd" id="1_o2km8"]
+[ext_resource type="AudioStream" uid="uid://mx8ernu12q0o" path="res://Music/Gun Shot Sound Effect.mp3" id="2_wpcks"]
 
 [node name="Laser" type="CharacterBody2D"]
 script = ExtResource("1_o2km8")
@@ -11,3 +12,7 @@ offset_top = -2.0
 offset_right = 17.0
 offset_bottom = 1.0
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_wpcks")
+autoplay = true
