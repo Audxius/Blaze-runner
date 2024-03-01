@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var kulka = preload("res://laser.tscn")
+var kulka = preload("res://Scenes/laser.tscn")
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
