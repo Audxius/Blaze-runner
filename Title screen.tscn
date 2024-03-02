@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://lanbfnlpdknt"]
+
+[ext_resource type="Script" path="res://Title screen.gd" id="1_2ca58"]
+[ext_resource type="Texture2D" uid="uid://bh36jgf4mg688" path="res://Scenes/Title screen/background.png" id="1_nyfiq"]
+[ext_resource type="Texture2D" uid="uid://phxyo88iwt2d" path="res://Scenes/Title screen/title.png" id="2_mnoa6"]
+[ext_resource type="Texture2D" uid="uid://n318ggsh2vn4" path="res://Scenes/Title screen/guy.png" id="3_myigp"]
+
+[node name="Title screen" type="Node2D"]
+script = ExtResource("1_2ca58")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(575, 325)
+scale = Vector2(4.27124, 4.27124)
+texture = ExtResource("1_nyfiq")
+
+[node name="Text" type="Sprite2D" parent="."]
+position = Vector2(564, 259.75)
+scale = Vector2(4.14706, 4.14706)
+texture = ExtResource("2_mnoa6")
+
+[node name="The guy" type="Sprite2D" parent="."]
+position = Vector2(590, 325)
+scale = Vector2(4.31699, 4.31699)
+texture = ExtResource("3_myigp")
