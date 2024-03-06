@@ -1,8 +1,8 @@
 extends Node2D
 
-var simultaneous_scene = preload("res://Scenes/LevelSelectScreen/LevelSelectScene.tscn").instantiate()
+@export var scena: PackedScene
 
 func _process(delta):
+	if scena == null: return
 	if Input.is_action_just_pressed("enter"):
-		get_tree().root.add_child(simultaneous_scene)
-		get_node("/root/Title screen").free()
+		get_tree().change_scene_to_packed(scena)
