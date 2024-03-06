@@ -1,16 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://lanbfnlpdknt"]
+[gd_scene load_steps=9 format=3 uid="uid://lanbfnlpdknt"]
 
 [ext_resource type="Script" path="res://Title screen.gd" id="1_2ca58"]
 [ext_resource type="Texture2D" uid="uid://bh36jgf4mg688" path="res://Scenes/Title screen/background.png" id="1_nyfiq"]
 [ext_resource type="PackedScene" uid="uid://dpo75klo2nn18" path="res://Scenes/LevelSelectScreen/LevelSelectScene.tscn" id="2_jdlgq"]
 [ext_resource type="Texture2D" uid="uid://phxyo88iwt2d" path="res://Scenes/Title screen/title.png" id="2_mnoa6"]
+[ext_resource type="PackedScene" uid="uid://dpo75klo2nn18" path="res://Scenes/LevelSelectScreen/LevelSelectScene.tscn" id="2_u3mws"]
 [ext_resource type="Texture2D" uid="uid://n318ggsh2vn4" path="res://Scenes/Title screen/guy.png" id="3_myigp"]
 [ext_resource type="Texture2D" uid="uid://c1j0jtsf25nes" path="res://Scenes/Title screen/press start.png" id="5_n3j4c"]
 [ext_resource type="Script" path="res://press start.gd" id="6_lhqxa"]
+[ext_resource type="Texture2D" uid="uid://be5eav0ggaehm" path="res://Scenes/button-for-starting-game-clicking-play-vector.jpg" id="7_1ecye"]
 
 [node name="Title screen" type="Node2D"]
 script = ExtResource("1_2ca58")
-scena = ExtResource("2_jdlgq")
+scena = ExtResource("2_u3mws")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(575, 325)
@@ -31,3 +33,28 @@ texture = ExtResource("3_myigp")
 position = Vector2(447, 590)
 texture = ExtResource("5_n3j4c")
 script = ExtResource("6_lhqxa")
+
+[node name="play" type="Button" parent="."]
+offset_left = 323.0
+offset_top = 22.0
+offset_right = 825.0
+offset_bottom = 230.0
+icon = ExtResource("7_1ecye")
+
+[node name="settings" type="Button" parent="."]
+offset_left = 323.0
+offset_top = 230.0
+offset_right = 825.0
+offset_bottom = 438.0
+icon = ExtResource("7_1ecye")
+
+[node name="exit" type="Button" parent="."]
+offset_left = 321.0
+offset_top = 442.0
+offset_right = 823.0
+offset_bottom = 650.0
+icon = ExtResource("7_1ecye")
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
