@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://lanbfnlpdknt"]
+[gd_scene load_steps=13 format=3 uid="uid://lanbfnlpdknt"]
 
 [ext_resource type="Script" path="res://Title screen.gd" id="1_2ca58"]
 [ext_resource type="Texture2D" uid="uid://bh36jgf4mg688" path="res://Scenes/Title screen/background.png" id="1_nyfiq"]
@@ -7,8 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://n318ggsh2vn4" path="res://Scenes/Title screen/guy.png" id="3_myigp"]
 [ext_resource type="Texture2D" uid="uid://c1j0jtsf25nes" path="res://Scenes/Title screen/press start.png" id="5_n3j4c"]
 [ext_resource type="Script" path="res://press start.gd" id="6_lhqxa"]
-[ext_resource type="Texture2D" uid="uid://be5eav0ggaehm" path="res://Scenes/button-for-starting-game-clicking-play-vector.jpg" id="7_1ecye"]
+[ext_resource type="Texture2D" uid="uid://c7qa26yqddsn4" path="res://Scenes/Title screen/play.png" id="8_qvk6r"]
+[ext_resource type="Texture2D" uid="uid://byksy3hpneiib" path="res://Scenes/Title screen/settings.png" id="9_4yues"]
 [ext_resource type="AudioStream" uid="uid://cq4858dmyn8p0" path="res://select_sfx.wav" id="9_dxwj1"]
+[ext_resource type="Texture2D" uid="uid://bh8ixvt8ntgaj" path="res://Scenes/exit.png" id="10_mxh7d"]
+[ext_resource type="AudioStream" uid="uid://cxqbm3p08l8vr" path="res://Scenes/Title screen music.wav" id="12_0tk6b"]
 
 [node name="Title screen" type="Node2D"]
 script = ExtResource("1_2ca58")
@@ -35,28 +38,38 @@ texture = ExtResource("5_n3j4c")
 script = ExtResource("6_lhqxa")
 
 [node name="play" type="Button" parent="."]
-offset_left = 323.0
-offset_top = 22.0
-offset_right = 825.0
-offset_bottom = 230.0
-icon = ExtResource("7_1ecye")
+offset_left = 306.0
+offset_top = 102.0
+offset_right = 846.0
+offset_bottom = 342.0
+icon = ExtResource("8_qvk6r")
+flat = true
+expand_icon = true
 
 [node name="settings" type="Button" parent="."]
-offset_left = 323.0
-offset_top = 230.0
-offset_right = 825.0
-offset_bottom = 438.0
-icon = ExtResource("7_1ecye")
+offset_left = -19.0
+offset_top = 500.0
+offset_right = 483.0
+offset_bottom = 708.0
+icon = ExtResource("9_4yues")
+flat = true
 
 [node name="exit" type="Button" parent="."]
-offset_left = 321.0
-offset_top = 442.0
-offset_right = 823.0
-offset_bottom = 650.0
-icon = ExtResource("7_1ecye")
+offset_left = 309.0
+offset_top = 282.0
+offset_right = 858.0
+offset_bottom = 521.0
+icon = ExtResource("10_mxh7d")
+flat = true
+expand_icon = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_dxwj1")
+
+[node name="background music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_0tk6b")
+volume_db = -10.895
+autoplay = true
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]

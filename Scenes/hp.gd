@@ -1,6 +1,6 @@
 extends ColorRect
 
-var hp = 1000;
+var hp = 100;
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,3 +15,5 @@ func _process(delta):
 	if Input.is_key_pressed(KEY_G):
 		if hp>=0:
 			hp-=1
+	if hp <=0:
+		get_tree().reload_current_scene()
