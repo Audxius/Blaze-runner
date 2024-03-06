@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cw1xl73mc64dq"]
+
+[node name="PauseUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.203922, 0.203922, 0.203922, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 241.0
+offset_right = 696.0
+offset_bottom = 308.0
+text = "PAUSED"
