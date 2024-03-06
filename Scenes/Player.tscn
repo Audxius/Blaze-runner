@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://buwt6ljlkp7c2"]
+[gd_scene load_steps=6 format=3 uid="uid://buwt6ljlkp7c2"]
 
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_lpi2i"]
+[ext_resource type="Script" path="res://Scenes/hp.gd" id="2_7yimy"]
+[ext_resource type="Texture2D" uid="uid://b1lyi4f7k4mxo" path="res://hp.png" id="2_wek1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffpd2"]
 
@@ -32,3 +34,19 @@ script = SubResource("GDScript_5lems")
 offset_top = -2.0
 offset_right = 40.0
 offset_bottom = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 139.0
+offset_top = 28.0
+offset_right = 503.275
+offset_bottom = 65.0
+scale = Vector2(1, 0.975)
+color = Color(0.494118, 0, 0, 1)
+script = ExtResource("2_7yimy")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(271, 50)
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("2_wek1a")
