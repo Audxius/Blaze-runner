@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_lpi2i"]
 [ext_resource type="Script" path="res://Scenes/hp.gd" id="2_7yimy"]
-[ext_resource type="Texture2D" path="res://hp.png" id="2_wek1a"]
+[ext_resource type="Texture2D" uid="uid://b1lyi4f7k4mxo" path="res://Art/hp.png" id="3_78hbe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffpd2"]
 
@@ -49,4 +49,4 @@ script = ExtResource("2_7yimy")
 [node name="Sprite2D" type="Sprite2D" parent="hp"]
 position = Vector2(271, 50)
 scale = Vector2(7.5, 7.5)
-texture = ExtResource("2_wek1a")
+texture = ExtResource("3_78hbe")
