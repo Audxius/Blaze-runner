@@ -35,9 +35,9 @@ offset_top = -2.0
 offset_right = 40.0
 offset_bottom = 1.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="hp" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="hp"]
 offset_left = 139.0
 offset_top = 28.0
 offset_right = 503.275
@@ -46,7 +46,7 @@ scale = Vector2(1, 0.975)
 color = Color(0.494118, 0, 0, 1)
 script = ExtResource("2_7yimy")
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="hp"]
 position = Vector2(271, 50)
 scale = Vector2(7.5, 7.5)
 texture = ExtResource("2_wek1a")
