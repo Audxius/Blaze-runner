@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_lpi2i"]
 [ext_resource type="Script" path="res://Scenes/hp.gd" id="2_7yimy"]
-[ext_resource type="Texture2D" uid="uid://b1lyi4f7k4mxo" path="res://hp.png" id="2_wek1a"]
+[ext_resource type="Texture2D" path="res://hp.png" id="2_wek1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffpd2"]
 

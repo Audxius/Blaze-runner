@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://lanbfnlpdknt"]
+[gd_scene load_steps=13 format=3 uid="uid://btsp1jnjwxr2e"]
 
 [ext_resource type="Script" path="res://Title screen.gd" id="1_2ca58"]
 [ext_resource type="Texture2D" uid="uid://bh36jgf4mg688" path="res://Scenes/Title screen/background.png" id="1_nyfiq"]
@@ -9,9 +9,9 @@
 [ext_resource type="Script" path="res://press start.gd" id="6_lhqxa"]
 [ext_resource type="Texture2D" uid="uid://c7qa26yqddsn4" path="res://Scenes/Title screen/play.png" id="8_qvk6r"]
 [ext_resource type="Texture2D" uid="uid://byksy3hpneiib" path="res://Scenes/Title screen/settings.png" id="9_4yues"]
-[ext_resource type="AudioStream" uid="uid://cq4858dmyn8p0" path="res://select_sfx.wav" id="9_dxwj1"]
 [ext_resource type="Texture2D" uid="uid://bh8ixvt8ntgaj" path="res://Scenes/exit.png" id="10_mxh7d"]
-[ext_resource type="AudioStream" uid="uid://cxqbm3p08l8vr" path="res://Scenes/Title screen music.wav" id="12_0tk6b"]
+[ext_resource type="AudioStream" uid="uid://cq4858dmyn8p0" path="res://Music/select_sfx.wav" id="11_v7325"]
+[ext_resource type="AudioStream" uid="uid://dxjpspo31nw51" path="res://Music/Main title screen music.wav" id="12_jo0av"]
 
 [node name="Title screen" type="Node2D"]
 script = ExtResource("1_2ca58")
@@ -64,10 +64,10 @@ flat = true
 expand_icon = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_dxwj1")
+stream = ExtResource("11_v7325")
 
 [node name="background music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_0tk6b")
+stream = ExtResource("12_jo0av")
 volume_db = -10.895
 autoplay = true
 

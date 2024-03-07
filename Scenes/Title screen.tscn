@@ -1,0 +1,76 @@
+[gd_scene load_steps=13 format=3 uid="uid://lanbfnlpdknt"]
+
+[ext_resource type="Script" path="res://Title screen.gd" id="1_2ca58"]
+[ext_resource type="Texture2D" uid="uid://bh36jgf4mg688" path="res://Scenes/Title screen/background.png" id="1_nyfiq"]
+[ext_resource type="Texture2D" uid="uid://phxyo88iwt2d" path="res://Scenes/Title screen/title.png" id="2_mnoa6"]
+[ext_resource type="PackedScene" uid="uid://dpo75klo2nn18" path="res://Scenes/LevelSelectScreen/LevelSelectScene.tscn" id="2_u3mws"]
+[ext_resource type="Texture2D" uid="uid://n318ggsh2vn4" path="res://Scenes/Title screen/guy.png" id="3_myigp"]
+[ext_resource type="Texture2D" uid="uid://c1j0jtsf25nes" path="res://Scenes/Title screen/press start.png" id="5_n3j4c"]
+[ext_resource type="Script" path="res://press start.gd" id="6_lhqxa"]
+[ext_resource type="Texture2D" uid="uid://c7qa26yqddsn4" path="res://Scenes/Title screen/play.png" id="8_qvk6r"]
+[ext_resource type="Texture2D" uid="uid://byksy3hpneiib" path="res://Scenes/Title screen/settings.png" id="9_4yues"]
+[ext_resource type="AudioStream" uid="uid://cq4858dmyn8p0" path="res://select_sfx.wav" id="9_dxwj1"]
+[ext_resource type="Texture2D" uid="uid://bh8ixvt8ntgaj" path="res://Scenes/exit.png" id="10_mxh7d"]
+[ext_resource type="AudioStream" uid="uid://dxjpspo31nw51" path="res://Music/Main title screen music.wav" id="12_jo0av"]
+
+[node name="Title screen" type="Node2D"]
+script = ExtResource("1_2ca58")
+scena = ExtResource("2_u3mws")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(575, 325)
+scale = Vector2(4.27124, 4.27124)
+texture = ExtResource("1_nyfiq")
+
+[node name="Text" type="Sprite2D" parent="."]
+position = Vector2(564, 259.75)
+scale = Vector2(4.14706, 4.14706)
+texture = ExtResource("2_mnoa6")
+
+[node name="The guy" type="Sprite2D" parent="."]
+position = Vector2(590, 325)
+scale = Vector2(4.31699, 4.31699)
+texture = ExtResource("3_myigp")
+
+[node name="press start" type="Sprite2D" parent="."]
+position = Vector2(447, 590)
+texture = ExtResource("5_n3j4c")
+script = ExtResource("6_lhqxa")
+
+[node name="play" type="Button" parent="."]
+offset_left = 306.0
+offset_top = 102.0
+offset_right = 846.0
+offset_bottom = 342.0
+icon = ExtResource("8_qvk6r")
+flat = true
+expand_icon = true
+
+[node name="settings" type="Button" parent="."]
+offset_left = -19.0
+offset_top = 500.0
+offset_right = 483.0
+offset_bottom = 708.0
+icon = ExtResource("9_4yues")
+flat = true
+
+[node name="exit" type="Button" parent="."]
+offset_left = 309.0
+offset_top = 282.0
+offset_right = 858.0
+offset_bottom = 521.0
+icon = ExtResource("10_mxh7d")
+flat = true
+expand_icon = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_dxwj1")
+
+[node name="background music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_jo0av")
+volume_db = -10.895
+autoplay = true
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
