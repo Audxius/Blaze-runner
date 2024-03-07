@@ -12,7 +12,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("pause"):
 		if not button_pressed:
-			if not get_tree().root.has_node("Title screen") and not get_tree().root.has_node("LevelSelectScene"):
+			if not treeContainsMenu():
 				ui.show()
 				get_tree().paused = true
 				button_pressed = true
@@ -20,3 +20,13 @@ func _process(delta):
 			ui.hide()
 			get_tree().paused = false
 			button_pressed = false
+
+func treeContainsMenu():
+	var menuNames = ["Title screen","LevelSelectScene"]
+	var exists = false
+	
+	for menuName in menuNames:
+		if get_tree().root.has_node(menuName):
+			exists = true
+		
+	return exists

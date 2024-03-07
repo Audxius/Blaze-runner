@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://buwt6ljlkp7c2"]
+[gd_scene load_steps=6 format=3 uid="uid://buwt6ljlkp7c2"]
 
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_lpi2i"]
 [ext_resource type="Script" path="res://Scenes/hp.gd" id="2_7yimy"]
+[ext_resource type="Texture2D" uid="uid://b1lyi4f7k4mxo" path="res://Art/hp.png" id="3_jk4ad"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffpd2"]
 
@@ -48,3 +49,4 @@ script = ExtResource("2_7yimy")
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(271, 50)
 scale = Vector2(7.5, 7.5)
+texture = ExtResource("3_jk4ad")
