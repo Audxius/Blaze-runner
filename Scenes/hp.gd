@@ -1,6 +1,6 @@
 extends ColorRect
 
-var hp = 1000;
+var hp = 100;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -12,3 +12,7 @@ func _process(delta):
 func damage(amount):
 	if hp>=0:
 		hp-=amount
+		if hp>=0:
+			hp-=1
+	if hp <=0:
+		get_tree().reload_current_scene()
