@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://btsp1jnjwxr2e"]
+[gd_scene load_steps=13 format=3 uid="uid://lanbfnlpdknt"]
 
 [ext_resource type="Script" path="res://Title screen.gd" id="1_2ca58"]
 [ext_resource type="Texture2D" uid="uid://bh36jgf4mg688" path="res://Scenes/Title screen/background.png" id="1_nyfiq"]

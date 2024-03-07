@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Pause="*res://Pause.gd"
+Pause="*res://Scenes/Pause.gd"
 
 [display]
 
