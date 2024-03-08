@@ -7,6 +7,7 @@ var ui = pause_ui.instantiate()
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	ui.hide()
+	ui.get_node("CanvasLayer").visible = false
 	get_tree().root.add_child.call_deferred(ui);
 
 func _process(delta):
@@ -14,10 +15,12 @@ func _process(delta):
 		if not button_pressed:
 			if not treeContainsMenu():
 				ui.show()
+				ui.get_node("CanvasLayer").visible = true
 				get_tree().paused = true
 				button_pressed = true
 		else:
 			ui.hide()
+			ui.get_node("CanvasLayer").visible = false
 			get_tree().paused = false
 			button_pressed = false
 
