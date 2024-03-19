@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cleirbyd7kb75"]
+
+[ext_resource type="Script" path="res://Scenes/GunSelectScreen/inventory_button_script.gd" id="1_kl6vg"]
+
+[node name="InventoryButtonScene" type="TextureButton"]
+script = ExtResource("1_kl6vg")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

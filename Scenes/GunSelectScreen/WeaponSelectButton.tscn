@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqd3mql8a8feh"]
+
+[ext_resource type="Script" path="res://Scenes/GunSelectScreen/weapon_select_button_script.gd" id="1_v4lvx"]
+
+[node name="WeaponSelectButton" type="TextureButton"]
+script = ExtResource("1_v4lvx")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

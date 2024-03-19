@@ -1,0 +1,168 @@
+[gd_scene load_steps=8 format=3 uid="uid://diqcqhhh7hcmy"]
+
+[ext_resource type="Script" path="res://Scenes/GunSelectScreen/gun_select_scene_script.gd" id="1_0yuvc"]
+[ext_resource type="Script" path="res://Scenes/GunSelectScreen/start_level_script.gd" id="1_4s7n6"]
+[ext_resource type="Script" path="res://Scenes/GunSelectScreen/button_script.gd" id="1_c5pn4"]
+[ext_resource type="Texture2D" uid="uid://dh7obdnfkm5sc" path="res://Scenes/Weapons/placeholder1.png" id="4_x5amm"]
+[ext_resource type="Texture2D" uid="uid://b3wrp3al7v2g0" path="res://Scenes/Weapons/placeholder2.png" id="5_i8j7d"]
+[ext_resource type="PackedScene" uid="uid://bqd3mql8a8feh" path="res://Scenes/GunSelectScreen/WeaponSelectButton.tscn" id="7_12d60"]
+[ext_resource type="PackedScene" uid="uid://cleirbyd7kb75" path="res://Scenes/GunSelectScreen/InventoryButtonScene.tscn" id="7_shw18"]
+
+[node name="GunSelectScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0yuvc")
+
+[node name="StartLevelButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1009.0
+offset_top = 570.0
+offset_right = 1115.0
+offset_bottom = 608.0
+text = "START LEVEL"
+script = ExtResource("1_4s7n6")
+
+[node name="GoToLevelSelectButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 573.0
+offset_right = 210.0
+offset_bottom = 610.0
+text = "BACK TO LEVEL SELECT"
+script = ExtResource("1_c5pn4")
+levelPath = NodePath("res://Scenes/LevelSelectScreen/LevelSelectScene.tscn")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.837
+offset_right = 500.0
+offset_bottom = 6.62396
+grow_vertical = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 20
+
+[node name="WeaponSelectButton" parent="MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("7_12d60")]
+layout_mode = 2
+texture_normal = ExtResource("4_x5amm")
+weaponTexture = ExtResource("4_x5amm")
+
+[node name="WeaponSelectButton2" parent="MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("7_12d60")]
+layout_mode = 2
+texture_normal = ExtResource("5_i8j7d")
+weaponTexture = ExtResource("5_i8j7d")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.829
+offset_left = -400.0
+offset_bottom = 3.80798
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 400
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 20
+
+[node name="InventoryButtonScene" parent="MarginContainer2/HBoxContainer/GridContainer" instance=ExtResource("7_shw18")]
+visible = false
+layout_mode = 2
+
+[node name="InventoryButtonScene2" parent="MarginContainer2/HBoxContainer/GridContainer" instance=ExtResource("7_shw18")]
+visible = false
+layout_mode = 2
+
+[node name="InventoryButtonScene3" parent="MarginContainer2/HBoxContainer/GridContainer" instance=ExtResource("7_shw18")]
+visible = false
+layout_mode = 2
+
+[node name="InventoryButtonScene4" parent="MarginContainer2/HBoxContainer/GridContainer" instance=ExtResource("7_shw18")]
+visible = false
+layout_mode = 2
+
+[node name="InventoryButtonScene5" parent="MarginContainer2/HBoxContainer/GridContainer" instance=ExtResource("7_shw18")]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 51.0
+offset_right = 492.0
+offset_bottom = 74.0
+text = "SELECT WEAPON"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 663.0
+offset_top = 46.0
+offset_right = 792.0
+offset_bottom = 69.0
+text = "INVENTORY"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 782.0
+offset_top = 113.0
+offset_right = 911.0
+offset_bottom = 136.0
+text = "slot 1"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 779.0
+offset_top = 186.0
+offset_right = 908.0
+offset_bottom = 209.0
+text = "slot 2"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 775.0
+offset_top = 256.0
+offset_right = 904.0
+offset_bottom = 279.0
+text = "slot 3"
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 331.0
+offset_right = 905.0
+offset_bottom = 354.0
+text = "slot 4"
+
+[node name="Label7" type="Label" parent="."]
+layout_mode = 0
+offset_left = 779.0
+offset_top = 396.0
+offset_right = 908.0
+offset_bottom = 419.0
+text = "slot 5"
+
+[connection signal="pressed" from="StartLevelButton" to="StartLevelButton" method="_on_pressed"]
+[connection signal="pressed" from="GoToLevelSelectButton" to="GoToLevelSelectButton" method="_on_pressed"]
+[connection signal="selected" from="MarginContainer/HBoxContainer/GridContainer/WeaponSelectButton" to="." method="_on_weapon_select_button_selected"]
+[connection signal="selected" from="MarginContainer/HBoxContainer/GridContainer/WeaponSelectButton2" to="." method="_on_weapon_select_button_selected"]
+[connection signal="selectedInventory" from="MarginContainer2/HBoxContainer/GridContainer/InventoryButtonScene" to="." method="_on_inventory_button_scene_selected_inventory"]

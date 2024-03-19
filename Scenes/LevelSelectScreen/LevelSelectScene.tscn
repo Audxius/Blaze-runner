@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://dpo75klo2nn18"]
+[gd_scene load_steps=20 format=3 uid="uid://dpo75klo2nn18"]
 
 [ext_resource type="Texture2D" uid="uid://cacmncrfidhoo" path="res://Scenes/LevelSelectScreen/background_su_tekstu.png" id="1_f64i5"]
 [ext_resource type="PackedScene" uid="uid://ci56xvd5f72us" path="res://Scenes/LevelSelectScreen/LevelSelectButton.tscn" id="1_i7pu7"]
 [ext_resource type="Texture2D" uid="uid://cw4kgg8jtenti" path="res://Scenes/LevelSelectScreen/Buttons/uno.png" id="3_rq74y"]
 [ext_resource type="Texture2D" uid="uid://bt8qmnb55c5cg" path="res://Scenes/LevelSelectScreen/Buttons/unoLight.png" id="4_cevpk"]
 [ext_resource type="Texture2D" uid="uid://dqojko2ofbq5b" path="res://Scenes/LevelSelectScreen/Buttons/unoDark.png" id="5_7ef0f"]
+[ext_resource type="PackedScene" uid="uid://diqcqhhh7hcmy" path="res://Scenes/GunSelectScreen/GunSelectScene.tscn" id="6_oq5tj"]
 [ext_resource type="Texture2D" uid="uid://0d2e74qhqqx5" path="res://Scenes/LevelSelectScreen/Buttons/dos.png" id="6_ybq87"]
 [ext_resource type="Texture2D" uid="uid://vs4ylv2uwbes" path="res://Scenes/LevelSelectScreen/Buttons/dosDark.png" id="7_2ret7"]
 [ext_resource type="Texture2D" uid="uid://c2i2gj2y0aolv" path="res://Scenes/LevelSelectScreen/Buttons/dosLight.png" id="7_tlau5"]
@@ -64,6 +65,7 @@ texture_normal = ExtResource("3_rq74y")
 texture_hover = ExtResource("4_cevpk")
 texture_disabled = ExtResource("5_7ef0f")
 levelPath = NodePath("res://Scenes/Level1.tscn")
+gunSelectScene = ExtResource("6_oq5tj")
 
 [node name="LevelSelectButton2" parent="MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("1_i7pu7")]
 layout_mode = 2
@@ -72,6 +74,7 @@ texture_normal = ExtResource("6_ybq87")
 texture_hover = ExtResource("7_tlau5")
 texture_disabled = ExtResource("7_2ret7")
 levelPath = NodePath("res://Scenes/Levels/Level2.tscn")
+gunSelectScene = ExtResource("6_oq5tj")
 
 [node name="LevelSelectButton3" parent="MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("1_i7pu7")]
 layout_mode = 2
@@ -80,6 +83,7 @@ texture_normal = ExtResource("9_xw7ar")
 texture_hover = ExtResource("10_son5n")
 texture_disabled = ExtResource("10_kam5r")
 levelPath = NodePath("res://Scenes/Levels/Level3.tscn")
+gunSelectScene = ExtResource("6_oq5tj")
 
 [node name="LevelSelectButton4" parent="MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("1_i7pu7")]
 layout_mode = 2
@@ -88,6 +92,7 @@ texture_normal = ExtResource("10_q83dp")
 texture_hover = ExtResource("13_ltwlh")
 texture_disabled = ExtResource("11_1x20q")
 levelPath = NodePath("res://Scenes/Levels/Level4.tscn")
+gunSelectScene = ExtResource("6_oq5tj")
 
 [node name="LevelSelectButton5" parent="MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("1_i7pu7")]
 layout_mode = 2
@@ -96,6 +101,7 @@ texture_normal = ExtResource("12_4gyvh")
 texture_hover = ExtResource("16_4dglv")
 texture_disabled = ExtResource("13_dshua")
 levelPath = NodePath("res://Scenes/Levels/Level5.tscn")
+gunSelectScene = ExtResource("6_oq5tj")
 
 [node name="LevelSelectMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_dedep")
