@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dia1xvjitklko"]
+
+[ext_resource type="Texture2D" uid="uid://b3wrp3al7v2g0" path="res://Scenes/Weapons/placeholder2.png" id="1_8aday"]
+
+[node name="Placeholder2" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8aday")

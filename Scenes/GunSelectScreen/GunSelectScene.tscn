@@ -1,14 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://diqcqhhh7hcmy"]
+[gd_scene load_steps=14 format=3 uid="uid://diqcqhhh7hcmy"]
 
 [ext_resource type="Script" path="res://Scenes/GunSelectScreen/gun_select_scene_script.gd" id="1_0yuvc"]
 [ext_resource type="Script" path="res://Scenes/GunSelectScreen/start_level_script.gd" id="1_4s7n6"]
 [ext_resource type="Script" path="res://Scenes/GunSelectScreen/button_script.gd" id="1_c5pn4"]
 [ext_resource type="Texture2D" uid="uid://dh7obdnfkm5sc" path="res://Scenes/Weapons/placeholder1.png" id="4_x5amm"]
 [ext_resource type="Texture2D" uid="uid://b3wrp3al7v2g0" path="res://Scenes/Weapons/placeholder2.png" id="5_i8j7d"]
+[ext_resource type="PackedScene" uid="uid://bcql748qrufws" path="res://Scenes/Weapons/placeholder1.tscn" id="6_ytju4"]
 [ext_resource type="PackedScene" uid="uid://bqd3mql8a8feh" path="res://Scenes/GunSelectScreen/WeaponSelectButton.tscn" id="7_12d60"]
 [ext_resource type="PackedScene" uid="uid://cleirbyd7kb75" path="res://Scenes/GunSelectScreen/InventoryButtonScene.tscn" id="7_shw18"]
 [ext_resource type="Texture2D" uid="uid://dbw5sde6vl7xu" path="res://Scenes/Weapons/placeholder3.png" id="7_unjq2"]
+[ext_resource type="PackedScene" uid="uid://dia1xvjitklko" path="res://Scenes/Weapons/placeholder2.tscn" id="8_r34f4"]
 [ext_resource type="Texture2D" uid="uid://dx8eaord5dax5" path="res://Scenes/Weapons/hideTexture.png" id="8_xmaa4"]
+[ext_resource type="PackedScene" uid="uid://cmjh8ysbdmj5v" path="res://Scenes/Weapons/placeholder3.tscn" id="10_21k1o"]
 [ext_resource type="AudioStream" uid="uid://co3dvbugwpq3s" path="res://Scenes/GunSelectScreen/Gun_Select_audio.wav" id="10_rc4ro"]
 
 [node name="GunSelectScene" type="Control"]
@@ -61,16 +64,19 @@ theme_override_constants/v_separation = 60
 layout_mode = 2
 texture_normal = ExtResource("4_x5amm")
 weaponTexture = ExtResource("4_x5amm")
+weaponScenePacked = ExtResource("6_ytju4")
 
 [node name="WeaponSelectButton2" parent="MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("7_12d60")]
 layout_mode = 2
 texture_normal = ExtResource("5_i8j7d")
 weaponTexture = ExtResource("5_i8j7d")
+weaponScenePacked = ExtResource("8_r34f4")
 
 [node name="WeaponSelectButton3" parent="MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("7_12d60")]
 layout_mode = 2
 texture_normal = ExtResource("7_unjq2")
 weaponTexture = ExtResource("7_unjq2")
+weaponScenePacked = ExtResource("10_21k1o")
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -94,28 +100,28 @@ layout_mode = 2
 theme_override_constants/v_separation = 60
 
 [node name="InventoryButtonScene" parent="MarginContainer2/HBoxContainer/GridContainer" instance=ExtResource("7_shw18")]
-visible = false
 layout_mode = 2
+texture_normal = ExtResource("8_xmaa4")
 hideTexture = ExtResource("8_xmaa4")
 
 [node name="InventoryButtonScene2" parent="MarginContainer2/HBoxContainer/GridContainer" instance=ExtResource("7_shw18")]
-visible = false
 layout_mode = 2
+texture_normal = ExtResource("8_xmaa4")
 hideTexture = ExtResource("8_xmaa4")
 
 [node name="InventoryButtonScene3" parent="MarginContainer2/HBoxContainer/GridContainer" instance=ExtResource("7_shw18")]
-visible = false
 layout_mode = 2
+texture_normal = ExtResource("8_xmaa4")
 hideTexture = ExtResource("8_xmaa4")
 
 [node name="InventoryButtonScene4" parent="MarginContainer2/HBoxContainer/GridContainer" instance=ExtResource("7_shw18")]
-visible = false
 layout_mode = 2
+texture_normal = ExtResource("8_xmaa4")
 hideTexture = ExtResource("8_xmaa4")
 
 [node name="InventoryButtonScene5" parent="MarginContainer2/HBoxContainer/GridContainer" instance=ExtResource("7_shw18")]
-visible = false
 layout_mode = 2
+texture_normal = ExtResource("8_xmaa4")
 hideTexture = ExtResource("8_xmaa4")
 
 [node name="Label" type="Label" parent="."]
