@@ -1,7 +1,7 @@
 extends Node
 
 signal selectedInventory
-@export var weaponTexture : CompressedTexture2D
+#@export var weaponTexture : CompressedTexture2D
 @export var hideTexture : CompressedTexture2D
 @export var weaponScenePacked : PackedScene
 var this
@@ -12,6 +12,6 @@ func _ready():
 
 func _on_pressed():
 	selectedInventory.emit(weaponScenePacked)
-	weaponTexture = null
+	#weaponTexture = null
 	weaponScenePacked = null
-	this.set_texture_normal(hideTexture)
+	this.get_node("TextureRect").texture = hideTexture

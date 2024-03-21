@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbw5sde6vl7xu"
-path="res://.godot/imported/placeholder3.png-dc249af4fcfb514be5fb040899d96597.ctex"
+uid="uid://bhq1tuftoohxg"
+path="res://.godot/imported/button1 highlight.png-685127eeb1c965a06cd40dfda12b13dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Weapons/placeholder3.png"
-dest_files=["res://.godot/imported/placeholder3.png-dc249af4fcfb514be5fb040899d96597.ctex"]
+source_file="res://Scenes/GunSelectScreen/button1 highlight.png"
+dest_files=["res://.godot/imported/button1 highlight.png-685127eeb1c965a06cd40dfda12b13dc.ctex"]
 
 [params]
 
