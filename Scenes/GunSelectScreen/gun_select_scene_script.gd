@@ -18,7 +18,8 @@ func _ready():
 	inventoryButtons.append($MarginContainer2/HBoxContainer/GridContainer/InventoryButtonScene5)
 	show_weapons_in_inventory()
 	
-
+#Kai paspaudziamas ginklo pasirinkimo mygtukas, pasirinktas ginklas idedamas i ginklu masyva
+#ir atnaujinamas inventoriaus mygtuko atvaizdavimas
 func _on_weapon_select_button_selected(weaponTexture, weaponScenePacked):
 	if not Global.weapons.has(weaponScenePacked):
 		for i in 5:
@@ -30,11 +31,14 @@ func _on_weapon_select_button_selected(weaponTexture, weaponScenePacked):
 				inventoryButtons[i].show()
 				return
 
+#spaudziant ant ginklo, kuris inventoriuje, jis pasalinamas is ginklo masyvo
 func _on_inventory_button_scene_selected_inventory(weaponScenePacked):
 	for i in 5:
 		if Global.weapons[i] == weaponScenePacked:
 			Global.weapons[i] = null
 
+#isejus is ginklu pasirinkimo meniu ir sugrizus ginklai, esantys masyve, atvaizduojami
+#inventoriuje
 func show_weapons_in_inventory():
 	for i in 5:
 		if Global.weapons[i] != null:
