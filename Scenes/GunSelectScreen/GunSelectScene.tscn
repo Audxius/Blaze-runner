@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://diqcqhhh7hcmy"]
+[gd_scene load_steps=11 format=3 uid="uid://diqcqhhh7hcmy"]
 
 [ext_resource type="Script" path="res://Scenes/GunSelectScreen/gun_select_scene_script.gd" id="1_0yuvc"]
 [ext_resource type="Script" path="res://Scenes/GunSelectScreen/start_level_script.gd" id="1_4s7n6"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cleirbyd7kb75" path="res://Scenes/GunSelectScreen/InventoryButtonScene.tscn" id="7_shw18"]
 [ext_resource type="Texture2D" uid="uid://dbw5sde6vl7xu" path="res://Scenes/Weapons/placeholder3.png" id="7_unjq2"]
 [ext_resource type="Texture2D" uid="uid://dx8eaord5dax5" path="res://Scenes/Weapons/hideTexture.png" id="8_xmaa4"]
+[ext_resource type="AudioStream" uid="uid://co3dvbugwpq3s" path="res://Scenes/GunSelectScreen/Gun_Select_audio.wav" id="10_rc4ro"]
 
 [node name="GunSelectScene" type="Control"]
 layout_mode = 3
@@ -172,6 +173,11 @@ offset_top = 376.0
 offset_right = 904.0
 offset_bottom = 399.0
 text = "slot 5"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_rc4ro")
+volume_db = -10.196
+autoplay = true
 
 [connection signal="pressed" from="StartLevelButton" to="StartLevelButton" method="_on_pressed"]
 [connection signal="pressed" from="GoToLevelSelectButton" to="GoToLevelSelectButton" method="_on_pressed"]
