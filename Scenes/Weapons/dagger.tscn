@@ -1,11 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsafi7m7f0lf7"]
+[gd_scene load_steps=7 format=3 uid="uid://dsafi7m7f0lf7"]
 
 [ext_resource type="Script" path="res://Scenes/Weapons/dagger.gd" id="1_ewtbn"]
 [ext_resource type="Texture2D" uid="uid://ct6twxlmggtgs" path="res://Scenes/Weapons/dagger.png" id="1_hnchy"]
+[ext_resource type="AudioStream" uid="uid://d33ak5lopawj7" path="res://Scenes/Weapons/swing-whoosh-weapon-3-189823.mp3" id="3_e42v1"]
 
-[node name="Dagger" type="Node2D"]
+[sub_resource type="Animation" id="Animation_ixo5d"]
+resource_name = "dagger_attack"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.07, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(80, 0), Vector2(130, 0), Vector2(80, 0), Vector2(80, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u3khb"]
+_data = {
+"dagger_attack": SubResource("Animation_ixo5d")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05vq4"]
+size = Vector2(90, 33)
+
+[node name="Dagger" type="Area2D"]
 script = ExtResource("1_ewtbn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(80, 0)
+rotation = 0.785398
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_hnchy")
+
+[node name="AttackAnim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u3khb")
+}
+
+[node name="AttackSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_e42v1")
+volume_db = -10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(101, 0)
+shape = SubResource("RectangleShape2D_05vq4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AttackAnim" to="." method="_on_attack_anim_animation_finished"]
