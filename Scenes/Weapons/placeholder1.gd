@@ -15,6 +15,7 @@ func _process(delta):
 	if get_parent().name == "Player":
 		if Input.is_action_pressed("mouse_left"):
 			bullet()
+		look_at(get_global_mouse_position())
 			
 	else:
 		look_at(player.position)
