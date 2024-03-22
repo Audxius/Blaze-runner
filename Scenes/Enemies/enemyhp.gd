@@ -1,6 +1,6 @@
 extends ColorRect
 
-var hp = 1000;
+var hp = 100;
 var timer = 1; #kiek laiko zaidejas turi iki scenos restarto
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
