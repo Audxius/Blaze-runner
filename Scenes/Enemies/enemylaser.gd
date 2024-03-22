@@ -21,6 +21,8 @@ func _physics_process(delta):
 	if(lifetime<=0):
 		queue_free() 
 
+	scale.x = get_parent().scale.x
+	scale.y = get_parent().scale.y
 
 func _on_hitbox_body_entered(body):
 	if body.name == "Player":
