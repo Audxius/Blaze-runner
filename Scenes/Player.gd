@@ -10,10 +10,13 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var loadedWeapon
 
+@onready var animationPlayer = $AnimationPlayer
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		animationPlayer.play("Jump")
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -39,9 +42,14 @@ func _physics_process(delta):
 	var direction
 	if Input.is_key_pressed(KEY_A):
 		direction = -1;
+		animationPlayer.play("Walking")
 	elif Input.is_key_pressed(KEY_D):
+		animationPlayer.play("Walking")
 		direction = 1;
-	else: direction = 0;
+	else:
+		direction = 0;
+		if is_on_floor():
+			animationPlayer.play("Idle")
 	
 	if direction:
 		velocity.x = direction * SPEED
@@ -49,6 +57,9 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	move_and_slide()
+	
+	
+	
 	
 
 

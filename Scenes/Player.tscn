@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://buwt6ljlkp7c2"]
+[gd_scene load_steps=16 format=3 uid="uid://buwt6ljlkp7c2"]
 
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_lpi2i"]
 [ext_resource type="Script" path="res://Scenes/hp.gd" id="2_7yimy"]
 [ext_resource type="Texture2D" uid="uid://b1lyi4f7k4mxo" path="res://Art/hp.png" id="3_jk4ad"]
 [ext_resource type="PackedScene" uid="uid://bcql748qrufws" path="res://Scenes/Weapons/placeholder1.tscn" id="4_vytwh"]
 [ext_resource type="Script" path="res://Scenes/score.gd" id="4_xdy32"]
+[ext_resource type="Texture2D" uid="uid://hpnmsmv148pn" path="res://Scenes/Player/jump_sprite.png" id="6_0fol1"]
+[ext_resource type="Texture2D" uid="uid://c0vvonks7mibj" path="res://Scenes/Player/idle_sprite.png" id="6_ufkpa"]
+[ext_resource type="Texture2D" uid="uid://i2a61bbov4b8" path="res://Scenes/Player/walk_sprite.png" id="8_jjju8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffpd2"]
 
@@ -17,10 +20,180 @@ func _physics_process(delta):
 	#print(get_angle_to(get_global_mouse_position()))
 "
 
+[sub_resource type="Animation" id="Animation_vl7yo"]
+resource_name = "Idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_ufkpa")]
+}
+
+[sub_resource type="Animation" id="Animation_3x8up"]
+resource_name = "Jump"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_0fol1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_yxviu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_0fol1")]
+}
+
+[sub_resource type="Animation" id="Animation_ltet0"]
+resource_name = "Walking"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_jjju8")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vrgl8"]
+_data = {
+"Idle": SubResource("Animation_vl7yo"),
+"Jump": SubResource("Animation_3x8up"),
+"RESET": SubResource("Animation_yxviu"),
+"Walking": SubResource("Animation_ltet0")
+}
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_lpi2i")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -10.0
 offset_top = -10.0
 offset_right = 10.0
@@ -70,3 +243,13 @@ text = "0"
 script = ExtResource("4_xdy32")
 
 [node name="Placeholder" parent="." instance=ExtResource("4_vytwh")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vrgl8")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("6_0fol1")
+hframes = 6
