@@ -3,13 +3,13 @@ extends CharacterBody2D
 var speed = 1000 #kulku greitis
 var lifetime = 5 #sekundes pries pasalinant kulka is atminties
 var mouse_position
+var player
 
 func _ready():
-	
-	if get_parent().get_node("Player"):
-		mouse_position = get_global_mouse_position()
-		velocity = Vector2(mouse_position.x-position.x,mouse_position.y-position.y) #Kulku judesio kryptis
-		look_at(mouse_position)
+	player = get_parent().get_node("Player")
+	mouse_position = player.position
+	velocity = Vector2(player.position.x-position.x,player.position.y-position.y) #Kulku judesio kryptis
+	look_at(mouse_position)
 	
 func _physics_process(delta):
 	#Atsakinkas uz kulku judesi
@@ -22,7 +22,6 @@ func _physics_process(delta):
 		queue_free() 
 
 
-func _on_hitbox_area_entered(area):
-	if area.name != "hitbox":
-		if area.name != "Notice area":
-			queue_free()
+func _on_hitbox_body_entered(body):
+	if body.name == "Player":
+		body.get_node("CanvasLayer").get_node("health").take_damage(1)

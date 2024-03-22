@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhmdjs54mty1j"]
 
-[ext_resource type="Script" path="res://Scenes/laser.gd" id="1_o2km8"]
+[ext_resource type="Script" path="res://Scenes/Enemies/enemylaser.gd" id="1_1hh6g"]
 [ext_resource type="AudioStream" uid="uid://mx8ernu12q0o" path="res://Music/Gun Shot Sound Effect.mp3" id="2_wpcks"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r04dl"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nq5yg"]
 size = Vector2(20, 3)
 
 [node name="Laser" type="CharacterBody2D"]
-script = ExtResource("1_o2km8")
+script = ExtResource("1_1hh6g")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -3.0
@@ -24,6 +24,6 @@ autoplay = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(7, -0.5)
-shape = SubResource("RectangleShape2D_r04dl")
+shape = SubResource("RectangleShape2D_nq5yg")
 
-[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

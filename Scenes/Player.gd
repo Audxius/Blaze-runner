@@ -50,17 +50,7 @@ func _physics_process(delta):
 		
 	move_and_slide()
 	
-	# Saudymas
-	
-	#if Input.is_action_pressed("mouse_left"):
-		#bullet()
-		#
-		#
-#func bullet():
-	#var instance = kulka.instantiate()
-	#instance.position.x = position.x
-	#instance.position.y = position.y
-	#add_sibling(instance)
+
 
 func replace_weapon(weaponPackedScene):
 	#delete current weapon
