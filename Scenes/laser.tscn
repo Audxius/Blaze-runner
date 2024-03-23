@@ -18,6 +18,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_wpcks")
+volume_db = -30.0
 autoplay = true
 
 [node name="hitbox" type="Area2D" parent="."]

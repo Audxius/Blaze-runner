@@ -18,12 +18,13 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_wpcks")
+volume_db = -30.0
 autoplay = true
 
-[node name="hitbox" type="Area2D" parent="."]
+[node name="hitbox2" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox2"]
 position = Vector2(7, -0.5)
 shape = SubResource("RectangleShape2D_nq5yg")
 
-[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="hitbox2" to="." method="_on_hitbox_body_entered"]

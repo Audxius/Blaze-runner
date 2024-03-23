@@ -18,7 +18,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.07, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(80, 0), Vector2(130, 0), Vector2(80, 0), Vector2(80, 0)]
+"values": [Vector2(100, 0), Vector2(130, 0), Vector2(50, 0), Vector2(50, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u3khb"]
@@ -27,15 +27,16 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05vq4"]
-size = Vector2(90, 33)
+size = Vector2(62, 33)
 
 [node name="Dagger" type="Area2D"]
+position = Vector2(21, 0)
 script = ExtResource("1_ewtbn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(80, 0)
+position = Vector2(50, 0)
 rotation = 0.785398
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_hnchy")
 
 [node name="AttackAnim" type="AnimationPlayer" parent="."]
@@ -48,7 +49,7 @@ stream = ExtResource("3_e42v1")
 volume_db = -10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(101, 0)
+position = Vector2(54, 0)
 shape = SubResource("RectangleShape2D_05vq4")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

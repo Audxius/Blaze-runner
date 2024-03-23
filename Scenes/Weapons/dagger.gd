@@ -4,7 +4,7 @@ var animation
 var sound
 var inAnimation = false
 
-var damage = 25
+var damage = 50
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,5 +28,5 @@ func _on_attack_anim_animation_finished(anim_name):
 
 func _on_body_entered(body):
 	if(inAnimation):
-		if body.has_method("take_damage"):
-			body.take_damage(damage)
+		if body.get_node("Healthbar"):
+			body.get_node("Healthbar").take_damage(damage)

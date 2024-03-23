@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://i2a61bbov4b8" path="res://Scenes/Player/walk_sprite.png" id="8_jjju8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffpd2"]
+size = Vector2(27, 70)
 
 [sub_resource type="GDScript" id="GDScript_5lems"]
 script/source = "extends CharacterBody2D
@@ -199,6 +200,7 @@ offset_right = 10.0
 offset_bottom = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 6)
 shape = SubResource("RectangleShape2D_ffpd2")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -248,5 +250,6 @@ libraries = {
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4)
+scale = Vector2(3, 3)
 texture = ExtResource("6_0fol1")
 hframes = 6
