@@ -140,6 +140,7 @@ layout_mode = 2
 texture_normal = ExtResource("12_ankj3")
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/GridContainer/HBoxContainer/WeaponSelectButton4"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -153,6 +154,7 @@ layout_mode = 2
 texture_normal = ExtResource("12_ankj3")
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/GridContainer/HBoxContainer2/WeaponSelectButton5"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -161,6 +163,7 @@ layout_mode = 2
 texture_normal = ExtResource("12_ankj3")
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/GridContainer/HBoxContainer2/WeaponSelectButton6"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 

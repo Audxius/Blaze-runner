@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://buwt6ljlkp7c2"]
+[gd_scene load_steps=15 format=3 uid="uid://buwt6ljlkp7c2"]
 
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_lpi2i"]
 [ext_resource type="Script" path="res://Scenes/hp.gd" id="2_7yimy"]
 [ext_resource type="Texture2D" uid="uid://b1lyi4f7k4mxo" path="res://Art/hp.png" id="3_jk4ad"]
-[ext_resource type="PackedScene" uid="uid://bcql748qrufws" path="res://Scenes/Weapons/placeholder1.tscn" id="4_vytwh"]
 [ext_resource type="Script" path="res://Scenes/score.gd" id="4_xdy32"]
 [ext_resource type="Texture2D" uid="uid://hpnmsmv148pn" path="res://Scenes/Player/jump_sprite.png" id="6_0fol1"]
 [ext_resource type="Texture2D" uid="uid://c0vvonks7mibj" path="res://Scenes/Player/idle_sprite.png" id="6_ufkpa"]
@@ -241,8 +240,6 @@ offset_right = 105.0
 offset_bottom = 118.0
 text = "0"
 script = ExtResource("4_xdy32")
-
-[node name="Placeholder" parent="." instance=ExtResource("4_vytwh")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
