@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsafi7m7f0lf7"]
+[gd_scene load_steps=8 format=3 uid="uid://dsafi7m7f0lf7"]
 
 [ext_resource type="Script" path="res://Scenes/Weapons/dagger.gd" id="1_ewtbn"]
 [ext_resource type="Texture2D" uid="uid://ct6twxlmggtgs" path="res://Scenes/Weapons/dagger.png" id="1_hnchy"]
 [ext_resource type="AudioStream" uid="uid://d33ak5lopawj7" path="res://Scenes/Weapons/swing-whoosh-weapon-3-189823.mp3" id="3_e42v1"]
+[ext_resource type="Texture2D" uid="uid://7l15esqsfdpy" path="res://Scenes/Player/rankutes/pixil-layer-4.png" id="4_1heig"]
 
 [sub_resource type="Animation" id="Animation_ixo5d"]
 resource_name = "dagger_attack"
@@ -19,6 +20,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(100, 0), Vector2(130, 0), Vector2(50, 0), Vector2(50, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.07, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(110, -7.15256e-07), Vector2(140, 0), Vector2(60, 0), Vector2(60, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u3khb"]
@@ -39,6 +52,12 @@ rotation = 0.785398
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_hnchy")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-41.0122, 41.0122)
+rotation = -1.10078
+scale = Vector2(8, 8)
+texture = ExtResource("4_1heig")
+
 [node name="AttackAnim" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_u3khb")
@@ -49,7 +68,7 @@ stream = ExtResource("3_e42v1")
 volume_db = -10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(54, 0)
+position = Vector2(60, 0)
 shape = SubResource("RectangleShape2D_05vq4")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
