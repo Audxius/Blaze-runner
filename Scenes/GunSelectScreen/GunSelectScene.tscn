@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://btsusdhu7nk5v" path="res://Scenes/GunSelectScreen/background.png" id="2_wbldg"]
 [ext_resource type="Texture2D" uid="uid://dbku15fyjknaj" path="res://Scenes/GunSelectScreen/start button highlight.png" id="4_84ndr"]
 [ext_resource type="Texture2D" uid="uid://dh7obdnfkm5sc" path="res://Scenes/Weapons/placeholder1.png" id="4_x5amm"]
-[ext_resource type="PackedScene" uid="uid://bcql748qrufws" path="res://Scenes/Weapons/placeholder.tscn" id="6_ytju4"]
+[ext_resource type="PackedScene" uid="uid://bcql748qrufws" path="res://Scenes/Weapons/submachinegun.tscn" id="6_ytju4"]
 [ext_resource type="Texture2D" uid="uid://dq5l1bbpd2klw" path="res://Scenes/GunSelectScreen/dagger button highlight.png" id="7_06w2l"]
 [ext_resource type="PackedScene" uid="uid://bqd3mql8a8feh" path="res://Scenes/GunSelectScreen/WeaponSelectButton.tscn" id="7_12d60"]
 [ext_resource type="PackedScene" uid="uid://cleirbyd7kb75" path="res://Scenes/GunSelectScreen/InventoryButtonScene.tscn" id="7_shw18"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Enemies/enemy.gd" id="1_scfla"]
 [ext_resource type="Script" path="res://Scenes/Enemies/enemyhp.gd" id="2_vfbs5"]
 [ext_resource type="Texture2D" uid="uid://bqn7p10idkapd" path="res://Scenes/Enemies/enemy/enemy_walk_sprite.png" id="4_apme3"]
-[ext_resource type="PackedScene" uid="uid://bcql748qrufws" path="res://Scenes/Weapons/placeholder1.tscn" id="4_vytwh"]
+[ext_resource type="PackedScene" uid="uid://bcql748qrufws" path="res://Scenes/Weapons/submachinegun.tscn" id="4_vytwh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mperw"]
 size = Vector2(30, 80)

@@ -9,6 +9,7 @@ func _ready():
 	if get_parent().get_node("Player"):
 		mouse_position = get_global_mouse_position()
 		velocity = Vector2(mouse_position.x-position.x,mouse_position.y-position.y) #Kulku judesio kryptis
+		print(velocity)
 		look_at(mouse_position)
 	
 func _physics_process(delta):

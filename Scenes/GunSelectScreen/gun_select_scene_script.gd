@@ -8,7 +8,7 @@ func _ready():
 	weaponTextures.append(load("res://Scenes/Weapons/dagger.png"))
 	weaponTextures.append(load("res://Scenes/Weapons/placeholder1.png"))
 	weaponInstances.append(preload("res://Scenes/Weapons/dagger.tscn"))
-	weaponInstances.append(preload("res://Scenes/Weapons/placeholder1.tscn"))
+	weaponInstances.append(preload("res://Scenes/Weapons/submachinegun.tscn"))
 	inventoryButtons.append($MarginContainer2/HBoxContainer/InventoryButtonScene)
 	inventoryButtons.append($MarginContainer2/HBoxContainer/InventoryButtonScene2)
 	inventoryButtons.append($MarginContainer2/HBoxContainer/InventoryButtonScene3)
