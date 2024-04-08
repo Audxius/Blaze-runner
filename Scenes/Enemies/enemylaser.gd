@@ -4,6 +4,7 @@ var speed = 1000 #kulku greitis
 var lifetime = 5 #sekundes pries pasalinant kulka is atminties
 var mouse_position
 var player
+var damage = 1
 
 func _ready():
 	player = get_parent().get_node("Player")
@@ -26,4 +27,4 @@ func _physics_process(delta):
 
 func _on_hitbox_body_entered(body):
 	if body.name == "Player":
-		body.get_node("CanvasLayer").get_node("health").take_damage(1)
+		body.get_node("CanvasLayer").get_node("health").take_damage(damage)

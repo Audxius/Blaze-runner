@@ -3,8 +3,8 @@ extends Node2D
 var animation
 var sound
 var inAnimation = false
-
 var damage = 20
+var maxAmmo = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

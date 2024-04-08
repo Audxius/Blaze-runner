@@ -10,7 +10,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var loadedWeapon
 
+@onready var uiWeaponTextureRect = $CanvasLayer/WeaponTextureRect
+@onready var uiAmmoLabel = $CanvasLayer/AmmoLabel
+
 @onready var animationPlayer = $AnimationPlayer
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -57,10 +61,6 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	move_and_slide()
-	
-	
-	
-	
 
 
 func replace_weapon(weaponPackedScene):
@@ -73,4 +73,12 @@ func replace_weapon(weaponPackedScene):
 	var weaponInstance = weaponPackedScene.instantiate()
 	loadedWeapon = weaponInstance
 	add_child(weaponInstance)
-
+	
+	#change ui weapon sprite
+	var weaponSprite = weaponInstance.get_node("Sprite2D").texture
+	uiWeaponTextureRect.texture = weaponSprite
+	
+	if(weaponInstance.maxAmmo == 0):
+		uiAmmoLabel.text = "inf"
+	else :
+		uiAmmoLabel.text = str(weaponInstance.maxAmmo,"/",weaponInstance.maxAmmo)

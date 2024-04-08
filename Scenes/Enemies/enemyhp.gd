@@ -26,9 +26,6 @@ func heal(amount):
 		hp+=amount
 
 
-
-
-
 func _on_hitbox_area_entered(area):
 	if area.name == "hitbox":
 		take_damage(1)
