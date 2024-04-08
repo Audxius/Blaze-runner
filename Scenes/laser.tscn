@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhmdjs54mty1j"]
 
 [ext_resource type="Script" path="res://Scenes/laser.gd" id="1_o2km8"]
-[ext_resource type="AudioStream" uid="uid://mx8ernu12q0o" path="res://Music/Gun Shot Sound Effect.mp3" id="2_wpcks"]
+[ext_resource type="AudioStream" uid="uid://jdlpsvd4gs6g" path="res://Music/smgSingleShot.wav" id="2_idlf2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r04dl"]
 size = Vector2(20, 3)
@@ -17,7 +17,7 @@ offset_bottom = 1.0
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_wpcks")
+stream = ExtResource("2_idlf2")
 volume_db = -35.0
 autoplay = true
 
