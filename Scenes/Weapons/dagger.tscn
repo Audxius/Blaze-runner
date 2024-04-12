@@ -71,5 +71,6 @@ volume_db = -10.0
 position = Vector2(60, 0)
 shape = SubResource("RectangleShape2D_05vq4")
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AttackAnim" to="." method="_on_attack_anim_animation_finished"]

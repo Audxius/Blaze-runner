@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://i12yinqaacwl"]
+
+[ext_resource type="Texture2D" uid="uid://c6af42bbque5g" path="res://More art/Loot stuff/ammoloot.png" id="1_81q5k"]
+[ext_resource type="Script" path="res://Scenes/LootBox/AmmoLoot.gd" id="1_e3a0s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bvjh"]
+size = Vector2(31, 26)
+
+[node name="AmmoLoot" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_e3a0s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_81q5k")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.5, -2)
+shape = SubResource("RectangleShape2D_6bvjh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

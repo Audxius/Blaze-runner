@@ -30,3 +30,8 @@ func _on_body_entered(body):
 	if(inAnimation):
 		if body.get_node("Healthbar"):
 			body.get_node("Healthbar").take_damage(damage)
+
+
+func _on_area_entered(area):
+	if(area.name == "LootBoxArea2D"):
+		area.get_parent().takeDamage(2)

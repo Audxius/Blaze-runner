@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://q2lyxew84fe4"]
+
+[ext_resource type="Script" path="res://Scenes/LootBox/LootBox.gd" id="1_eko6f"]
+[ext_resource type="Texture2D" uid="uid://cgi2jst1ptcrd" path="res://More art/Loot stuff/lootcrate.png" id="2_3hvpa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlmnv"]
+size = Vector2(25, 26)
+
+[node name="LootBox" type="Node2D"]
+script = ExtResource("1_eko6f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_3hvpa")
+
+[node name="LootBoxArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LootBoxArea2D"]
+position = Vector2(5, -3)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_nlmnv")
+
+[node name="HitTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="area_entered" from="LootBoxArea2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="LootBoxArea2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="HitTimer" to="." method="_on_timer_timeout"]
