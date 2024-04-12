@@ -29,7 +29,7 @@ func takeDamage(damage):
 		var loot = lootInstance
 		loot.position = position
 		get_parent().add_child(loot)
-		get_tree().get_root().get_node("Level1").get_node("Player").get_node("CanvasLayer").get_node("score").add_score(150)
+		#get_tree().get_root().get_node("Level1").get_node("Player").get_node("CanvasLayer").get_node("score").add_score(150)
 		queue_free()
 
 
