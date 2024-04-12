@@ -1,12 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://buwt6ljlkp7c2"]
+[gd_scene load_steps=20 format=3 uid="uid://buwt6ljlkp7c2"]
 
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_lpi2i"]
 [ext_resource type="Script" path="res://Scenes/hp.gd" id="2_7yimy"]
 [ext_resource type="Texture2D" uid="uid://b1lyi4f7k4mxo" path="res://Art/hp.png" id="3_jk4ad"]
+[ext_resource type="FontFile" uid="uid://cja6vbwfj20uq" path="res://customfont.pfb" id="4_tgicu"]
 [ext_resource type="Script" path="res://Scenes/score.gd" id="4_xdy32"]
+[ext_resource type="Texture2D" uid="uid://cuaf8ge044ygx" path="res://More art/Score/score3.png" id="5_tlbfp"]
 [ext_resource type="Texture2D" uid="uid://hpnmsmv148pn" path="res://Scenes/Player/jump_sprite.png" id="6_0fol1"]
 [ext_resource type="Texture2D" uid="uid://c0vvonks7mibj" path="res://Scenes/Player/idle_sprite.png" id="6_ufkpa"]
 [ext_resource type="Texture2D" uid="uid://i2a61bbov4b8" path="res://Scenes/Player/walk_sprite.png" id="8_jjju8"]
+[ext_resource type="Texture2D" uid="uid://2asiv1oah184" path="res://More art/Score/scoreSpace.png" id="9_5p6kp"]
+[ext_resource type="Texture2D" uid="uid://d0xjwmoa18vjh" path="res://More art/Score/score2.png" id="11_j62is"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffpd2"]
 size = Vector2(27, 70)
@@ -231,18 +235,29 @@ position = Vector2(271, 50)
 scale = Vector2(7.5, 7.5)
 texture = ExtResource("3_jk4ad")
 
-[node name="(temp) Score text" type="Label" parent="CanvasLayer"]
-offset_left = 16.0
-offset_top = 93.0
-offset_right = 196.0
-offset_bottom = 197.0
-text = "Score"
+[node name="ScoreSpace" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(185.429, 116.5)
+scale = Vector2(5.7, 5.7)
+texture = ExtResource("9_5p6kp")
+
+[node name="Score3" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(387.86, 116.55)
+scale = Vector2(73.423, 5.684)
+texture = ExtResource("5_tlbfp")
+
+[node name="Score2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(507, 117)
+scale = Vector2(5.605, 5.61)
+texture = ExtResource("11_j62is")
 
 [node name="score" type="Label" parent="CanvasLayer"]
-offset_left = 65.0
-offset_top = 95.0
-offset_right = 105.0
-offset_bottom = 118.0
+offset_left = 216.0
+offset_top = 91.0
+offset_right = 292.0
+offset_bottom = 148.0
+theme_override_colors/font_color = Color(1, 0.741176, 0.321569, 1)
+theme_override_fonts/font = ExtResource("4_tgicu")
+theme_override_font_sizes/font_size = 48
 text = "0"
 script = ExtResource("4_xdy32")
 

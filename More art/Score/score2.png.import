@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3e7eed6pbyge"
-path="res://.godot/imported/pixil-layer-0.png-7ab30c77eef10ca8f1d83814e3d6d33b.ctex"
+uid="uid://d0xjwmoa18vjh"
+path="res://.godot/imported/score2.png-f973a3b132c8b3260df346ffaf43ad28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://More art/LVL assets/pixil-layer-0.png"
-dest_files=["res://.godot/imported/pixil-layer-0.png-7ab30c77eef10ca8f1d83814e3d6d33b.ctex"]
+source_file="res://More art/Score/score2.png"
+dest_files=["res://.godot/imported/score2.png-f973a3b132c8b3260df346ffaf43ad28.ctex"]
 
 [params]
 
