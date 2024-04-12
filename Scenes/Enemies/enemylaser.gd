@@ -4,7 +4,7 @@ var speed = 1000 #kulku greitis
 var lifetime = 5 #sekundes pries pasalinant kulka is atminties
 var mouse_position
 var player
-var damage = 1
+var damage = 5
 
 func _ready():
 	player = get_parent().get_node("Player")

@@ -17,9 +17,9 @@ func _process(delta):
 			get_tree().reload_current_scene()	
 
 #Pasalino zaidejo gyvybes taskus nurodyta kieki
-func take_damage(amount):
+func take_damage(amountToTake):
 	if hp>0:
-		hp-=amount
+		hp-=amountToTake
 		
 #Papildo zaidejo gyvybes taskus nurodyta kieki
 func heal(amount):
