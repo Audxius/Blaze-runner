@@ -42,6 +42,7 @@ func _physics_process(delta):
 		if Global.weapons[4] != null:
 			replace_weapon(Global.weapons[4])
 
+
 	# Zaidejo vaiksciojimas
 	var direction
 	if Input.is_key_pressed(KEY_A):
