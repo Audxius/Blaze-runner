@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhmdjs54mty1j"]
 
 [ext_resource type="Script" path="res://Scenes/laser.gd" id="1_o2km8"]
-[ext_resource type="AudioStream" uid="uid://mx8ernu12q0o" path="res://Music/Gun Shot Sound Effect.mp3" id="2_wpcks"]
+[ext_resource type="AudioStream" uid="uid://b2tlfbyr5asv5" path="res://Music/smgSingleShot2.wav" id="2_v2r8b"]
 [ext_resource type="Texture2D" uid="uid://dmf13thsqx8k0" path="res://More art/Random/kulka.png" id="3_s8vgu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r04dl"]
@@ -19,8 +19,8 @@ offset_bottom = 1.0
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_wpcks")
-volume_db = -35.0
+stream = ExtResource("2_v2r8b")
+volume_db = -10.0
 autoplay = true
 
 [node name="hitbox" type="Area2D" parent="."]

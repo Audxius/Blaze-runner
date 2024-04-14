@@ -24,6 +24,10 @@ Global="*res://global.gd"
 
 window/stretch/mode="viewport"
 
+[dotnet]
+
+project/assembly_name="Blaze runner"
+
 [input]
 
 mouse_left={
