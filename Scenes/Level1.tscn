@@ -1,7 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://ooljvwxaeise"]
 
 [ext_resource type="PackedScene" uid="uid://buwt6ljlkp7c2" path="res://Scenes/Player.tscn" id="1_848j0"]
-[ext_resource type="Texture2D" uid="uid://bh36jgf4mg688" path="res://Scenes/Title screen/background.png" id="1_c8t6y"]
 [ext_resource type="Texture2D" uid="uid://8vofgph63qfn" path="res://More art/Background layers/pixil-layer-0.png" id="1_e6ctr"]
 [ext_resource type="AudioStream" uid="uid://omtnaa2yq8n5" path="res://Music/intense music (just for fun, will get replaced later).mp3" id="2_5q8fg"]
 [ext_resource type="Texture2D" uid="uid://cdb444mopgt34" path="res://More art/Background layers/pixil-layer-3.png" id="3_kfixo"]
@@ -11,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://q2lyxew84fe4" path="res://Scenes/LootBox/LootBox.tscn" id="5_tfrbr"]
 [ext_resource type="Texture2D" uid="uid://bet0ixoux5dyo" path="res://More art/Background layers/pixil-layer-6.png" id="6_6hu27"]
 [ext_resource type="Texture2D" uid="uid://du8on8fo48apj" path="res://More art/Background layers/pixil-layer-1.png" id="7_dl20n"]
+[ext_resource type="Texture2D" uid="uid://ndx3w4ld5xh5" path="res://More art/Background layers/pixil-layer-7.png" id="8_d443k"]
 [ext_resource type="Texture2D" uid="uid://d1hgjhcr2abh8" path="res://More art/Background layers/pixil-layer-2.png" id="8_l46ub"]
 [ext_resource type="Texture2D" uid="uid://b3e7eed6pbyge" path="res://More art/LVL assets/pixil-layer-0.png" id="13_8mn3j"]
 [ext_resource type="Texture2D" uid="uid://i4jecbi4xi6g" path="res://More art/LVL assets/pixil-layer-2.png" id="14_8lojh"]
@@ -28,18 +28,82 @@ size = Vector2(43.75, 694)
 
 [node name="Level1" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(3883, 245)
-scale = Vector2(36.32, 4.54698)
-texture = ExtResource("1_e6ctr")
-region_enabled = true
-region_rect = Rect2(0, 0, 250, 180)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(584, 295)
-scale = Vector2(4.36928, 4.36928)
-texture = ExtResource("1_c8t6y")
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(4134.4, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(692, 262)
+scale = Vector2(7.60458, 7.60458)
+texture = ExtResource("1_e6ctr")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-5.59, 65.155)
+scale = Vector2(0.295, 0.295)
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(4000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(2000, 262)
+scale = Vector2(7.60458, 7.60458)
+texture = ExtResource("7_dl20n")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(692, 262)
+scale = Vector2(7.60458, 7.60458)
+texture = ExtResource("8_l46ub")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-300, 65.155)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1037.62, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(692, 262)
+scale = Vector2(3.815, 3.815)
+texture = ExtResource("3_kfixo")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-300, 53.915)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1035.83, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(692, 262)
+scale = Vector2(3.815, 3.815)
+texture = ExtResource("4_4yqnv")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-400, 53.915)
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1036.78, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2(692, 262)
+scale = Vector2(3.815, 3.815)
+texture = ExtResource("5_3jg43")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-400, 53.915)
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1034.04, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2(692, 262)
+scale = Vector2(3.815, 3.815)
+texture = ExtResource("6_6hu27")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-500, 53.915)
+motion_scale = Vector2(0.5, 0.45)
+motion_mirroring = Vector2(1035.9, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
+position = Vector2(692, 262)
+scale = Vector2(3.815, 3.815)
+texture = ExtResource("8_d443k")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -48,134 +112,16 @@ offset_top = 562.0
 offset_right = 1208.0
 offset_bottom = 799.0
 
-[node name="Mountain4" type="Sprite2D" parent="."]
-position = Vector2(606, 340)
-scale = Vector2(6.25083, 5.2309)
-texture = ExtResource("3_kfixo")
-
-[node name="Sprite2D4" type="Sprite2D" parent="Mountain4"]
-position = Vector2(-6.40973, 20.9023)
-texture = ExtResource("8_l46ub")
-
-[node name="Sprite2D" type="Sprite2D" parent="Mountain4"]
-position = Vector2(-0.364311, 5.36915)
-scale = Vector2(0.955495, 0.782397)
-texture = ExtResource("4_4yqnv")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Mountain4"]
-position = Vector2(-67.882, 2.90224)
-scale = Vector2(0.993829, 1.05206)
-texture = ExtResource("5_3jg43")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Mountain4"]
-position = Vector2(8.25755, 0.435336)
-texture = ExtResource("6_6hu27")
-
-[node name="Mountain1" type="Sprite2D" parent="."]
-position = Vector2(1899, 356)
-scale = Vector2(6.479, 5.231)
-texture = ExtResource("3_kfixo")
-
-[node name="Sprite2D" type="Sprite2D" parent="Mountain1"]
-texture = ExtResource("4_4yqnv")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Mountain1"]
-texture = ExtResource("5_3jg43")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Mountain1"]
-texture = ExtResource("6_6hu27")
-
-[node name="Sprite2D4" type="Sprite2D" parent="Mountain1"]
-position = Vector2(-62.9638, 10.5322)
-texture = ExtResource("7_dl20n")
-
-[node name="Mountain6" type="Sprite2D" parent="."]
-position = Vector2(7177, 357)
-scale = Vector2(6.479, 5.231)
-texture = ExtResource("3_kfixo")
-
-[node name="Sprite2D" type="Sprite2D" parent="Mountain6"]
-texture = ExtResource("4_4yqnv")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Mountain6"]
-texture = ExtResource("5_3jg43")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Mountain6"]
-texture = ExtResource("6_6hu27")
-
-[node name="Sprite2D4" type="Sprite2D" parent="Mountain6"]
-position = Vector2(-62.9638, 10.5322)
-texture = ExtResource("7_dl20n")
-
-[node name="Mountain2" type="Sprite2D" parent="."]
-position = Vector2(3675, 351)
-scale = Vector2(6.6256, 5.34892)
-texture = ExtResource("3_kfixo")
-flip_h = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Mountain2"]
-texture = ExtResource("4_4yqnv")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Mountain2"]
-texture = ExtResource("5_3jg43")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Mountain2"]
-texture = ExtResource("6_6hu27")
-
-[node name="Sprite2D4" type="Sprite2D" parent="Mountain2"]
-position = Vector2(66.3213, 43.2629)
-texture = ExtResource("8_l46ub")
-
-[node name="Sprite2D" type="Sprite2D" parent="Mountain2/Sprite2D4"]
-position = Vector2(-204.981, -28.1938)
-texture = ExtResource("7_dl20n")
-
-[node name="Mountain3" type="Sprite2D" parent="."]
-position = Vector2(5444, 359)
-scale = Vector2(6.45176, 5.20857)
-texture = ExtResource("3_kfixo")
-
-[node name="Sprite2D4" type="Sprite2D" parent="Mountain3"]
-position = Vector2(-6.40973, 20.9023)
-texture = ExtResource("8_l46ub")
-
-[node name="Sprite2D" type="Sprite2D" parent="Mountain3"]
-texture = ExtResource("4_4yqnv")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Mountain3"]
-texture = ExtResource("5_3jg43")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Mountain3"]
-texture = ExtResource("6_6hu27")
-
-[node name="Mountain5" type="Sprite2D" parent="."]
-position = Vector2(-1051, 348)
-scale = Vector2(6.45176, 5.20857)
-texture = ExtResource("3_kfixo")
-
-[node name="Sprite2D4" type="Sprite2D" parent="Mountain5"]
-position = Vector2(-6.40973, 20.9023)
-texture = ExtResource("8_l46ub")
-
-[node name="Sprite2D" type="Sprite2D" parent="Mountain5"]
-texture = ExtResource("4_4yqnv")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Mountain5"]
-texture = ExtResource("5_3jg43")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Mountain5"]
-texture = ExtResource("6_6hu27")
-
 [node name="Floor" type="Sprite2D" parent="."]
-position = Vector2(-2927.65, 608.763)
-scale = Vector2(35.4632, 0.617474)
+position = Vector2(-2927.65, 614.488)
+scale = Vector2(39.486, 0.687)
 texture = ExtResource("1_e6ctr")
 offset = Vector2(200, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_848j0")]
 position = Vector2(307, 514)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2(274, -234)
 zoom = Vector2(0.98, 0.98)
 
