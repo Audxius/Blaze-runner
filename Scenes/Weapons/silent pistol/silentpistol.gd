@@ -8,11 +8,13 @@ var canShoot = true
 var timer
 var maxAmmo = 10
 var ammo = maxAmmo
+var shootingSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_parent().get_parent().get_node("Player")
 	timer = $ShootTimer
+	shootingSound = get_node("ShootingSound")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -51,6 +53,7 @@ func fire(label):
 	var distance = global_position.distance_to(mouse_position)
 	if(distance > 95):
 		bullet()
+		shootingSound.play()
 		ammo -= 1
 		canShoot = false
 		timer.start()

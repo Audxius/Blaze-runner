@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cb3uhgu04ks5d"]
+[gd_scene load_steps=4 format=3 uid="uid://cb3uhgu04ks5d"]
 
 [ext_resource type="Script" path="res://Scenes/Weapons/silent pistol/silentpistol.gd" id="1_dfqeo"]
 [ext_resource type="Texture2D" uid="uid://b2xe15xyiipjd" path="res://More art/Guns/silent pistol.png" id="2_qy42q"]
+[ext_resource type="AudioStream" uid="uid://b2tlfbyr5asv5" path="res://Music/smgSingleShot2.wav" id="3_0ala7"]
 
 [node name="Placeholder" type="Node2D"]
 script = ExtResource("1_dfqeo")
@@ -18,5 +19,10 @@ scale = Vector2(10.0211, 10.0211)
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 0.35
 one_shot = true
+
+[node name="ShootingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0ala7")
+volume_db = -10.0
+max_polyphony = 100
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
