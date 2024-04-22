@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb3uhgu04ks5d"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/silent pistol/silentpistol.gd" id="1_dfqeo"]
+[ext_resource type="Texture2D" uid="uid://b2xe15xyiipjd" path="res://More art/Guns/silent pistol.png" id="2_qy42q"]
+
+[node name="Placeholder" type="Node2D"]
+script = ExtResource("1_dfqeo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(63, 5)
+scale = Vector2(0.164773, 0.164773)
+texture = ExtResource("2_qy42q")
+
+[node name="BarrelEnd" type="Node2D" parent="Sprite2D"]
+position = Vector2(148.417, -40.0061)
+scale = Vector2(10.0211, 10.0211)
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.35
+one_shot = true
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

@@ -6,7 +6,7 @@ var mouse_position
 var rng = RandomNumberGenerator.new()
 var random_nr
 var distance
-var spread = 20
+var spread = 5
 
 func _ready():
 	

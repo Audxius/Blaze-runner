@@ -17,6 +17,8 @@ func _ready():
 func _on_area_2d_area_entered(area):
 	if area.name == "hitbox":
 		takeDamage(1)
+	elif area.name == "pistolBulletHitbox":
+		takeDamage(2)
 
 
 func takeDamage(damage):
