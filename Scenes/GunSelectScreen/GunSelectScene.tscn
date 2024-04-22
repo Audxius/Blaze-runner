@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://le28kvrnwj14" path="res://Scenes/GunSelectScreen/start button.png" id="2_713q0"]
 [ext_resource type="Texture2D" uid="uid://btsusdhu7nk5v" path="res://Scenes/GunSelectScreen/background.png" id="2_wbldg"]
 [ext_resource type="Texture2D" uid="uid://dbku15fyjknaj" path="res://Scenes/GunSelectScreen/start button highlight.png" id="4_84ndr"]
-[ext_resource type="Texture2D" uid="uid://dh7obdnfkm5sc" path="res://Scenes/Weapons/placeholder1.png" id="4_x5amm"]
 [ext_resource type="Texture2D" uid="uid://dq5l1bbpd2klw" path="res://Scenes/GunSelectScreen/dagger button highlight.png" id="7_06w2l"]
 [ext_resource type="PackedScene" uid="uid://bqd3mql8a8feh" path="res://Scenes/GunSelectScreen/WeaponSelectButton.tscn" id="7_12d60"]
 [ext_resource type="PackedScene" uid="uid://cleirbyd7kb75" path="res://Scenes/GunSelectScreen/InventoryButtonScene.tscn" id="7_shw18"]
@@ -18,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://baftudd72c68s" path="res://Scenes/GunSelectScreen/submachinegun button highlight.png" id="13_21dch"]
 [ext_resource type="Texture2D" uid="uid://cb1w07avttfuv" path="res://Scenes/GunSelectScreen/button1.png" id="13_f86g5"]
 [ext_resource type="Texture2D" uid="uid://ct6twxlmggtgs" path="res://Scenes/Weapons/dagger.png" id="14_fvd13"]
+[ext_resource type="Texture2D" uid="uid://cb7vh7h5vujkf" path="res://More art/Guns/submachine gun.png" id="14_jjo81"]
 [ext_resource type="Texture2D" uid="uid://dfx2lpwf1lrtr" path="res://Scenes/GunSelectScreen/button2.png" id="15_fof0l"]
 [ext_resource type="PackedScene" uid="uid://bcql748qrufws" path="res://Scenes/Weapons/submachinegun.tscn" id="15_k683e"]
 [ext_resource type="Texture2D" uid="uid://8b3wbplsiqyp" path="res://Scenes/GunSelectScreen/dagger button.png" id="16_1kqk6"]
@@ -124,14 +124,15 @@ stretch_mode = 5
 layout_mode = 2
 texture_normal = ExtResource("12_luffs")
 texture_hover = ExtResource("13_21dch")
-weaponTexture = ExtResource("4_x5amm")
+weaponTexture = ExtResource("14_jjo81")
 weaponScenePacked = ExtResource("15_k683e")
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/GridContainer/HBoxContainer/WeaponSelectButton3"]
 layout_mode = 0
-offset_right = 89.0
-offset_bottom = 83.0
-texture = ExtResource("4_x5amm")
+offset_left = 6.0
+offset_right = 90.0
+offset_bottom = 81.0
+texture = ExtResource("14_jjo81")
 expand_mode = 2
 stretch_mode = 5
 

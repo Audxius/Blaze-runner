@@ -1,14 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://bcql748qrufws"]
 
 [ext_resource type="Script" path="res://Scenes/Weapons/submachinegun.gd" id="1_si7en"]
-[ext_resource type="Texture2D" uid="uid://dh7obdnfkm5sc" path="res://Scenes/Weapons/placeholder1.png" id="2_8k625"]
+[ext_resource type="Texture2D" uid="uid://cb7vh7h5vujkf" path="res://More art/Guns/submachine gun.png" id="2_u8djq"]
 
 [node name="Placeholder" type="Node2D"]
 script = ExtResource("1_si7en")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(46, 0)
-texture = ExtResource("2_8k625")
+position = Vector2(52.1895, 7.99219)
+scale = Vector2(0.0997896, 0.0997896)
+texture = ExtResource("2_u8djq")
 
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 0.1
