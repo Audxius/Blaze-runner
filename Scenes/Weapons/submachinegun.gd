@@ -34,9 +34,12 @@ func _process(delta):
 func bullet():
 	if get_parent().name=="Player":
 		var instance = kulka.instantiate()
-		instance.position.x = get_parent().position.x
-		instance.position.y = get_parent().position.y
+		instance.position.x = $Sprite2D/BarrelEnd.global_position.x
+		instance.position.y = $Sprite2D/BarrelEnd.global_position.y
 		get_parent().add_sibling(instance)
+		#instance.position.x = get_parent().position.x
+		#instance.position.y = get_parent().position.y
+		#get_parent().add_sibling(instance)
 	else:
 		var instance = kulka2.instantiate()
 		instance.position.x = get_parent().position.x
@@ -44,11 +47,14 @@ func bullet():
 		get_parent().add_sibling(instance)
 
 func fire(label):
-	bullet()
-	ammo -= 1
-	canShoot = false
-	timer.start()
-	label.text = str(ammo,"/",maxAmmo)
+	var mouse_position = get_global_mouse_position()
+	var distance = global_position.distance_to(mouse_position)
+	if(distance > 90):
+		bullet()
+		ammo -= 1
+		canShoot = false
+		timer.start()
+		label.text = str(ammo,"/",maxAmmo)
 	
 func reload(label):
 	ammo = maxAmmo

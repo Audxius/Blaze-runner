@@ -11,6 +11,10 @@ position = Vector2(52.1895, 7.99219)
 scale = Vector2(0.0997896, 0.0997896)
 texture = ExtResource("2_u8djq")
 
+[node name="BarrelEnd" type="Node2D" parent="Sprite2D"]
+position = Vector2(278.691, -100.133)
+scale = Vector2(10.0211, 10.0211)
+
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
