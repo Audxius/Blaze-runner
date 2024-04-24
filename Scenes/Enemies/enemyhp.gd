@@ -27,7 +27,7 @@ func heal(amount):
 
 
 func _on_hitbox_area_entered(area):
-	if area.name == "hitbox":
-		take_damage(5)
+	if area.name == "submachineGunBulletHitbox":
+		take_damage(10)
 	elif area.name == "pistolBulletHitbox":
 		take_damage(20)

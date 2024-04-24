@@ -23,13 +23,13 @@ stream = ExtResource("2_wpcks")
 volume_db = -35.0
 autoplay = true
 
-[node name="hitbox2" type="Area2D" parent="."]
+[node name="enemyBulletHitbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyBulletHitbox"]
 position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_nq5yg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_ryhpp")
 
-[connection signal="body_entered" from="hitbox2" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="enemyBulletHitbox" to="." method="_on_hitbox_body_entered"]

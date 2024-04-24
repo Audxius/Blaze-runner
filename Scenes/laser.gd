@@ -34,6 +34,6 @@ func _physics_process(delta):
 
 
 func _on_hitbox_area_entered(area):
-	if area.name != "hitbox":
+	if area.name != "enemyBulletHitbox":
 		if area.name != "Notice area":
 			queue_free()

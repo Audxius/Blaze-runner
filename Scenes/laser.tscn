@@ -17,9 +17,9 @@ offset_right = 17.0
 offset_bottom = 1.0
 metadata/_edit_use_anchors_ = true
 
-[node name="hitbox" type="Area2D" parent="."]
+[node name="submachineGunBulletHitbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="submachineGunBulletHitbox"]
 position = Vector2(7, -0.5)
 shape = SubResource("RectangleShape2D_r04dl")
 
@@ -28,4 +28,4 @@ position = Vector2(7, -0.5)
 scale = Vector2(1, 0.5)
 texture = ExtResource("3_s8vgu")
 
-[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="submachineGunBulletHitbox" to="." method="_on_hitbox_area_entered"]
