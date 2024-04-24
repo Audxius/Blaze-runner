@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cb7vh7h5vujkf" path="res://More art/Guns/submachine gun.png" id="2_u8djq"]
 [ext_resource type="AudioStream" uid="uid://b2tlfbyr5asv5" path="res://Music/smgSingleShot2.wav" id="3_h6knn"]
 
-[node name="Placeholder" type="Node2D"]
+[node name="SubmachineGun" type="Node2D"]
 script = ExtResource("1_si7en")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

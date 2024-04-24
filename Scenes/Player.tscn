@@ -263,19 +263,19 @@ text = "0"
 script = ExtResource("4_xdy32")
 
 [node name="WeaponTextureRect" type="TextureRect" parent="CanvasLayer"]
-offset_left = 893.0
-offset_top = 7.0
-offset_right = 997.0
-offset_bottom = 81.0
+offset_left = 821.0
+offset_top = 5.0
+offset_right = 925.0
+offset_bottom = 79.0
 expand_mode = 2
 stretch_mode = 5
 
 [node name="AmmoLabel" type="Label" parent="CanvasLayer"]
-offset_left = 1004.0
-offset_top = 16.0
-offset_right = 1135.0
-offset_bottom = 72.0
-text = "90/90"
+offset_left = 938.0
+offset_top = 11.0
+offset_right = 1126.0
+offset_bottom = 67.0
+text = "inf"
 label_settings = SubResource("LabelSettings_tfynt")
 horizontal_alignment = 1
 vertical_alignment = 1

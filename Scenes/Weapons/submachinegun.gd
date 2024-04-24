@@ -7,7 +7,7 @@ var shooting = 1
 var canShoot = true
 var timer
 var maxAmmo = 35
-var ammo = maxAmmo
+#var ammo = maxAmmo
 var shootingSound
 
 # Called when the node enters the scene tree for the first time.
@@ -15,14 +15,15 @@ func _ready():
 	player = get_parent().get_parent().get_node("Player")
 	timer = $ShootTimer
 	shootingSound = get_node("ShootingSound")
+	#ammo = Global.submachineGunAmmo
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if get_parent().name == "Player":
 		var ammoLabel = get_parent().get_node("CanvasLayer/AmmoLabel")
-		if Input.is_action_pressed("mouse_left") and canShoot and ammo > 0:
+		if Input.is_action_pressed("mouse_left") and canShoot and Global.currentSubmachineGunAmmo > 0:
 			fire(ammoLabel)
-		if Input.is_action_pressed("reload"):
+		if Input.is_action_just_pressed("reload") and Global.currentSubmachineGunAmmo < maxAmmo and Global.totalSubmachineGunAmmo/maxAmmo != 0:
 			reload(ammoLabel)
 		look_at(get_global_mouse_position())
 	
@@ -54,14 +55,22 @@ func fire(label):
 	if(distance > 90):
 		bullet()
 		shootingSound.play()
-		ammo -= 1
+		#ammo -= 1
+		Global.currentSubmachineGunAmmo -= 1
 		canShoot = false
 		timer.start()
-		label.text = str(ammo,"/",maxAmmo)
+		label.text = str(Global.currentSubmachineGunAmmo,"/",maxAmmo,"x",Global.totalSubmachineGunAmmo/maxAmmo)
 	
 func reload(label):
-	ammo = maxAmmo
-	label.text = str(ammo,"/",maxAmmo)
+	if(Global.totalSubmachineGunAmmo > 0):
+		#ammo = maxAmmo
+		Global.currentSubmachineGunAmmo = maxAmmo
+		Global.totalSubmachineGunAmmo -= maxAmmo
+		label.text = str(Global.currentSubmachineGunAmmo,"/",maxAmmo,"x",Global.totalSubmachineGunAmmo/maxAmmo)
+	elif(Global.totalSubmachineGunAmmo < 35):
+		#ammo = Global.submachineGunAmmo
+		Global.currentSubmachineGunAmmo = Global.totalSubmachineGunAmmo
+		Global.totalSubmachineGunAmmo -=  Global.totalSubmachineGunAmmo
 
 func _on_notice_area_body_entered(body):
 	if body.name == "Player":
