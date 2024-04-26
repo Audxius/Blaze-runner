@@ -85,9 +85,13 @@ func replace_weapon(weaponPackedScene):
 		uiAmmoLabel.text = str(Global.currentSubmachineGunAmmo,"/",weaponInstance.maxAmmo,"x",Global.totalSubmachineGunAmmo/weaponInstance.maxAmmo)
 	elif(weaponInstance.name == "SilentPistol"):
 		uiAmmoLabel.text = str(Global.currentPistolAmmo,"/",weaponInstance.maxAmmo,"x",Global.totalPistolAmmo/weaponInstance.maxAmmo)
+	elif(weaponInstance.name == "AssaultRifle"):
+		uiAmmoLabel.text = str(Global.currentRifleAmmo,"/",weaponInstance.maxAmmo,"x",Global.totalRifleAmmo/weaponInstance.maxAmmo)
 
 func update_ammo_label():
 	if(loadedWeapon.name == "SubmachineGun"):
 		uiAmmoLabel.text = str(Global.currentSubmachineGunAmmo,"/",loadedWeapon.maxAmmo,"x",Global.totalSubmachineGunAmmo/loadedWeapon.maxAmmo)
 	if(loadedWeapon.name == "SilentPistol"):
 		uiAmmoLabel.text = str(Global.currentPistolAmmo,"/",loadedWeapon.maxAmmo,"x",Global.totalPistolAmmo/loadedWeapon.maxAmmo)
+	if(loadedWeapon.name == "AssaultRifle"):
+		uiAmmoLabel.text = str(Global.currentRifleAmmo,"/",loadedWeapon.maxAmmo,"x",Global.totalRifleAmmo/loadedWeapon.maxAmmo)

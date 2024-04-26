@@ -7,8 +7,10 @@ var inventoryButtons = []
 func _ready():
 	weaponTextures.append(load("res://Scenes/Weapons/dagger.png"))
 	weaponTextures.append(load("res://Scenes/Weapons/placeholder1.png"))
+	weaponTextures.append(load("res://Scenes/Weapons/assault rifle/assault rifle.png"))
 	weaponInstances.append(preload("res://Scenes/Weapons/dagger.tscn"))
 	weaponInstances.append(preload("res://Scenes/Weapons/submachinegun.tscn"))
+	weaponInstances.append(preload("res://Scenes/Weapons/assault rifle/AssaultRifle.tscn"))
 	inventoryButtons.append($MarginContainer2/HBoxContainer/InventoryButtonScene)
 	inventoryButtons.append($MarginContainer2/HBoxContainer/InventoryButtonScene2)
 	inventoryButtons.append($MarginContainer2/HBoxContainer/InventoryButtonScene3)

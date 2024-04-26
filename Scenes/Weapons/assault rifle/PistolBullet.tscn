@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmhuabij5t4ku"]
 
-[ext_resource type="Script" path="res://Scenes/Weapons/assault rifle/PistolBullet.gd" id="1_mtku0"]
+[ext_resource type="Script" path="res://Scenes/Weapons/silent pistol/PistolBullet.gd" id="1_sttm4"]
 [ext_resource type="Texture2D" uid="uid://dmf13thsqx8k0" path="res://More art/Random/kulka.png" id="3_e7ll4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r04dl"]
 size = Vector2(20, 3)
 
 [node name="Laser" type="CharacterBody2D"]
-script = ExtResource("1_mtku0")
+script = ExtResource("1_sttm4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false

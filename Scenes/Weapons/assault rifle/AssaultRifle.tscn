@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw5x10g126c5l"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/assault rifle/AssaultRifle.gd" id="1_hx5jr"]
+[ext_resource type="Texture2D" uid="uid://ceb8l7j7nchrv" path="res://Scenes/Weapons/assault rifle/assault rifle.png" id="1_vjm81"]
+[ext_resource type="AudioStream" uid="uid://jdlpsvd4gs6g" path="res://Music/smgSingleShot.wav" id="3_tmyke"]
+
+[node name="AssaultRifle" type="Node2D"]
+script = ExtResource("1_hx5jr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(63, 5)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("1_vjm81")
+
+[node name="BarrelEnd" type="Node2D" parent="Sprite2D"]
+position = Vector2(220.31, -27.83)
+scale = Vector2(0.17, 0.17)
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.07
+one_shot = true
+
+[node name="ShootingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tmyke")
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

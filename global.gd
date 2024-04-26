@@ -6,3 +6,5 @@ var totalSubmachineGunAmmo = 175
 var currentSubmachineGunAmmo = 35
 var totalPistolAmmo = 40
 var currentPistolAmmo = 10
+var totalRifleAmmo = 90
+var currentRifleAmmo = 30
