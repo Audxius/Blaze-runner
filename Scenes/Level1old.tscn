@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://omtnaa2yq8n5" path="res://Music/intense music (just for fun, will get replaced later).mp3" id="2_5q8fg"]
 [ext_resource type="Texture2D" uid="uid://du8on8fo48apj" path="res://More art/Background layers/pixil-layer-1.png" id="2_kgfhh"]
 [ext_resource type="Texture2D" uid="uid://d1hgjhcr2abh8" path="res://More art/Background layers/pixil-layer-2.png" id="3_mr643"]
-[ext_resource type="PackedScene" uid="uid://drsxbom2vjrpw" path="res://Scenes/Enemies/enemy.tscn" id="3_vvj7x"]
+[ext_resource type="PackedScene" uid="uid://drsxbom2vjrpw" path="res://Scenes/Enemies/stronger enemy.tscn" id="3_vvj7x"]
 [ext_resource type="Texture2D" uid="uid://cdb444mopgt34" path="res://More art/Background layers/pixil-layer-3.png" id="4_vvhfa"]
 [ext_resource type="Texture2D" uid="uid://dhwy4rt6r8o4r" path="res://More art/Background layers/pixil-layer-4.png" id="5_dmqtn"]
 [ext_resource type="PackedScene" uid="uid://q2lyxew84fe4" path="res://Scenes/LootBox/LootBox.tscn" id="5_tfrbr"]
@@ -125,9 +125,6 @@ position = Vector2(331, 207)
 stream = ExtResource("2_5q8fg")
 volume_db = -25.0
 
-[node name="Player2" parent="." instance=ExtResource("3_vvj7x")]
-position = Vector2(401, -518)
-
 [node name="LootBox" parent="." instance=ExtResource("5_tfrbr")]
 position = Vector2(60, 553)
 
@@ -139,3 +136,6 @@ position = Vector2(1019, 555)
 
 [node name="LootBox4" parent="." instance=ExtResource("5_tfrbr")]
 position = Vector2(1083, 556)
+
+[node name="Enemy" parent="." instance=ExtResource("3_vvj7x")]
+position = Vector2(548, 348)
