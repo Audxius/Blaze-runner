@@ -1,6 +1,6 @@
 extends Node2D
 
-var kulka = preload("res://Scenes/Weapons/silent pistol/PistolBullet.tscn")
+var kulka = preload("res://Scenes/Weapons/assault rifle/RifleBullet.tscn")
 var kulka2 = preload("res://Scenes/Enemies/enemylaser.tscn")
 var player
 var shooting = 1

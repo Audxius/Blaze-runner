@@ -222,6 +222,25 @@ offset_bottom = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="gunUI" type="Node2D" parent="CanvasLayer"]
+scale = Vector2(1, 1.1)
+
+[node name="Score4" type="Sprite2D" parent="CanvasLayer/gunUI"]
+position = Vector2(954, 38.288)
+scale = Vector2(110.667, 6.75543)
+texture = ExtResource("5_tlbfp")
+
+[node name="Score5" type="Sprite2D" parent="CanvasLayer/gunUI"]
+position = Vector2(1136, 38.3337)
+scale = Vector2(5.624, 6.76196)
+texture = ExtResource("11_j62is")
+
+[node name="Score6" type="Sprite2D" parent="CanvasLayer/gunUI"]
+position = Vector2(771.936, 38.3)
+scale = Vector2(6.056, 6.75714)
+texture = ExtResource("11_j62is")
+flip_h = true
+
 [node name="health" type="ColorRect" parent="CanvasLayer"]
 offset_left = 139.0
 offset_top = 28.0

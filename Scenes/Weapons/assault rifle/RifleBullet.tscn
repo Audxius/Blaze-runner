@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmhuabij5t4ku"]
 
-[ext_resource type="Script" path="res://Scenes/Weapons/silent pistol/PistolBullet.gd" id="1_sttm4"]
+[ext_resource type="Script" path="res://Scenes/Weapons/assault rifle/RifleBullet.gd" id="1_iras8"]
 [ext_resource type="Texture2D" uid="uid://dmf13thsqx8k0" path="res://More art/Random/kulka.png" id="3_e7ll4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r04dl"]
 size = Vector2(20, 3)
 
 [node name="Laser" type="CharacterBody2D"]
-script = ExtResource("1_sttm4")
+script = ExtResource("1_iras8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -17,9 +17,9 @@ offset_right = 17.0
 offset_bottom = 1.0
 metadata/_edit_use_anchors_ = true
 
-[node name="pistolBulletHitbox" type="Area2D" parent="."]
+[node name="rifleBulletHitbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pistolBulletHitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rifleBulletHitbox"]
 position = Vector2(7, -0.5)
 shape = SubResource("RectangleShape2D_r04dl")
 
@@ -28,4 +28,4 @@ position = Vector2(7, -0.5)
 scale = Vector2(1, 0.5)
 texture = ExtResource("3_e7ll4")
 
-[connection signal="area_entered" from="pistolBulletHitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="rifleBulletHitbox" to="." method="_on_hitbox_area_entered"]
