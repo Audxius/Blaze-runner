@@ -71,9 +71,9 @@ func _physics_process(delta: float) -> void:
 	#loadedWeapon = weaponInstance
 	#add_child(weaponInstance)
 	#
-
-
-
+#
+#
+#
 
 
 func _on_notice_area_body_entered(body):

@@ -104,3 +104,4 @@ libraries = {
 }
 
 [connection signal="body_entered" from="Notice area" to="." method="_on_notice_area_body_entered"]
+[connection signal="area_entered" from="Hitbox" to="Healthbar" method="_on_hitbox_area_entered"]
