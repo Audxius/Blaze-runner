@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://buwt6ljlkp7c2" path="res://Scenes/Player.tscn" id="1_848j0"]
 [ext_resource type="Texture2D" uid="uid://8vofgph63qfn" path="res://More art/Background layers/pixil-layer-0.png" id="1_e6ctr"]
-[ext_resource type="AudioStream" uid="uid://omtnaa2yq8n5" path="res://Music/intense music (just for fun, will get replaced later).mp3" id="2_5q8fg"]
 [ext_resource type="Texture2D" uid="uid://cdb444mopgt34" path="res://More art/Background layers/pixil-layer-3.png" id="3_kfixo"]
 [ext_resource type="PackedScene" uid="uid://drsxbom2vjrpw" path="res://Scenes/Enemies/enemy.tscn" id="3_vvj7x"]
 [ext_resource type="Texture2D" uid="uid://dhwy4rt6r8o4r" path="res://More art/Background layers/pixil-layer-4.png" id="4_4yqnv"]
@@ -12,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://du8on8fo48apj" path="res://More art/Background layers/pixil-layer-1.png" id="7_dl20n"]
 [ext_resource type="Texture2D" uid="uid://ndx3w4ld5xh5" path="res://More art/Background layers/pixil-layer-7.png" id="8_d443k"]
 [ext_resource type="Texture2D" uid="uid://d1hgjhcr2abh8" path="res://More art/Background layers/pixil-layer-2.png" id="8_l46ub"]
+[ext_resource type="AudioStream" uid="uid://hmg4lrnuvv0g" path="res://Music/LVL1Audio.wav" id="10_46vbi"]
 [ext_resource type="Texture2D" uid="uid://b3e7eed6pbyge" path="res://More art/LVL assets/pixil-layer-0.png" id="13_8mn3j"]
 [ext_resource type="Texture2D" uid="uid://i4jecbi4xi6g" path="res://More art/LVL assets/pixil-layer-2.png" id="14_8lojh"]
 [ext_resource type="Texture2D" uid="uid://256fbrojt631" path="res://More art/LVL assets/pixil-layer-3.png" id="15_qdm75"]
@@ -127,8 +127,9 @@ position = Vector2(274, -234)
 zoom = Vector2(0.98, 0.98)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_5q8fg")
+stream = ExtResource("10_46vbi")
 volume_db = -25.0
+autoplay = true
 
 [node name="Player2" parent="." instance=ExtResource("3_vvj7x")]
 position = Vector2(726, 503)
