@@ -11,7 +11,8 @@ var direction = 1:
 		direction = val
 var walking = 0
 var ogscale
-@onready var animationPlayer = $AnimationPlayer
+@onready var animationPlayer = $animationPlayer
+
 
 
 
@@ -23,25 +24,30 @@ func _physics_process(delta: float) -> void:
 	 #Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	if(get_parent().get_node("Player").position.x>position.x):
-		
-		direction = 1
+	animationPlayer.play("walking")
+	if(walking == 1):
+		if(get_parent().get_node("Player").position.x>position.x):
+			direction = 1
+			#print("right")
+		else:
+			direction = -1
 
-		print("right")
-		
-
+			#print("left")
+		position.x += speed*direction*delta	
 	else:
-		direction = -1
-
-		print("left")
-	position.x += speed*direction*delta	
+		timeWalked+=delta
+		if timeWalked>walkingTime:
+			timeWalked=0
+			direction*=-1
+			#scale.x*=-1
+		position.x += speed*direction*delta
 	move_and_slide()
 		#move_and_slide()
 		#
 		
 		
 	#if walking == 0:
-		#animationPlayer.play("Walking")
+		
 		##walks left and right
 		#timeWalked+=delta
 		#if timeWalked>walkingTime:
@@ -73,11 +79,8 @@ func _physics_process(delta: float) -> void:
 func _on_notice_area_body_entered(body):
 	if body.name == "Player":
 		walking = 1
+	print("seen")
 
-
-func _on_notice_area_body_exited(body):
-	if body.name == "Player":
-		walking = 0
 
 
 

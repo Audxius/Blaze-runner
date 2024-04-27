@@ -1,0 +1,106 @@
+[gd_scene load_steps=12 format=3 uid="uid://cuvt4oosd5cd1"]
+
+[ext_resource type="Script" path="res://Scenes/Enemies/stronger enemy/miniboss.gd" id="1_p4sgp"]
+[ext_resource type="Script" path="res://Scenes/Enemies/stronger enemy/minibosshp.gd" id="2_t4qiq"]
+[ext_resource type="PackedScene" uid="uid://bcql748qrufws" path="res://Scenes/Weapons/submachinegun.tscn" id="3_yfdhc"]
+[ext_resource type="Texture2D" uid="uid://cwilu8l18mulw" path="res://More art/Mini Boss/miniBoss_sprite.png" id="4_cb8jj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2sp3"]
+size = Vector2(30, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrf2f"]
+size = Vector2(355, 324)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2g0nd"]
+size = Vector2(33, 58)
+
+[sub_resource type="Animation" id="Animation_owr5u"]
+resource_name = "new_animation"
+
+[sub_resource type="Animation" id="Animation_h2dyq"]
+resource_name = "walking"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_uoc4j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2r8ts"]
+_data = {
+"RESET": SubResource("Animation_uoc4j"),
+"new_animation": SubResource("Animation_owr5u"),
+"walking": SubResource("Animation_h2dyq")
+}
+
+[node name="Miniboss" type="CharacterBody2D"]
+script = ExtResource("1_p4sgp")
+
+[node name="Healthbar" type="ColorRect" parent="."]
+offset_left = -9.0
+offset_top = -36.0
+offset_right = 12.0
+offset_bottom = -34.0
+scale = Vector2(1, 0.975)
+color = Color(0.494118, 0, 0, 1)
+script = ExtResource("2_t4qiq")
+
+[node name="Enemy sprite" type="ColorRect" parent="."]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="Enemy collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_y2sp3")
+
+[node name="Placeholder" parent="." instance=ExtResource("3_yfdhc")]
+position = Vector2(4, 3)
+
+[node name="Notice area" type="Area2D" parent="."]
+position = Vector2(0, 37)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Notice area"]
+position = Vector2(169.5, -154)
+shape = SubResource("RectangleShape2D_hrf2f")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(1.5, 16)
+shape = SubResource("RectangleShape2D_2g0nd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("4_cb8jj")
+hframes = 8
+
+[node name="animationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2r8ts")
+}
+
+[connection signal="body_entered" from="Notice area" to="." method="_on_notice_area_body_entered"]
