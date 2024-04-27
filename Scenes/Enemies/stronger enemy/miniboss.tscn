@@ -1,15 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://cuvt4oosd5cd1"]
+[gd_scene load_steps=13 format=3 uid="uid://cuvt4oosd5cd1"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/stronger enemy/miniboss.gd" id="1_p4sgp"]
 [ext_resource type="Script" path="res://Scenes/Enemies/stronger enemy/minibosshp.gd" id="2_t4qiq"]
 [ext_resource type="PackedScene" uid="uid://bcql748qrufws" path="res://Scenes/Weapons/submachinegun.tscn" id="3_yfdhc"]
 [ext_resource type="Texture2D" uid="uid://cwilu8l18mulw" path="res://More art/Mini Boss/miniBoss_sprite.png" id="4_cb8jj"]
+[ext_resource type="Script" path="res://Scenes/Weapons/shoot.gd" id="4_ex2t5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2sp3"]
 size = Vector2(30, 80)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrf2f"]
-size = Vector2(355, 324)
+size = Vector2(527, 324)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2g0nd"]
 size = Vector2(33, 58)
@@ -68,6 +69,7 @@ color = Color(0.494118, 0, 0, 1)
 script = ExtResource("2_t4qiq")
 
 [node name="Enemy sprite" type="ColorRect" parent="."]
+visible = false
 offset_left = -10.0
 offset_top = -10.0
 offset_right = 10.0
@@ -79,12 +81,13 @@ shape = SubResource("RectangleShape2D_y2sp3")
 
 [node name="Placeholder" parent="." instance=ExtResource("3_yfdhc")]
 position = Vector2(4, 3)
+script = ExtResource("4_ex2t5")
 
 [node name="Notice area" type="Area2D" parent="."]
 position = Vector2(0, 37)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Notice area"]
-position = Vector2(169.5, -154)
+position = Vector2(255.5, -154)
 shape = SubResource("RectangleShape2D_hrf2f")
 
 [node name="Hitbox" type="Area2D" parent="."]
@@ -93,15 +96,21 @@ shape = SubResource("RectangleShape2D_hrf2f")
 position = Vector2(1.5, 16)
 shape = SubResource("RectangleShape2D_2g0nd")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(3, 3)
-texture = ExtResource("4_cb8jj")
-hframes = 8
-
 [node name="animationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_2r8ts")
 }
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("4_cb8jj")
+hframes = 8
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
 [connection signal="body_entered" from="Notice area" to="." method="_on_notice_area_body_entered"]
+[connection signal="body_entered" from="Notice area" to="Placeholder" method="_on_notice_area_body_entered"]
+[connection signal="body_exited" from="Notice area" to="Placeholder" method="_on_notice_area_body_exited"]
 [connection signal="area_entered" from="Hitbox" to="Healthbar" method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="Timer" to="Placeholder" method="_on_timer_timeout"]

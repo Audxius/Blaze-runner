@@ -13,7 +13,7 @@ func _process(delta):
 	#Jei zaidejas nebeturi gyvybes tasku scenai padaro restarta
 	if hp <=0:
 		get_parent().queue_free()
-		get_parent().get_parent().get_node("Player").get_node("CanvasLayer").get_node("score").add_score(150)
+		get_parent().get_parent().get_node("Player").get_node("CanvasLayer").get_node("score").add_score(450)
 
 #Pasalino zaidejo gyvybes taskus nurodyta kieki
 func take_damage(amount):
