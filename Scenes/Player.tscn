@@ -294,7 +294,6 @@ offset_left = 938.0
 offset_top = 11.0
 offset_right = 1126.0
 offset_bottom = 67.0
-text = "inf"
 label_settings = SubResource("LabelSettings_tfynt")
 horizontal_alignment = 1
 vertical_alignment = 1
