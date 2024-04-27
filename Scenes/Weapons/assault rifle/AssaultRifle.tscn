@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/Weapons/assault rifle/AssaultRifle.gd" id="1_hx5jr"]
 [ext_resource type="Texture2D" uid="uid://ceb8l7j7nchrv" path="res://Scenes/Weapons/assault rifle/assault rifle.png" id="1_vjm81"]
-[ext_resource type="AudioStream" uid="uid://jdlpsvd4gs6g" path="res://Music/smgSingleShot.wav" id="3_tmyke"]
+[ext_resource type="AudioStream" uid="uid://gcipk7flb6fb" path="res://Music/Assault rifle single.wav" id="3_1jnlx"]
 
 [node name="AssaultRifle" type="Node2D"]
 script = ExtResource("1_hx5jr")
@@ -21,7 +21,7 @@ wait_time = 0.07
 one_shot = true
 
 [node name="ShootingSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_tmyke")
+stream = ExtResource("3_1jnlx")
 max_polyphony = 100
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
