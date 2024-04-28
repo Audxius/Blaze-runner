@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cpenw5jyp0ecj"]
+[gd_scene load_steps=30 format=3 uid="uid://cpenw5jyp0ecj"]
 
 [ext_resource type="Texture2D" uid="uid://d4ff7tk0k8jso" path="res://More art/Level2 background layers/pixil-layer-3.png" id="1_psxf6"]
 [ext_resource type="Texture2D" uid="uid://8vofgph63qfn" path="res://More art/Background layers/pixil-layer-0.png" id="1_ya2ca"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://drsxbom2vjrpw" path="res://Scenes/Enemies/enemy.tscn" id="17_fwaku"]
 [ext_resource type="PackedScene" uid="uid://cuvt4oosd5cd1" path="res://Scenes/Enemies/stronger enemy/miniboss.tscn" id="18_fm0l1"]
 [ext_resource type="Texture2D" uid="uid://bk2lqhfop4kff" path="res://More art/LVL assets/Platform.png" id="19_pc5cy"]
+[ext_resource type="Texture2D" uid="uid://b5cyqxnos4jq3" path="res://More art/LVL assets/pixil-layer-4.png" id="20_703gh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0m6uu"]
 size = Vector2(7886, 94)
@@ -36,7 +37,16 @@ size = Vector2(15.248, 26.3375)
 size = Vector2(101.753, 11.1343)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pp342"]
-size = Vector2(77.6853, 3.44574)
+size = Vector2(89.0768, 6.03233)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72jau"]
+size = Vector2(74.3816, 65.3981)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sas0i"]
+size = Vector2(65.9385, 6.34782)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7gqw"]
+size = Vector2(25.5593, 26.0308)
 
 [node name="Level2" type="Node2D"]
 
@@ -123,8 +133,8 @@ scale = Vector2(3.815, 3.815)
 texture = ExtResource("8_amg5w")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(3371.5, 433)
-scale = Vector2(32.7096, 2.9902)
+position = Vector2(4316.5, 433.125)
+scale = Vector2(39.6581, 2.99183)
 texture = ExtResource("3_m8hsl")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -183,7 +193,7 @@ position = Vector2(-59.6059, 43.3182)
 shape = SubResource("RectangleShape2D_aytof")
 
 [node name="Player7" parent="." instance=ExtResource("17_fwaku")]
-position = Vector2(3153, 472)
+position = Vector2(3155, 470)
 
 [node name="Player6" parent="." instance=ExtResource("17_fwaku")]
 position = Vector2(2494, 483)
@@ -216,7 +226,7 @@ position = Vector2(5590, 539)
 position = Vector2(5290, 550)
 
 [node name="LootBox16" parent="." instance=ExtResource("15_x4exe")]
-position = Vector2(4317, 553)
+position = Vector2(4657, 552)
 
 [node name="Metal barrel2" type="Sprite2D" parent="."]
 position = Vector2(2253, 421)
@@ -261,13 +271,13 @@ position = Vector2(-9, 9)
 shape = SubResource("RectangleShape2D_kr7sr")
 
 [node name="Blue barrel4" type="Sprite2D" parent="."]
-position = Vector2(4543, 533)
+position = Vector2(4989, 525)
 texture = ExtResource("11_rdakk")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Blue barrel4"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Blue barrel4/StaticBody2D"]
-position = Vector2(-9, 9)
+position = Vector2(-11, 10)
 shape = SubResource("RectangleShape2D_kr7sr")
 
 [node name="Palm2" type="Sprite2D" parent="."]
@@ -283,26 +293,109 @@ texture = ExtResource("13_jv84k")
 [node name="Miniboss2" parent="." instance=ExtResource("18_fm0l1")]
 position = Vector2(6821, 521)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="platform" type="Sprite2D" parent="."]
 position = Vector2(3927, 536)
 scale = Vector2(1.30229, 1.30229)
 texture = ExtResource("19_pc5cy")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+[node name="StaticBody2D" type="StaticBody2D" parent="platform"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform/StaticBody2D"]
 position = Vector2(111.146, -91.1857)
 shape = SubResource("RectangleShape2D_v06h1")
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
+[node name="platform2" type="Sprite2D" parent="."]
 position = Vector2(4147.19, 498.906)
 scale = Vector2(1.51571, 2.01185)
 texture = ExtResource("19_pc5cy")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D3"]
+[node name="StaticBody2D" type="StaticBody2D" parent="platform2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D3/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform2/StaticBody2D"]
 position = Vector2(-187.411, -8.40334)
+shape = SubResource("RectangleShape2D_pp342")
+one_way_collision = true
+
+[node name="House2" type="Sprite2D" parent="."]
+position = Vector2(4340, 521)
+scale = Vector2(2.67157, 2.67157)
+texture = ExtResource("12_y8ntd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House2/StaticBody2D"]
+position = Vector2(-7.24585, 6.12294)
+shape = SubResource("RectangleShape2D_72jau")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="House2/StaticBody2D"]
+position = Vector2(-32.5651, -34.4367)
+rotation = -0.745108
+shape = SubResource("RectangleShape2D_sas0i")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="House2/StaticBody2D"]
+position = Vector2(14.9725, -37.8055)
+rotation = 0.629492
+shape = SubResource("RectangleShape2D_sas0i")
+
+[node name="LootBox17" parent="." instance=ExtResource("15_x4exe")]
+position = Vector2(4066, 382)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(5849, 457)
+scale = Vector2(2.12092, 2.12091)
+texture = ExtResource("20_703gh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D4/StaticBody2D"]
+position = Vector2(-28.8101, 44.0355)
+shape = SubResource("RectangleShape2D_p7gqw")
+
+[node name="platform3" type="Sprite2D" parent="."]
+position = Vector2(5866, 534)
+scale = Vector2(0.999137, 1.32619)
+texture = ExtResource("19_pc5cy")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="platform3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform3/StaticBody2D"]
+position = Vector2(50.0425, -41.4723)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_pp342")
 one_way_collision = true
+
+[node name="platform4" type="Sprite2D" parent="."]
+position = Vector2(6005, 519)
+scale = Vector2(1.14463, 1.5193)
+texture = ExtResource("19_pc5cy")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="platform4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform4/StaticBody2D"]
+position = Vector2(50.0425, -41.4723)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_pp342")
+one_way_collision = true
+
+[node name="platform5" type="Sprite2D" parent="."]
+position = Vector2(6168, 497)
+scale = Vector2(1.32078, 1.75312)
+texture = ExtResource("19_pc5cy")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="platform5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform5/StaticBody2D"]
+position = Vector2(50.0425, -41.4723)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_pp342")
+one_way_collision = true
+
+[node name="Player10" parent="." instance=ExtResource("17_fwaku")]
+position = Vector2(1498, 512)
+
+[node name="Player11" parent="." instance=ExtResource("17_fwaku")]
+position = Vector2(6061, 405)
+speed = 0
