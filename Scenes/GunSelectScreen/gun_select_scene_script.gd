@@ -6,9 +6,12 @@ var inventoryButtons = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	weaponTextures.append(load("res://Scenes/Weapons/dagger.png"))
-	weaponTextures.append(load("res://Scenes/Weapons/placeholder1.png"))
+	weaponTextures.append(load("res://More art/Guns/silent pistol.png"))
+	weaponTextures.append(load("res://More art/Guns/submachine gun.png"))
 	weaponTextures.append(load("res://Scenes/Weapons/assault rifle/assault rifle.png"))
+	
 	weaponInstances.append(preload("res://Scenes/Weapons/dagger.tscn"))
+	weaponInstances.append(preload("res://Scenes/Weapons/silent pistol/silentPistol.tscn"))
 	weaponInstances.append(preload("res://Scenes/Weapons/submachinegun.tscn"))
 	weaponInstances.append(preload("res://Scenes/Weapons/assault rifle/AssaultRifle.tscn"))
 	inventoryButtons.append($MarginContainer2/HBoxContainer/InventoryButtonScene)
@@ -45,6 +48,10 @@ func show_weapons_in_inventory():
 				set_inventory_from_list(inventoryButtons[i], weaponInstances[0], weaponTextures[0])
 			if Global.weapons[i] == weaponInstances[1]:
 				set_inventory_from_list(inventoryButtons[i], weaponInstances[1], weaponTextures[1])
+			if Global.weapons[i] == weaponInstances[2]:
+				set_inventory_from_list(inventoryButtons[i], weaponInstances[2], weaponTextures[2])
+			if Global.weapons[i] == weaponInstances[3]:
+				set_inventory_from_list(inventoryButtons[i], weaponInstances[3], weaponTextures[3])
 
 func set_inventory_from_list(button, weapon, weaponTexture):
 	button.get_node("TextureRect").texture = weaponTexture
