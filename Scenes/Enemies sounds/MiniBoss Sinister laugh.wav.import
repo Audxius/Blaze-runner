@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bi3gdfawf6okh"
+path="res://.godot/imported/MiniBoss Sinister laugh.wav-10331456f50d73db89eb3599561fa3de.sample"
+
+[deps]
+
+source_file="res://Scenes/Enemies sounds/MiniBoss Sinister laugh.wav"
+dest_files=["res://.godot/imported/MiniBoss Sinister laugh.wav-10331456f50d73db89eb3599561fa3de.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

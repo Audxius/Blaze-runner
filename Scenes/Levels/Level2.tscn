@@ -361,7 +361,6 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform3/StaticBody2D"]
 position = Vector2(50.0425, -41.4723)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_pp342")
 one_way_collision = true
 
@@ -375,7 +374,6 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform4/StaticBody2D"]
 position = Vector2(50.0425, -41.4723)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_pp342")
 one_way_collision = true
 
@@ -389,7 +387,6 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform5/StaticBody2D"]
 position = Vector2(50.0425, -41.4723)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_pp342")
 one_way_collision = true
 
