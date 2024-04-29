@@ -13,6 +13,7 @@ var walking = 0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta: float) -> void:
+	var greitis = abs(get_real_velocity().x)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -20,6 +21,9 @@ func _physics_process(delta: float) -> void:
 		animationPlayer.play("Walking")
 		#walks left and right
 		timeWalked+=delta
+		if(greitis > speed-10):
+			print("siena")
+			timeWalked=walkingTime+10
 		if timeWalked>walkingTime:
 			timeWalked=0
 			direction*=-1
@@ -28,6 +32,8 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 	else:
 		animationPlayer.play("Idle")
+		
+
 
 
 func replace_weapon(weaponPackedScene: PackedScene) -> void:
