@@ -3,7 +3,7 @@ extends CharacterBody2D
 var loadedWeapon
 
 @export var speed: = 100
-const JUMP_VELOCITY = -200.0
+const JUMP_VELOCITY = -400.0
 @export var walkingTime = 3
 var timeWalked=0
 var direction = 1:
@@ -45,7 +45,7 @@ func _physics_process(delta: float) -> void:
 			direction*=-1
 			#scale.x*=-1
 		position.x += speed*direction*delta
-	if(greitis > speed-10):
+	if(greitis > speed-10 and is_on_floor()):
 		velocity.y = JUMP_VELOCITY
 	move_and_slide()
 		

@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bqn7p10idkapd" path="res://Scenes/Enemies/enemy/enemy_walk_sprite.png" id="4_apme3"]
 [ext_resource type="PackedScene" uid="uid://bcql748qrufws" path="res://Scenes/Weapons/submachinegun.tscn" id="4_vytwh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mperw"]
-size = Vector2(30, 80)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0sm8k"]
+height = 68.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cl7d6"]
 size = Vector2(355, 74)
@@ -89,13 +89,14 @@ offset_right = 10.0
 offset_bottom = 10.0
 
 [node name="Enemy collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_mperw")
+position = Vector2(0, 10)
+shape = SubResource("CapsuleShape2D_0sm8k")
 
 [node name="Placeholder" parent="." instance=ExtResource("4_vytwh")]
 position = Vector2(4, 3)
 
 [node name="Notice area" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, 37)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Notice area"]
@@ -103,6 +104,7 @@ position = Vector2(169.5, -29)
 shape = SubResource("RectangleShape2D_cl7d6")
 
 [node name="Hitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(1.5, 16)
