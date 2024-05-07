@@ -8,3 +8,73 @@ var totalPistolAmmo = 40
 var currentPistolAmmo = 10
 var totalRifleAmmo = 90
 var currentRifleAmmo = 30
+
+#player score
+var score = 0
+var lastLevelFinished
+
+#level 1 score stuff
+var dates1 = ["a1"]
+var highScoresStr1 = ["level1score"]
+var highScoresInt1 = [0]
+
+#level 2 score stuff
+var dates2 = ["a2"]
+var highScoresStr2 = ["level2score"]
+var highScoresInt2 = [0]
+
+#level 3 score stuff
+var dates3 = ["a3"]
+var highScoresStr3 = ["level3score"]
+var highScoresInt3 = [0]
+
+#issaugo taskus i high score masyva jeigu surinktu tasku kiekis diesnis nei didziausias high score
+func save_level1_score():
+	if(highScoresInt1.size() == 0):
+		var date = Time.get_date_string_from_system()
+		date.replace("-", "/")
+		dates1.append(date)
+		highScoresInt1.append(score)
+		highScoresStr1.append(str(score))
+	elif(score > highScoresInt1.max()):
+		var date = Time.get_date_string_from_system()
+		date.replace("-", "/")
+		dates1.append(date)
+		highScoresInt1.append(score)
+		highScoresStr1.append(str(score))
+	lastLevelFinished = 1
+	score = 0
+
+func save_level2_score():
+	if(highScoresInt2.size() == 0):
+		var date = Time.get_date_string_from_system()
+		date.replace("-", "/")
+		dates2.append(date)
+		highScoresInt2.append(score)
+		highScoresStr2.append(str(score))
+	elif(score > highScoresInt2.max()):
+		var date = Time.get_date_string_from_system()
+		date.replace("-", "/")
+		dates2.append(date)
+		highScoresInt2.append(score)
+		highScoresStr2.append(str(score))
+	lastLevelFinished = 2
+	score = 0
+
+func save_level3_score():
+	if(highScoresInt3.size() == 0):
+		var date = Time.get_date_string_from_system()
+		date.replace("-", "/")
+		dates3.append(date)
+		highScoresInt3.append(score)
+		highScoresStr3.append(str(score))
+	elif(score > highScoresInt3.max()):
+		var date = Time.get_date_string_from_system()
+		date.replace("-", "/")
+		dates3.append(date)
+		highScoresInt3.append(score)
+		highScoresStr3.append(str(score))
+	lastLevelFinished = 3
+	score = 0
+
+

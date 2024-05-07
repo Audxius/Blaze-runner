@@ -10,5 +10,5 @@ func _process(delta):
 
 func add_score(amount):
 	score += amount
-	
+	Global.score += amount
 

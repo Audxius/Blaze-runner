@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw025bhj8ts86"]
+
+[ext_resource type="Script" path="res://LevelEndObjects/Level2EndScript.gd" id="1_0cl36"]
+[ext_resource type="Texture2D" uid="uid://dh7obdnfkm5sc" path="res://Scenes/Weapons/placeholder1.png" id="2_g1bmp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnmgw"]
+size = Vector2(66, 114)
+
+[node name="Level2End" type="Node2D"]
+script = ExtResource("1_0cl36")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_g1bmp")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_nnmgw")

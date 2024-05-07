@@ -45,6 +45,8 @@ func bullet():
 		#get_parent().add_sibling(instance)
 	else:
 		var instance = kulka2.instantiate()
+		#instance.position.x = $Sprite2D/BarrelEnd.global_position.x
+		#instance.position.y = $Sprite2D/BarrelEnd.global_position.y
 		instance.position.x = get_parent().position.x
 		instance.position.y = get_parent().position.y
 		get_parent().add_sibling(instance)
