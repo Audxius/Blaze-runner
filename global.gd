@@ -10,6 +10,7 @@ var totalRifleAmmo = 90
 var currentRifleAmmo = 30
 
 #player score
+var labelCount = 5
 var score = 0
 var lastLevelFinished
 

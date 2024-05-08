@@ -20,6 +20,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_b78my"]
 line_spacing = 0.0
 font_size = 28
+font_color = Color(0.937255, 0.839216, 0.709804, 1)
 
 [node name="ScoreScene" type="Control"]
 layout_mode = 3

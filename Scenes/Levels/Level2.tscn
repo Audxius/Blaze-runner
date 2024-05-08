@@ -399,4 +399,4 @@ position = Vector2(6061, 405)
 speed = 0
 
 [node name="Level2End" parent="." instance=ExtResource("21_o8nun")]
-position = Vector2(80, 549)
+position = Vector2(7746, 559)

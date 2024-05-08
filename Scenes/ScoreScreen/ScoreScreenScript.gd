@@ -39,37 +39,43 @@ func update_info(level):
 		load_level3_scores()
 
 func load_level1_scores():
+	var index = Global.dates1.size()-1
 	for i in range(labelCount):
 		if(i < Global.dates1.size()):
-			dateLabels[i].text = Global.dates1[i]
-			timeLabels[i].text = Global.time1[i]
-			scoreLabels[i].text = Global.highScoresStr1[i]
+			dateLabels[i].text = Global.dates1[index]
+			timeLabels[i].text = Global.time1[index]
+			scoreLabels[i].text = Global.highScoresStr1[index]
 		else:
 			dateLabels[i].text = " "
 			timeLabels[i].text = " "
 			scoreLabels[i].text = " "
+		index = index - 1
 
 func load_level2_scores():
+	var index = Global.dates2.size()-1
 	for i in range(labelCount):
 		if(i < Global.dates2.size()):
-			dateLabels[i].text = Global.dates2[i]
-			timeLabels[i].text = Global.time2[i]
-			scoreLabels[i].text = Global.highScoresStr2[i]
+			dateLabels[i].text = Global.dates2[index]
+			timeLabels[i].text = Global.time2[index]
+			scoreLabels[i].text = Global.highScoresStr2[index]
 		else:
 			dateLabels[i].text = " "
 			timeLabels[i].text = " "
 			scoreLabels[i].text = " "
+		index = index - 1
 
 func load_level3_scores():
+	var index = Global.dates2.size()-1
 	for i in range(labelCount):
 		if(i < Global.dates3.size()):
-			dateLabels[i].text = Global.dates3[i]
-			timeLabels[i].text = Global.time3[i]
-			scoreLabels[i].text = Global.highScoresStr3[i]
+			dateLabels[i].text = Global.dates3[index]
+			timeLabels[i].text = Global.time3[index]
+			scoreLabels[i].text = Global.highScoresStr3[index]
 		else:
 			dateLabels[i].text = " "
 			timeLabels[i].text = " "
 			scoreLabels[i].text = " "
+		index = index - 1
 
 #	for i in range(5):
 #		if(i+offset < Global.dates.size()):
