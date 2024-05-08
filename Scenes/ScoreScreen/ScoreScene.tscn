@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://duhtrycjv3g1o"]
+[gd_scene load_steps=18 format=3 uid="uid://duhtrycjv3g1o"]
 
 [ext_resource type="Script" path="res://Scenes/ScoreScreen/ScoreScreenScript.gd" id="1_dnt1q"]
 [ext_resource type="FontFile" uid="uid://cja6vbwfj20uq" path="res://customfont.pfb" id="1_sqnh2"]
 [ext_resource type="Texture2D" uid="uid://s21i4p0eev7b" path="res://Scenes/ScoreScreen/score background2.png" id="2_7idt6"]
+[ext_resource type="Texture2D" uid="uid://b5k4a2capt7cg" path="res://Scenes/ScoreScreen/scoreTable.png" id="3_6tkdr"]
 [ext_resource type="Texture2D" uid="uid://xcth6y6prcpv" path="res://Scenes/ScoreScreen/button2.png" id="4_erwd1"]
 [ext_resource type="Texture2D" uid="uid://bd4majfkl1h5y" path="res://Scenes/ScoreScreen/button3.png" id="4_kro85"]
 [ext_resource type="Texture2D" uid="uid://t2es0wmdfyeu" path="res://Scenes/ScoreScreen/button2 highlight.png" id="5_tlsiq"]
@@ -12,10 +13,13 @@
 [ext_resource type="Script" path="res://Scenes/ScoreScreen/MenuButtonScript.gd" id="9_i6qou"]
 [ext_resource type="Texture2D" uid="uid://c4k7fxkwee6ii" path="res://Scenes/ScoreScreen/button1 highlight.png" id="9_q1hti"]
 [ext_resource type="Script" path="res://Scenes/ScoreScreen/NextLevelButtonScript.gd" id="12_ax7hm"]
+[ext_resource type="Texture2D" uid="uid://du87ufye38iv6" path="res://Scenes/ScoreScreen/date text.png" id="14_yoox5"]
+[ext_resource type="Texture2D" uid="uid://b6i2bockqo3ju" path="res://Scenes/ScoreScreen/time text.png" id="15_mecsv"]
+[ext_resource type="Texture2D" uid="uid://m5pcgly76f1o" path="res://Scenes/ScoreScreen/score text.png" id="16_5kcjm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b78my"]
 line_spacing = 0.0
-font_size = 30
+font_size = 28
 
 [node name="ScoreScene" type="Control"]
 layout_mode = 3
@@ -35,15 +39,24 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_7idt6")
 
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 183.0
+offset_right = 945.0
+offset_bottom = 441.0
+texture = ExtResource("3_6tkdr")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(426, 300)
+visible = false
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 1.0
-offset_left = 140.0
-offset_top = 200.0
-offset_right = 566.0
-offset_bottom = -148.0
+offset_left = 235.0
+offset_top = 236.0
+offset_right = 475.0
+offset_bottom = -112.0
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
@@ -52,7 +65,7 @@ theme_override_constants/separation = 0
 alignment = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(240, 300)
 layout_mode = 2
 theme_override_constants/separation = 20
 
@@ -93,15 +106,17 @@ text = "2024/05/06"
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(454, 300)
+visible = false
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -454.0
-offset_top = 200.0
-offset_bottom = -148.0
+offset_left = -380.0
+offset_top = 236.0
+offset_right = 74.0
+offset_bottom = -112.0
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -116,7 +131,7 @@ theme_override_constants/separation = 20
 [node name="ScoreLabel1" type="Label" parent="MarginContainer2/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "400"
+text = "20"
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="ScoreLabel2" type="Label" parent="MarginContainer2/HBoxContainer/VBoxContainer"]
@@ -128,25 +143,25 @@ label_settings = SubResource("LabelSettings_b78my")
 [node name="ScoreLabel3" type="Label" parent="MarginContainer2/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "200"
+text = "2000"
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="ScoreLabel4" type="Label" parent="MarginContainer2/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "200"
+text = "20000"
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="ScoreLabel5" type="Label" parent="MarginContainer2/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "200"
+text = "20000"
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="ScoreLabel6" type="Label" parent="MarginContainer2/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "200"
+text = "20000"
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
@@ -183,6 +198,233 @@ texture_hover = ExtResource("9_q1hti")
 script = ExtResource("12_ax7hm")
 level2ScenePath = NodePath("res://Scenes/Levels/Level2.tscn")
 level3ScenePath = NodePath("res://Scenes/Levels/Level3.tscn")
+
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = 236.0
+offset_right = -476.0
+offset_bottom = -112.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer4"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer4/HBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ScoreLabel1" type="Label" parent="MarginContainer4/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "2460"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="ScoreLabel2" type="Label" parent="MarginContainer4/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "200"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="ScoreLabel3" type="Label" parent="MarginContainer4/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "200"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="ScoreLabel4" type="Label" parent="MarginContainer4/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "200"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="ScoreLabel5" type="Label" parent="MarginContainer4/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "200"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="ScoreLabel6" type="Label" parent="MarginContainer4/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "2460"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="MarginContainerTable" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -369.0
+offset_top = -75.0
+offset_right = 365.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainerTable"]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="VBoxContainerDates" type="VBoxContainer" parent="MarginContainerTable/HBoxContainer"]
+custom_minimum_size = Vector2(240, 250)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="DateLabel1" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerDates"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "2024/05/06"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="DateLabel2" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerDates"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "2024/05/06"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="DateLabel3" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerDates"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "2024/05/06"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="DateLabel4" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerDates"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "2024/05/06"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="DateLabel5" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerDates"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "2024/05/06"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="VBoxContainer2Time" type="VBoxContainer" parent="MarginContainerTable/HBoxContainer"]
+custom_minimum_size = Vector2(100, 250)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TimeLabel1" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainer2Time"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "2460"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="TimeLabel2" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainer2Time"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "2460"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="TimeLabel3" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainer2Time"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "2460"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="TimeLabel4" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainer2Time"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "2460"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="TimeLabel5" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainer2Time"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "2460"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="VBoxContainerScore" type="VBoxContainer" parent="MarginContainerTable/HBoxContainer"]
+custom_minimum_size = Vector2(150, 250)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore"]
+layout_mode = 2
+alignment = 1
+
+[node name="ScoreLabel1" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore/HBoxContainer1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "20"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore"]
+layout_mode = 2
+alignment = 1
+
+[node name="ScoreLabel2" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "200"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore"]
+layout_mode = 2
+alignment = 1
+
+[node name="ScoreLabel3" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore/HBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "2000"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore"]
+layout_mode = 2
+alignment = 1
+
+[node name="ScoreLabel4" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore/HBoxContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "20000"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore"]
+layout_mode = 2
+alignment = 1
+
+[node name="ScoreLabel5" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore/HBoxContainer5"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sqnh2")
+text = "20000"
+label_settings = SubResource("LabelSettings_b78my")
+
+[node name="DateText" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 205.0
+offset_right = 410.0
+offset_bottom = 245.0
+texture = ExtResource("14_yoox5")
+stretch_mode = 2
+
+[node name="TimeText" type="TextureRect" parent="."]
+offset_left = 579.0
+offset_top = 205.0
+offset_right = 642.0
+offset_bottom = 245.0
+texture = ExtResource("15_mecsv")
+stretch_mode = 2
+
+[node name="ScoreText" type="TextureRect" parent="."]
+offset_left = 757.0
+offset_top = 203.0
+offset_right = 851.0
+offset_bottom = 243.0
+texture = ExtResource("16_5kcjm")
+stretch_mode = 2
 
 [connection signal="pressed" from="MarginContainer3/HBoxContainer/RestartButton" to="MarginContainer3/HBoxContainer/RestartButton" method="on_restart_button_pressed"]
 [connection signal="pressed" from="MarginContainer3/HBoxContainer/MenuButton" to="MarginContainer3/HBoxContainer/MenuButton" method="_on_menu_button_pressed"]
