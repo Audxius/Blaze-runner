@@ -2,7 +2,7 @@ extends Node
 
 var dateLabels = []
 var scoreLabels = []
-var labelCount = 5
+var labelCount = 6
 #var dates = ["1", "2", "3"]
 #var scores = ["100", "200", "300"]
 #var offset = 0
@@ -13,11 +13,13 @@ func _ready():
 	dateLabels.append($MarginContainer/HBoxContainer/VBoxContainer/DateLabel3);
 	dateLabels.append($MarginContainer/HBoxContainer/VBoxContainer/DateLabel4);
 	dateLabels.append($MarginContainer/HBoxContainer/VBoxContainer/DateLabel5);
+	dateLabels.append($MarginContainer/HBoxContainer/VBoxContainer/DateLabel6);
 	scoreLabels.append($MarginContainer2/HBoxContainer/VBoxContainer/ScoreLabel1)
 	scoreLabels.append($MarginContainer2/HBoxContainer/VBoxContainer/ScoreLabel2)
 	scoreLabels.append($MarginContainer2/HBoxContainer/VBoxContainer/ScoreLabel3)
 	scoreLabels.append($MarginContainer2/HBoxContainer/VBoxContainer/ScoreLabel4)
 	scoreLabels.append($MarginContainer2/HBoxContainer/VBoxContainer/ScoreLabel5)
+	scoreLabels.append($MarginContainer2/HBoxContainer/VBoxContainer/ScoreLabel6)
 	update_info(Global.lastLevelFinished)
 
 

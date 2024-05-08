@@ -14,7 +14,7 @@ func _process(delta):
 	if hp <=0:
 		timer-=delta
 		if timer<=0:
-			get_tree().reload_current_scene()	
+			get_tree().reload_current_scene()
 
 #Pasalino zaidejo gyvybes taskus nurodyta kieki
 func take_damage(amountToTake):

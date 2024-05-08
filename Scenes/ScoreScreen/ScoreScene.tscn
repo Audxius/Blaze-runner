@@ -1,8 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://duhtrycjv3g1o"]
+[gd_scene load_steps=14 format=3 uid="uid://duhtrycjv3g1o"]
 
 [ext_resource type="Script" path="res://Scenes/ScoreScreen/ScoreScreenScript.gd" id="1_dnt1q"]
 [ext_resource type="FontFile" uid="uid://cja6vbwfj20uq" path="res://customfont.pfb" id="1_sqnh2"]
-[ext_resource type="Texture2D" uid="uid://b03relo6kfc6g" path="res://Scenes/ScoreScreen/score background.png" id="2_ml5dd"]
+[ext_resource type="Texture2D" uid="uid://s21i4p0eev7b" path="res://Scenes/ScoreScreen/score background2.png" id="2_7idt6"]
+[ext_resource type="Texture2D" uid="uid://xcth6y6prcpv" path="res://Scenes/ScoreScreen/button2.png" id="4_erwd1"]
+[ext_resource type="Texture2D" uid="uid://bd4majfkl1h5y" path="res://Scenes/ScoreScreen/button3.png" id="4_kro85"]
+[ext_resource type="Texture2D" uid="uid://t2es0wmdfyeu" path="res://Scenes/ScoreScreen/button2 highlight.png" id="5_tlsiq"]
+[ext_resource type="Script" path="res://Scenes/ScoreScreen/RestartButtonScript.gd" id="6_3gulf"]
+[ext_resource type="Texture2D" uid="uid://b8pjidueddvq" path="res://Scenes/ScoreScreen/button1.png" id="6_ayfco"]
+[ext_resource type="Texture2D" uid="uid://b6mi2am4b7k8p" path="res://Scenes/ScoreScreen/button3 highlight.png" id="7_batiq"]
+[ext_resource type="Script" path="res://Scenes/ScoreScreen/MenuButtonScript.gd" id="9_i6qou"]
+[ext_resource type="Texture2D" uid="uid://c4k7fxkwee6ii" path="res://Scenes/ScoreScreen/button1 highlight.png" id="9_q1hti"]
+[ext_resource type="Script" path="res://Scenes/ScoreScreen/NextLevelButtonScript.gd" id="12_ax7hm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b78my"]
 font_size = 30
@@ -23,16 +32,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ml5dd")
+texture = ExtResource("2_7idt6")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 1.0
 offset_left = 140.0
-offset_top = 210.0
+offset_top = 200.0
 offset_right = 566.0
-offset_bottom = 13.0
+offset_bottom = -148.0
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
@@ -87,8 +96,8 @@ anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -454.0
-offset_top = 210.0
-offset_bottom = 16.0
+offset_top = 200.0
+offset_bottom = -157.0
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -102,7 +111,7 @@ theme_override_constants/separation = 20
 [node name="ScoreLabel1" type="Label" parent="MarginContainer2/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "200000"
+text = "100000"
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="ScoreLabel2" type="Label" parent="MarginContainer2/HBoxContainer/VBoxContainer"]
@@ -134,3 +143,42 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
 text = "200"
 label_settings = SubResource("LabelSettings_b78my")
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -118.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="RestartButton" type="TextureButton" parent="MarginContainer3/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_erwd1")
+texture_hover = ExtResource("5_tlsiq")
+script = ExtResource("6_3gulf")
+
+[node name="MenuButton" type="TextureButton" parent="MarginContainer3/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_kro85")
+texture_hover = ExtResource("7_batiq")
+script = ExtResource("9_i6qou")
+
+[node name="NextLevelButton" type="TextureButton" parent="MarginContainer3/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_ayfco")
+texture_hover = ExtResource("9_q1hti")
+script = ExtResource("12_ax7hm")
+level2ScenePath = NodePath("res://Scenes/Levels/Level2.tscn")
+level3ScenePath = NodePath("res://Scenes/Levels/Level3.tscn")
+
+[connection signal="pressed" from="MarginContainer3/HBoxContainer/RestartButton" to="MarginContainer3/HBoxContainer/RestartButton" method="on_restart_button_pressed"]
+[connection signal="pressed" from="MarginContainer3/HBoxContainer/MenuButton" to="MarginContainer3/HBoxContainer/MenuButton" method="_on_menu_button_pressed"]
+[connection signal="pressed" from="MarginContainer3/HBoxContainer/NextLevelButton" to="MarginContainer3/HBoxContainer/NextLevelButton" method="_on_next_level_button_pressed"]

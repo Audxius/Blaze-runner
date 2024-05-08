@@ -51,7 +51,7 @@ func bullet():
 func fire(label):
 	var mouse_position = get_global_mouse_position()
 	var distance = global_position.distance_to(mouse_position)
-	if(distance > 95):
+	if(distance > 105):
 		bullet()
 		shootingSound.play()
 		#ammo -= 1
