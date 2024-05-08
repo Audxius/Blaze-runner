@@ -28,6 +28,10 @@ var dates3 = []
 var highScoresStr3 = []
 var highScoresInt3 = []
 
+func _ready():
+	load_data_from_disk()
+	#pass
+
 #issaugo taskus i high score masyva jeigu surinktu tasku kiekis diesnis nei didziausias high score
 func save_level1_score():
 	if(highScoresInt1.size() == 0):
@@ -42,6 +46,7 @@ func save_level1_score():
 		dates1.append(date)
 		highScoresInt1.append(score)
 		highScoresStr1.append(str(score))
+	save_data_to_disk()
 	lastLevelFinished = 1
 	score = 0
 
@@ -58,6 +63,7 @@ func save_level2_score():
 		dates2.append(date)
 		highScoresInt2.append(score)
 		highScoresStr2.append(str(score))
+	save_data_to_disk()
 	lastLevelFinished = 2
 	score = 0
 
@@ -74,7 +80,61 @@ func save_level3_score():
 		dates3.append(date)
 		highScoresInt3.append(score)
 		highScoresStr3.append(str(score))
+	save_data_to_disk()
 	lastLevelFinished = 3
 	score = 0
 
+func save_data_to_disk():
+	var dates1Save = JSON.stringify(dates1)
+	var highScoresInt1Save = JSON.stringify(highScoresInt1)
+	var highScoresStr1Save = JSON.stringify(highScoresStr1)
+	var dates2Save = JSON.stringify(dates2)
+	var highScoresInt2Save = JSON.stringify(highScoresInt2)
+	var highScoresStr2Save = JSON.stringify(highScoresStr2)
+	var dates3Save = JSON.stringify(dates3)
+	var highScoresInt3Save = JSON.stringify(highScoresInt3)
+	var highScoresStr3Save = JSON.stringify(highScoresStr3)
+	
+	var file = FileAccess.open("user://save_file.txt", FileAccess.WRITE)
+	file.store_string(dates1Save + "\n")
+	file.store_string(highScoresInt1Save + "\n")
+	file.store_string(highScoresStr1Save + "\n")
+	file.store_string(dates2Save + "\n")
+	file.store_string(highScoresInt2Save + "\n")
+	file.store_string(highScoresStr2Save + "\n")
+	file.store_string(dates3Save + "\n")
+	file.store_string(highScoresInt3Save + "\n")
+	file.store_string(highScoresStr3Save + "\n")
+	file.close()
 
+func load_data_from_disk():
+	if(FileAccess.file_exists("user://save_file.txt")):
+		var file = FileAccess.open("user://save_file.txt", FileAccess.READ)
+		
+		var date1Line = file.get_line()
+		var scoreInt1Line = file.get_line()
+		var scoreStr1Line = file.get_line()
+		var date2Line = file.get_line()
+		var scoreInt2Line = file.get_line()
+		var scoreStr2Line = file.get_line()
+		var date3Line = file.get_line()
+		var scoreInt3Line = file.get_line()
+		var scoreStr3Line = file.get_line()
+		
+		dates1 = JSON.parse_string(date1Line)
+		highScoresInt1 = JSON.parse_string(scoreInt1Line)
+		highScoresStr1 = JSON.parse_string(scoreStr1Line)
+		dates2 = JSON.parse_string(date2Line)
+		highScoresInt2 = JSON.parse_string(scoreInt2Line)
+		highScoresStr2 = JSON.parse_string(scoreStr2Line)
+		dates3 = JSON.parse_string(date3Line)
+		highScoresInt3 = JSON.parse_string(scoreInt3Line)
+		highScoresStr3 = JSON.parse_string(scoreStr3Line)
+		
+		
+		#dates1 = JSON.parse_string(date1Line)
+		#highScoresInt1 = JSON.parse_string(scoreInt1Line)
+		#var highScoresStr1Parsed = JSON.parse_string(scoreStr1Line)
+		#for value in highScoresStr1Parsed:
+		#	highScoresStr1.append(str(value))
+		#file.close()

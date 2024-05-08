@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://Scenes/ScoreScreen/NextLevelButtonScript.gd" id="12_ax7hm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b78my"]
+line_spacing = 0.0
 font_size = 30
 
 [node name="ScoreScene" type="Control"]
@@ -35,6 +36,7 @@ grow_vertical = 2
 texture = ExtResource("2_7idt6")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(426, 300)
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 1.0
@@ -50,6 +52,7 @@ theme_override_constants/separation = 0
 alignment = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 theme_override_constants/separation = 20
 
@@ -90,6 +93,7 @@ text = "2024/05/06"
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(454, 300)
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -97,7 +101,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -454.0
 offset_top = 200.0
-offset_bottom = -157.0
+offset_bottom = -148.0
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -105,13 +109,14 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="ScoreLabel1" type="Label" parent="MarginContainer2/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "100000"
+text = "400"
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="ScoreLabel2" type="Label" parent="MarginContainer2/HBoxContainer/VBoxContainer"]
