@@ -15,6 +15,7 @@ func _process(delta):
 		timer-=delta
 		if timer<=0:
 			Global.start_clock()
+			Global.reset_ammo()
 			get_tree().reload_current_scene()
 
 #Pasalino zaidejo gyvybes taskus nurodyta kieki

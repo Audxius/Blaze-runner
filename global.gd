@@ -201,3 +201,11 @@ func calculate_time_elapsed():
 	timeElapsedStr = str(minutesStr, ":", secondsStr)
 	startTime = 0
 	return timeElapsedStr
+
+func reset_ammo():
+	Global.totalSubmachineGunAmmo = 175
+	Global.currentSubmachineGunAmmo = 35
+	Global.totalPistolAmmo = 40
+	Global.currentPistolAmmo = 10
+	Global.totalRifleAmmo = 90
+	Global.currentRifleAmmo = 30

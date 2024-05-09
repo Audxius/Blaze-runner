@@ -10,12 +10,7 @@ func _ready():
 	#level3Scene = load("res://Scenes/Levels/Level3.tscn")
 
 func _on_next_level_button_pressed():
-	Global.totalSubmachineGunAmmo = 175
-	Global.currentSubmachineGunAmmo = 35
-	Global.totalPistolAmmo = 40
-	Global.currentPistolAmmo = 10
-	Global.totalRifleAmmo = 90
-	Global.currentRifleAmmo = 30
+	Global.reset_ammo()
 	if Global.lastLevelFinished == 1:
 		Global.goToLevel = level2ScenePath
 		get_tree().change_scene_to_packed(gunSelectScene)
