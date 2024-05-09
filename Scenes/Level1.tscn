@@ -389,4 +389,4 @@ shape = SubResource("RectangleShape2D_ld7wp")
 position = Vector2(470, 380)
 
 [node name="Level1End" parent="." instance=ExtResource("18_evegd")]
-position = Vector2(7741, 568)
+position = Vector2(84, 568)

@@ -17,6 +17,7 @@ func on_restart_button_pressed():
 	Global.currentPistolAmmo = 10
 	Global.totalRifleAmmo = 90
 	Global.currentRifleAmmo = 30
+	Global.start_clock()
 	if Global.lastLevelFinished == 1:
 		get_tree().change_scene_to_packed(level1Scene)
 	if Global.lastLevelFinished == 2:

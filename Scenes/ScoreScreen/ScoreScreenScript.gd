@@ -14,12 +14,12 @@ func _ready():
 	dateLabels.append($MarginContainerTable/HBoxContainer/VBoxContainerDates/DateLabel3);
 	dateLabels.append($MarginContainerTable/HBoxContainer/VBoxContainerDates/DateLabel4);
 	dateLabels.append($MarginContainerTable/HBoxContainer/VBoxContainerDates/DateLabel5);
-	
-	timeLabels.append($MarginContainerTable/HBoxContainer/VBoxContainer2Time/TimeLabel1);
-	timeLabels.append($MarginContainerTable/HBoxContainer/VBoxContainer2Time/TimeLabel2);
-	timeLabels.append($MarginContainerTable/HBoxContainer/VBoxContainer2Time/TimeLabel3);
-	timeLabels.append($MarginContainerTable/HBoxContainer/VBoxContainer2Time/TimeLabel4);
-	timeLabels.append($MarginContainerTable/HBoxContainer/VBoxContainer2Time/TimeLabel5);
+
+	timeLabels.append($MarginContainerTable/HBoxContainer/VBoxContainer2Time/HBoxContainer1/TimeLabel1);
+	timeLabels.append($MarginContainerTable/HBoxContainer/VBoxContainer2Time/HBoxContainer2/TimeLabel2);
+	timeLabels.append($MarginContainerTable/HBoxContainer/VBoxContainer2Time/HBoxContainer3/TimeLabel3);
+	timeLabels.append($MarginContainerTable/HBoxContainer/VBoxContainer2Time/HBoxContainer4/TimeLabel4);
+	timeLabels.append($MarginContainerTable/HBoxContainer/VBoxContainer2Time/HBoxContainer5/TimeLabel5);
 	
 	scoreLabels.append($MarginContainerTable/HBoxContainer/VBoxContainerScore/HBoxContainer1/ScoreLabel1)
 	scoreLabels.append($MarginContainerTable/HBoxContainer/VBoxContainerScore/HBoxContainer2/ScoreLabel2)

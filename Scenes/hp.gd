@@ -14,6 +14,7 @@ func _process(delta):
 	if hp <=0:
 		timer-=delta
 		if timer<=0:
+			Global.start_clock()
 			get_tree().reload_current_scene()
 
 #Pasalino zaidejo gyvybes taskus nurodyta kieki

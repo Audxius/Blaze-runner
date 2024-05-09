@@ -10,6 +10,7 @@ var totalRifleAmmo = 90
 var currentRifleAmmo = 30
 
 #player score
+var startTime
 var labelCount = 5
 var score = 0
 var lastLevelFinished
@@ -39,19 +40,21 @@ func _ready():
 #issaugo taskus i high score masyva jeigu surinktu tasku kiekis diesnis nei didziausias high score
 func save_level1_score():
 	if(highScoresInt1.size() == 0):
+		#var time = Time.get_time_string_from_system()
+		#time = time.left(5)
 		var date = Time.get_date_string_from_system()
-		var time = Time.get_time_string_from_system()
+		var time = calculate_time_elapsed()
+		print(time)
 		date = date.replace("-", "/")
-		time = time.left(5)
 		dates1.append(date)
 		time1.append(time)
 		highScoresInt1.append(score)
 		highScoresStr1.append(str(score))
 	elif(score > highScoresInt1.max()):
 		var date = Time.get_date_string_from_system()
-		var time = Time.get_time_string_from_system()
+		var time = calculate_time_elapsed()
+		print(time)
 		date = date.replace("-", "/")
-		time = time.left(5)
 		dates1.append(date)
 		time1.append(time)
 		highScoresInt1.append(score)
@@ -172,3 +175,29 @@ func load_data_from_disk():
 		#for value in highScoresStr1Parsed:
 		#	highScoresStr1.append(str(value))
 		#file.close()
+func start_clock():
+	startTime = Time.get_unix_time_from_system()
+
+func calculate_time_elapsed():
+	var timeElapsedStr
+	var secondsStr
+	var minutesStr
+	var endTime = Time.get_unix_time_from_system()
+	var timeElapsed = endTime-startTime
+	timeElapsed = int(timeElapsed)
+	var minutes = timeElapsed/60
+	var seconds = timeElapsed%60
+	
+	if(seconds < 10):
+		secondsStr = str("0",seconds)
+	else:
+		secondsStr = seconds
+	
+	if(minutes < 10):
+		minutesStr = str("0",minutes)
+	else:
+		minutesStr = minutes
+	
+	timeElapsedStr = str(minutesStr, ":", secondsStr)
+	startTime = 0
+	return timeElapsedStr
