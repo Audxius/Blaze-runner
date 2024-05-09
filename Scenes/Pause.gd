@@ -25,7 +25,7 @@ func _process(delta):
 			button_pressed = false
 
 func treeContainsMenu():
-	var menuNames = ["Title screen","LevelSelectScene", "GunSelectScene"]
+	var menuNames = ["Title screen","LevelSelectScene", "GunSelectScene", "ScoreScene"]
 	var exists = false
 	
 	for menuName in menuNames:
