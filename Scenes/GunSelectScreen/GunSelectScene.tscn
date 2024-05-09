@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://diqcqhhh7hcmy"]
+[gd_scene load_steps=41 format=3 uid="uid://diqcqhhh7hcmy"]
 
 [ext_resource type="Script" path="res://Scenes/GunSelectScreen/gun_select_scene_script.gd" id="1_0yuvc"]
 [ext_resource type="Script" path="res://Scenes/GunSelectScreen/start_level_script.gd" id="1_4s7n6"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://dx8eaord5dax5" path="res://Scenes/Weapons/hideTexture.png" id="8_xmaa4"]
 [ext_resource type="PackedScene" uid="uid://dsafi7m7f0lf7" path="res://Scenes/Weapons/dagger.tscn" id="9_ovotd"]
 [ext_resource type="AudioStream" uid="uid://co3dvbugwpq3s" path="res://Scenes/GunSelectScreen/Gun_Select_audio.wav" id="10_rc4ro"]
-[ext_resource type="Texture2D" uid="uid://cfaj6uwethkmd" path="res://Scenes/GunSelectScreen/weapon button.png" id="12_ankj3"]
 [ext_resource type="Texture2D" uid="uid://b13u3l6fk32mg" path="res://Scenes/GunSelectScreen/submachinegun button.png" id="12_luffs"]
 [ext_resource type="Texture2D" uid="uid://baftudd72c68s" path="res://Scenes/GunSelectScreen/submachinegun button highlight.png" id="13_21dch"]
 [ext_resource type="Texture2D" uid="uid://cb1w07avttfuv" path="res://Scenes/GunSelectScreen/button1.png" id="13_f86g5"]
@@ -36,7 +35,11 @@
 [ext_resource type="Texture2D" uid="uid://cerxcjnswi4pt" path="res://Scenes/GunSelectScreen/button3 highlight.png" id="22_pc8cf"]
 [ext_resource type="PackedScene" uid="uid://bw5x10g126c5l" path="res://Scenes/Weapons/assault rifle/AssaultRifle.tscn" id="22_qxv30"]
 [ext_resource type="Texture2D" uid="uid://cnfdag1ws0yhl" path="res://Scenes/GunSelectScreen/button4 highlight.png" id="24_ojvfr"]
+[ext_resource type="Texture2D" uid="uid://bvo0js1dpsfda" path="res://Scenes/GunSelectScreen/machinegun button.png" id="24_v3810"]
+[ext_resource type="Texture2D" uid="uid://d3q0gpww6kpn0" path="res://More art/Guns/machine gun.png" id="25_28j86"]
+[ext_resource type="Texture2D" uid="uid://ceme6gdnkag1t" path="res://Scenes/GunSelectScreen/machinegun button highlight.png" id="25_gyuxu"]
 [ext_resource type="Texture2D" uid="uid://buixnqnlyaenq" path="res://Scenes/GunSelectScreen/button5 highlight.png" id="26_wcima"]
+[ext_resource type="PackedScene" uid="uid://bod3buwnqo5rm" path="res://Scenes/Weapons/machine gun/machineGun.tscn" id="27_2cecl"]
 
 [node name="GunSelectScene" type="Control"]
 layout_mode = 3
@@ -186,12 +189,20 @@ stretch_mode = 5
 
 [node name="WeaponSelectButton6" parent="MarginContainer/HBoxContainer/GridContainer/HBoxContainer2" instance=ExtResource("7_12d60")]
 layout_mode = 2
-texture_normal = ExtResource("12_ankj3")
+texture_normal = ExtResource("24_v3810")
+texture_hover = ExtResource("25_gyuxu")
+weaponTexture = ExtResource("25_28j86")
+weaponScenePacked = ExtResource("27_2cecl")
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/GridContainer/HBoxContainer2/WeaponSelectButton6"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 8.0
+offset_top = 12.0
+offset_right = 86.0
+offset_bottom = 77.0
+texture = ExtResource("25_28j86")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 1

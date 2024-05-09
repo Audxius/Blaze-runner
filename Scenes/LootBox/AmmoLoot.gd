@@ -7,5 +7,6 @@ func _on_area_2d_body_entered(body):
 		Global.totalPistolAmmo += 10
 		Global.totalSubmachineGunAmmo += 35
 		Global.totalRifleAmmo += 30
+		Global.totalMachineGunAmmo += 50
 		body.update_ammo_label()
 		queue_free()

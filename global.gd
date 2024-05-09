@@ -8,6 +8,8 @@ var totalPistolAmmo = 40
 var currentPistolAmmo = 10
 var totalRifleAmmo = 90
 var currentRifleAmmo = 30
+var totalMachineGunAmmo = 150
+var currentMachineGunAmmo = 50
 
 #player score
 var startTime
@@ -231,6 +233,8 @@ func reset_ammo():
 	Global.currentPistolAmmo = 10
 	Global.totalRifleAmmo = 90
 	Global.currentRifleAmmo = 30
+	Global.totalMachineGunAmmo = 150
+	Global.currentMachineGunAmmo = 50
 
 #removes first element of array and shifts the rest left
 func shift_array_left(array):

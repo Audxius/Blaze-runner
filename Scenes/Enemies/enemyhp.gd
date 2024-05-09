@@ -33,3 +33,5 @@ func _on_hitbox_area_entered(area):
 		take_damage(20)
 	elif area.name == "rifleBulletHitbox":
 		take_damage(20)
+	elif area.name == "machineGunBulletHitbox":
+		take_damage(15)
