@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Enemies/stronger enemy/miniboss.gd" id="1_p4sgp"]
 [ext_resource type="Script" path="res://Scenes/Enemies/stronger enemy/minibosshp.gd" id="2_t4qiq"]
 [ext_resource type="PackedScene" uid="uid://bcql748qrufws" path="res://Scenes/Weapons/submachinegun.tscn" id="3_yfdhc"]
-[ext_resource type="Texture2D" uid="uid://cwilu8l18mulw" path="res://More art/Mini Boss/miniBoss_sprite.png" id="4_cb8jj"]
+[ext_resource type="Texture2D" uid="uid://chnrwyk7inb3f" path="res://More art/Mini Boss/miniBoss_sprite.png" id="4_cb8jj"]
 [ext_resource type="Script" path="res://Scenes/Weapons/shoot.gd" id="4_ex2t5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2sp3"]

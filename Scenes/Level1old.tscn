@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://jmdmmnenwcdn"]
+[gd_scene load_steps=19 format=3 uid="uid://jmdmmnenwcdn"]
 
 [ext_resource type="PackedScene" uid="uid://buwt6ljlkp7c2" path="res://Scenes/Player.tscn" id="1_848j0"]
 [ext_resource type="Texture2D" uid="uid://8vofgph63qfn" path="res://More art/Background layers/pixil-layer-0.png" id="1_aswjm"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ndx3w4ld5xh5" path="res://More art/Background layers/pixil-layer-7.png" id="8_pno6s"]
 [ext_resource type="PackedScene" uid="uid://dw5ptij0jmeky" path="res://Scenes/Weapons/bomb/bomb.tscn" id="13_kc87i"]
 [ext_resource type="Texture2D" uid="uid://b5cyqxnos4jq3" path="res://More art/LVL assets/pixil-layer-4.png" id="13_yfxff"]
+[ext_resource type="PackedScene" uid="uid://b27hk7hmk1325" path="res://Scenes/Enemies/boss/boss.tscn" id="14_mm8wc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gxrr8"]
 size = Vector2(2766, 94)
@@ -169,7 +170,7 @@ scale = Vector2(0.36581, 0.36581)
 shape = SubResource("RectangleShape2D_l81up")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(1000, 526)
+position = Vector2(1369, 552)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 visible = false
@@ -187,5 +188,8 @@ position = Vector2(441, -216)
 
 [node name="Bomb4" parent="." instance=ExtResource("13_kc87i")]
 position = Vector2(284, -373)
+
+[node name="Boss" parent="." instance=ExtResource("14_mm8wc")]
+position = Vector2(1849, 242)
 
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]

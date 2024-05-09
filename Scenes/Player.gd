@@ -104,7 +104,14 @@ func update_ammo_label():
 
 func _on_area_2d_body_entered(body):
 	var screen = get_viewport_rect().size.length()
-	body.get_node("Camera2D").limit_left=position.x-(screen/2)
+	var camera = $Camera2D
+
+# Calculate the limit_left value based on position.x
+	var screen_width = get_viewport_rect().size.x
+	var limit_left = position.x - (screen_width / 2)
+
+# Set the limit_left property of the Camera2D node
+	camera.limit_left = limit_left
 	#var rng = RandomNumberGenerator.new()
 	#var my_random_number = floor(rng.randf_range(-10.0, 10.0))
 	#print(my_random_number)
