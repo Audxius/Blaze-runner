@@ -39,72 +39,94 @@ func _ready():
 
 #issaugo taskus i high score masyva jeigu surinktu tasku kiekis diesnis nei didziausias high score
 func save_level1_score():
+	var date = Time.get_date_string_from_system()
+	var time = calculate_time_elapsed()
 	if(highScoresInt1.size() == 0):
-		#var time = Time.get_time_string_from_system()
-		#time = time.left(5)
-		var date = Time.get_date_string_from_system()
-		var time = calculate_time_elapsed()
-		print(time)
 		date = date.replace("-", "/")
 		dates1.append(date)
 		time1.append(time)
 		highScoresInt1.append(score)
 		highScoresStr1.append(str(score))
 	elif(score > highScoresInt1.max()):
-		var date = Time.get_date_string_from_system()
-		var time = calculate_time_elapsed()
-		print(time)
-		date = date.replace("-", "/")
-		dates1.append(date)
-		time1.append(time)
-		highScoresInt1.append(score)
-		highScoresStr1.append(str(score))
+		if(highScoresInt1.size() >= labelCount):
+			shift_array_left(dates1)
+			shift_array_left(time1)
+			shift_array_left(highScoresInt1)
+			shift_array_left(highScoresStr1)
+			
+			date = date.replace("-", "/")
+			dates1.append(date)
+			time1.append(time)
+			highScoresInt1.append(score)
+			highScoresStr1.append(str(score))
+		else:
+			date = date.replace("-", "/")
+			dates1.append(date)
+			time1.append(time)
+			highScoresInt1.append(score)
+			highScoresStr1.append(str(score))
 	save_data_to_disk()
 	lastLevelFinished = 1
 	score = 0
 
 func save_level2_score():
+	var date = Time.get_date_string_from_system()
+	var time = calculate_time_elapsed()
 	if(highScoresInt2.size() == 0):
-		var date = Time.get_date_string_from_system()
-		var time = Time.get_time_string_from_system()
 		date = date.replace("-", "/")
-		time = time.left(5)
 		dates2.append(date)
 		time2.append(time)
 		highScoresInt2.append(score)
 		highScoresStr2.append(str(score))
 	elif(score > highScoresInt2.max()):
-		var date = Time.get_date_string_from_system()
-		var time = Time.get_time_string_from_system()
-		date = date.replace("-", "/")
-		time = time.left(5)
-		dates2.append(date)
-		time2.append(time)
-		highScoresInt2.append(score)
-		highScoresStr2.append(str(score))
+		if(highScoresInt2.size() >= labelCount):
+			shift_array_left(dates2)
+			shift_array_left(time2)
+			shift_array_left(highScoresInt2)
+			shift_array_left(highScoresStr2)
+			
+			date = date.replace("-", "/")
+			dates2.append(date)
+			time2.append(time)
+			highScoresInt2.append(score)
+			highScoresStr2.append(str(score))
+		else:
+			date = date.replace("-", "/")
+			dates2.append(date)
+			time2.append(time)
+			highScoresInt2.append(score)
+			highScoresStr2.append(str(score))
 	save_data_to_disk()
 	lastLevelFinished = 2
 	score = 0
 
 func save_level3_score():
+	var date = Time.get_date_string_from_system()
+	var time = calculate_time_elapsed()
 	if(highScoresInt3.size() == 0):
-		var date = Time.get_date_string_from_system()
-		var time = Time.get_time_string_from_system()
 		date = date.replace("-", "/")
-		time = time.left(5)
 		dates3.append(date)
 		time3.append(time)
 		highScoresInt3.append(score)
 		highScoresStr3.append(str(score))
 	elif(score > highScoresInt3.max()):
-		var date = Time.get_date_string_from_system()
-		var time = Time.get_time_string_from_system()
-		date = date.replace("-", "/")
-		time = time.left(5)
-		dates3.append(date)
-		time3.append(time)
-		highScoresInt3.append(score)
-		highScoresStr3.append(str(score))
+		if(highScoresInt3.size() >= labelCount):
+			shift_array_left(dates3)
+			shift_array_left(time3)
+			shift_array_left(highScoresInt3)
+			shift_array_left(highScoresStr3)
+			
+			date = date.replace("-", "/")
+			dates3.append(date)
+			time3.append(time)
+			highScoresInt3.append(score)
+			highScoresStr3.append(str(score))
+		else:
+			date = date.replace("-", "/")
+			dates3.append(date)
+			time3.append(time)
+			highScoresInt3.append(score)
+			highScoresStr3.append(str(score))
 	save_data_to_disk()
 	lastLevelFinished = 3
 	score = 0
@@ -209,3 +231,10 @@ func reset_ammo():
 	Global.currentPistolAmmo = 10
 	Global.totalRifleAmmo = 90
 	Global.currentRifleAmmo = 30
+
+#removes first element of array and shifts the rest left
+func shift_array_left(array):
+	for i in range(0, array.size(), 1):
+		if i < array.size()-1:
+			array[i] = array[i+1]
+	array.remove_at(array.size()-1)
