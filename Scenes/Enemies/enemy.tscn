@@ -96,7 +96,6 @@ shape = SubResource("CapsuleShape2D_0sm8k")
 position = Vector2(4, 3)
 
 [node name="Notice area" type="Area2D" parent="."]
-visible = false
 position = Vector2(0, 37)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Notice area"]

@@ -17,6 +17,7 @@ var loadedWeapon
 
 
 func _physics_process(delta):
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -99,3 +100,12 @@ func update_ammo_label():
 		uiAmmoLabel.text = str(Global.currentRifleAmmo,"/",loadedWeapon.maxAmmo,"x",Global.totalRifleAmmo/loadedWeapon.maxAmmo)
 	if(loadedWeapon.name == "MachineGun"):
 		uiAmmoLabel.text = str(Global.currentMachineGunAmmo,"/",loadedWeapon.maxAmmo,"x",Global.totalMachineGunAmmo/loadedWeapon.maxAmmo)
+
+
+func _on_area_2d_body_entered(body):
+	var screen = get_viewport_rect().size.length()
+	body.get_node("Camera2D").limit_left=position.x-(screen/2)
+	#var rng = RandomNumberGenerator.new()
+	#var my_random_number = floor(rng.randf_range(-10.0, 10.0))
+	#print(my_random_number)
+

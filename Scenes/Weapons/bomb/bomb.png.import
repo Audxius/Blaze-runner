@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xa81qrhx57ic"
-path="res://.godot/imported/joker-frame-7.png-8b7484b0196d12f6e8af373751ded44d.ctex"
+uid="uid://dy6ckmlmd6wd0"
+path="res://.godot/imported/bomb.png-37980bb4aa09d6266481c1cdbf645a31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://More art/final Boss JOKER/joker-frame-7.png"
-dest_files=["res://.godot/imported/joker-frame-7.png-8b7484b0196d12f6e8af373751ded44d.ctex"]
+source_file="res://Scenes/Weapons/bomb/bomb.png"
+dest_files=["res://.godot/imported/bomb.png-37980bb4aa09d6266481c1cdbf645a31.ctex"]
 
 [params]
 

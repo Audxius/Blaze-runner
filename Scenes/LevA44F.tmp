@@ -179,13 +179,4 @@ shape = SubResource("RectangleShape2D_1mblc")
 [node name="Bomb" parent="." instance=ExtResource("13_kc87i")]
 position = Vector2(319, 55)
 
-[node name="Bomb2" parent="." instance=ExtResource("13_kc87i")]
-position = Vector2(124, -83)
-
-[node name="Bomb3" parent="." instance=ExtResource("13_kc87i")]
-position = Vector2(441, -216)
-
-[node name="Bomb4" parent="." instance=ExtResource("13_kc87i")]
-position = Vector2(284, -373)
-
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]
