@@ -85,6 +85,7 @@ levelPath = NodePath("res://Scenes/Levels/Level3.tscn")
 gunSelectScene = ExtResource("6_oq5tj")
 
 [node name="LevelSelectButton4" parent="MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("1_i7pu7")]
+visible = false
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("10_q83dp")
@@ -94,6 +95,7 @@ levelPath = NodePath("res://Scenes/Levels/Level4.tscn")
 gunSelectScene = ExtResource("6_oq5tj")
 
 [node name="LevelSelectButton5" parent="MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("1_i7pu7")]
+visible = false
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("12_4gyvh")
