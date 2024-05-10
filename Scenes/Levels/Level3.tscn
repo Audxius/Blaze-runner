@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvh1sco4dfdp0"]
+[gd_scene load_steps=38 format=3 uid="uid://dvh1sco4dfdp0"]
 
 [ext_resource type="PackedScene" uid="uid://ci56xvd5f72us" path="res://Scenes/LevelSelectScreen/LevelSelectButton.tscn" id="1_7vfx0"]
 [ext_resource type="Texture2D" uid="uid://dmp2j2c35e6la" path="res://More art/3rd level background layers/layer-0.png" id="1_8s6jw"]
@@ -11,33 +11,75 @@
 [ext_resource type="Texture2D" uid="uid://c5syim4nc47f4" path="res://More art/3rd level background layers/layer-4.png" id="8_k065f"]
 [ext_resource type="Texture2D" uid="uid://cxyy6wq7yg2yd" path="res://More art/3rd level background layers/layer-6.png" id="9_57ivl"]
 [ext_resource type="Texture2D" uid="uid://bx6iiavnfufck" path="res://More art/3rd level background layers/layer-8.png" id="10_5w1xm"]
+[ext_resource type="Texture2D" uid="uid://1sr3jf2fc0e3" path="res://More art/3rd level background layers/layer-1.png" id="12_fgvhk"]
+[ext_resource type="Texture2D" uid="uid://1ggi5oq1i0vm" path="res://More art/3rd level background layers/layer-2.png" id="13_wp20x"]
+[ext_resource type="Texture2D" uid="uid://bbe18quw1b45l" path="res://More art/LVL assets/blue barrel.png" id="14_phkml"]
+[ext_resource type="Texture2D" uid="uid://bk2lqhfop4kff" path="res://More art/LVL assets/Platform.png" id="15_0cuub"]
+[ext_resource type="Texture2D" uid="uid://tws783771rv1" path="res://More art/LVL assets/kindpng_586963.png" id="16_qli4y"]
+[ext_resource type="Texture2D" uid="uid://0wxbjpvvksbn" path="res://More art/LVL assets/fence_00.png" id="17_rkkss"]
+[ext_resource type="Texture2D" uid="uid://blsk3l7pvbinr" path="res://More art/LVL assets/fence_01.png" id="18_wprv4"]
+[ext_resource type="Texture2D" uid="uid://bjqogh254lsvw" path="res://More art/LVL assets/add_yard_00.png" id="19_qphem"]
+[ext_resource type="Texture2D" uid="uid://24ju6m1qseh2" path="res://More art/LVL assets/add_yard_05.png" id="20_b21uo"]
+[ext_resource type="PackedScene" uid="uid://q2lyxew84fe4" path="res://Scenes/LootBox/LootBox.tscn" id="21_gylci"]
+[ext_resource type="Texture2D" uid="uid://bcw3eamt03tkn" path="res://More art/LVL assets/garage_16.png" id="21_hsju6"]
+[ext_resource type="Texture2D" uid="uid://bxatyls4xxfkd" path="res://More art/LVL assets/pixil-frame-0.png" id="22_8datm"]
+[ext_resource type="Texture2D" uid="uid://l1tl5hbj61i4" path="res://More art/LVL assets/fence_05.png" id="23_jcdmy"]
+[ext_resource type="Texture2D" uid="uid://b3e7eed6pbyge" path="res://More art/LVL assets/pixil-layer-0.png" id="24_gohhj"]
+[ext_resource type="Texture2D" uid="uid://i4jecbi4xi6g" path="res://More art/LVL assets/pixil-layer-2.png" id="26_468ug"]
+[ext_resource type="PackedScene" uid="uid://drsxbom2vjrpw" path="res://Scenes/Enemies/enemy.tscn" id="27_qxcsr"]
+[ext_resource type="PackedScene" uid="uid://cuvt4oosd5cd1" path="res://Scenes/Enemies/stronger enemy/miniboss.tscn" id="28_gbovf"]
+[ext_resource type="PackedScene" uid="uid://b27hk7hmk1325" path="res://Scenes/Enemies/boss/boss.tscn" id="29_78hvn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0qj7"]
-size = Vector2(5454.5, 114)
+size = Vector2(5961.5, 114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lg0vc"]
+size = Vector2(68.5, 850.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67t4y"]
+size = Vector2(89, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcmdq"]
+size = Vector2(89.0855, 6.0835)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugygs"]
+size = Vector2(42.1386, 14.8911)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1tiw"]
+size = Vector2(121.818, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4scl"]
+size = Vector2(16.0845, 26.2253)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eajk5"]
+size = Vector2(37, 60)
 
 [node name="Level3" type="Node2D"]
-
-[node name="LevelSelectButton" parent="." instance=ExtResource("1_7vfx0")]
-texture_normal = ExtResource("2_p5fep")
-levelPath = NodePath("res://Scenes/LevelSelectScreen/LevelSelectScene.tscn")
+position = Vector2(5, -1)
 
 [node name="Player" parent="." instance=ExtResource("1_svgrq")]
-position = Vector2(200, 591)
+top_level = true
+position = Vector2(442, 600)
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2(497, -159)
 zoom = Vector2(0.78, 0.78)
 
+[node name="LevelSelectButton" parent="." instance=ExtResource("1_7vfx0")]
+texture_normal = ExtResource("2_p5fep")
+levelPath = NodePath("res://Scenes/LevelSelectScreen/LevelSelectScene.tscn")
+
 [node name="Layer-7" type="Sprite2D" parent="."]
-position = Vector2(2678, 334)
-scale = Vector2(20.0772, 7.69118)
+y_sort_enabled = true
+position = Vector2(3906.75, 336.812)
+scale = Vector2(31.0901, 7.72794)
 texture = ExtResource("2_3ebsc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(68.2037, 562.256)
+position = Vector2(68, 567)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2641.55, 147.744)
+position = Vector2(2895.05, 147.744)
 shape = SubResource("RectangleShape2D_p0qj7")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -49,7 +91,7 @@ autoplay = true
 
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0, 0)
-motion_mirroring = Vector2(6000, 0)
+motion_mirroring = Vector2(10000, 60)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
 position = Vector2(805, 290)
@@ -60,7 +102,7 @@ flip_v = true
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0, 0)
 motion_offset = Vector2(0, -20)
-motion_mirroring = Vector2(6000, 0)
+motion_mirroring = Vector2(10000, 200)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(676.556, 382.188)
@@ -70,7 +112,7 @@ texture = ExtResource("6_6wgvy")
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.01, 0)
 motion_offset = Vector2(0, -20)
-motion_mirroring = Vector2(6000, 0)
+motion_mirroring = Vector2(10000, 100)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(664, 385)
@@ -78,9 +120,9 @@ scale = Vector2(5.04739, 5.04739)
 texture = ExtResource("7_tlmbw")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.1, 0.1)
+motion_scale = Vector2(0.1, 0.01)
 motion_offset = Vector2(0, -20)
-motion_mirroring = Vector2(1540, 0)
+motion_mirroring = Vector2(1540, 100)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 position = Vector2(722.069, 385)
@@ -88,9 +130,9 @@ scale = Vector2(5.69802, 2.81536)
 texture = ExtResource("9_57ivl")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.2, 0.2)
+motion_scale = Vector2(0.2, 0.02)
 motion_offset = Vector2(0, -20)
-motion_mirroring = Vector2(1560, 0)
+motion_mirroring = Vector2(1560, 100)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(760.472, 463.828)
@@ -98,11 +140,308 @@ scale = Vector2(5.74653, 3.65788)
 texture = ExtResource("8_k065f")
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.3, 0.3)
+motion_scale = Vector2(0.3, 0.03)
 motion_offset = Vector2(0, -15)
-motion_mirroring = Vector2(1450, 0)
+motion_mirroring = Vector2(1450, 35)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
 position = Vector2(724, -54)
 scale = Vector2(5.48693, 8.76307)
 texture = ExtResource("10_5w1xm")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1200, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
+position = Vector2(461, 314)
+scale = Vector2(1.77451, 1.77451)
+texture = ExtResource("12_fgvhk")
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer8"]
+position = Vector2(554, 349)
+scale = Vector2(2.41503, 2.41503)
+texture = ExtResource("13_wp20x")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(235.75, 230.25)
+shape = SubResource("RectangleShape2D_lg0vc")
+
+[node name="Platform" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1816, 635)
+texture = ExtResource("15_0cuub")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/StaticBody2D"]
+position = Vector2(-49.5, -41.5)
+shape = SubResource("RectangleShape2D_67t4y")
+one_way_collision = true
+
+[node name="Platform2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(2018, 602)
+scale = Vector2(1.64379, 1.64379)
+texture = ExtResource("15_0cuub")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2/StaticBody2D"]
+position = Vector2(-49.4095, -41.3678)
+shape = SubResource("RectangleShape2D_wcmdq")
+one_way_collision = true
+
+[node name="Kindpng586963" type="Sprite2D" parent="."]
+position = Vector2(1933, 413)
+scale = Vector2(0.633059, 0.633059)
+texture = ExtResource("16_qli4y")
+
+[node name="Fence00" type="Sprite2D" parent="."]
+position = Vector2(2737.82, 594.25)
+scale = Vector2(2.92045, 2.92045)
+texture = ExtResource("17_rkkss")
+
+[node name="Fence02" type="Sprite2D" parent="."]
+position = Vector2(3484.82, 594.25)
+scale = Vector2(2.92046, 2.92046)
+texture = ExtResource("18_wprv4")
+
+[node name="AddYard00" type="Sprite2D" parent="."]
+position = Vector2(2549, 623)
+scale = Vector2(1.85417, 1.85417)
+texture = ExtResource("19_qphem")
+
+[node name="AddYard05" type="Sprite2D" parent="."]
+position = Vector2(3063, 646)
+scale = Vector2(3.15625, 3.15625)
+texture = ExtResource("20_b21uo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="AddYard05"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AddYard05/StaticBody2D"]
+position = Vector2(-0.792114, 0.158417)
+shape = SubResource("RectangleShape2D_ugygs")
+
+[node name="Garage16" type="Sprite2D" parent="."]
+position = Vector2(4226, 549)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("21_hsju6")
+
+[node name="LootBox11" parent="." instance=ExtResource("21_gylci")]
+position = Vector2(1932, 510)
+scale = Vector2(0.868946, 0.868946)
+
+[node name="Pixil-frame-0" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(3262, 338)
+scale = Vector2(1.534, 1.534)
+texture = ExtResource("22_8datm")
+
+[node name="Kindpng586964" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(4922, 416)
+scale = Vector2(0.633059, 0.633059)
+texture = ExtResource("16_qli4y")
+
+[node name="Fence05" type="Sprite2D" parent="."]
+position = Vector2(3544, 594)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("23_jcdmy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Fence05"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fence05/StaticBody2D"]
+position = Vector2(-1.36353, 0)
+shape = SubResource("RectangleShape2D_b1tiw")
+
+[node name="Platform3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(3368, 622)
+texture = ExtResource("15_0cuub")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3/StaticBody2D"]
+position = Vector2(-49.5, -41.5)
+shape = SubResource("RectangleShape2D_67t4y")
+one_way_collision = true
+
+[node name="Barrel" type="Sprite2D" parent="."]
+position = Vector2(1283, 556)
+scale = Vector2(1.97222, 1.97222)
+texture = ExtResource("24_gohhj")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Barrel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrel/StaticBody2D"]
+position = Vector2(59.3943, 42.662)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_i4scl")
+
+[node name="Barrel2" type="Sprite2D" parent="."]
+position = Vector2(2706, 554)
+scale = Vector2(1.97222, 1.97222)
+texture = ExtResource("24_gohhj")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Barrel2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrel2/StaticBody2D"]
+position = Vector2(59.3943, 42.662)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_i4scl")
+
+[node name="Barrel3" type="Sprite2D" parent="."]
+position = Vector2(3834, 553)
+scale = Vector2(1.97222, 1.97222)
+texture = ExtResource("24_gohhj")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Barrel3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrel3/StaticBody2D"]
+position = Vector2(59.3943, 42.662)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_i4scl")
+
+[node name="Barrel4" type="Sprite2D" parent="."]
+position = Vector2(4447, 555)
+scale = Vector2(1.97222, 1.97222)
+texture = ExtResource("24_gohhj")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Barrel4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrel4/StaticBody2D"]
+position = Vector2(59.3943, 42.662)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_i4scl")
+
+[node name="BlueBarrel" type="Sprite2D" parent="."]
+position = Vector2(4086, 622)
+texture = ExtResource("14_phkml")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BlueBarrel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueBarrel/StaticBody2D"]
+position = Vector2(-10.5, 8)
+shape = SubResource("RectangleShape2D_eajk5")
+
+[node name="BlueBarrel2" type="Sprite2D" parent="."]
+position = Vector2(4338, 626)
+texture = ExtResource("14_phkml")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BlueBarrel2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueBarrel2/StaticBody2D"]
+position = Vector2(-10.5, 8)
+shape = SubResource("RectangleShape2D_eajk5")
+
+[node name="BlueBarrel3" type="Sprite2D" parent="."]
+position = Vector2(2219, 625)
+texture = ExtResource("14_phkml")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BlueBarrel3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueBarrel3/StaticBody2D"]
+position = Vector2(-10.5, 8)
+shape = SubResource("RectangleShape2D_eajk5")
+
+[node name="BlueBarrel4" type="Sprite2D" parent="."]
+position = Vector2(813, 625)
+texture = ExtResource("14_phkml")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BlueBarrel4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueBarrel4/StaticBody2D"]
+position = Vector2(-10.5, 8)
+shape = SubResource("RectangleShape2D_eajk5")
+
+[node name="Pixil-layer-2" type="Sprite2D" parent="."]
+position = Vector2(771, 537)
+scale = Vector2(2.28431, 2.28431)
+texture = ExtResource("26_468ug")
+flip_h = true
+
+[node name="Pixil-layer-3" type="Sprite2D" parent="."]
+position = Vector2(884, 557)
+scale = Vector2(1.9134, 1.9134)
+texture = ExtResource("26_468ug")
+flip_h = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(5675, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(235.75, 230.25)
+shape = SubResource("RectangleShape2D_lg0vc")
+
+[node name="LootBox12" parent="." instance=ExtResource("21_gylci")]
+position = Vector2(1485, 647)
+scale = Vector2(0.868946, 0.868946)
+
+[node name="LootBox13" parent="." instance=ExtResource("21_gylci")]
+position = Vector2(2077, 651)
+scale = Vector2(0.868946, 0.868946)
+
+[node name="LootBox14" parent="." instance=ExtResource("21_gylci")]
+position = Vector2(2903, 649)
+scale = Vector2(0.868946, 0.868946)
+
+[node name="LootBox15" parent="." instance=ExtResource("21_gylci")]
+position = Vector2(1105, 653)
+scale = Vector2(0.868946, 0.868946)
+
+[node name="LootBox16" parent="." instance=ExtResource("21_gylci")]
+position = Vector2(3204, 647)
+scale = Vector2(0.868946, 0.868946)
+
+[node name="LootBox17" parent="." instance=ExtResource("21_gylci")]
+position = Vector2(3807, 647)
+scale = Vector2(0.868946, 0.868946)
+
+[node name="LootBox18" parent="." instance=ExtResource("21_gylci")]
+position = Vector2(4192, 647)
+scale = Vector2(0.868946, 0.868946)
+
+[node name="LootBox19" parent="." instance=ExtResource("21_gylci")]
+position = Vector2(4655, 642)
+scale = Vector2(0.868946, 0.868946)
+
+[node name="Enemy" parent="." instance=ExtResource("27_qxcsr")]
+position = Vector2(1552, 608)
+
+[node name="Enemy2" parent="." instance=ExtResource("27_qxcsr")]
+position = Vector2(2307, 608)
+
+[node name="Enemy3" parent="." instance=ExtResource("27_qxcsr")]
+position = Vector2(901, 605)
+
+[node name="Enemy4" parent="." instance=ExtResource("27_qxcsr")]
+position = Vector2(1277, 608)
+
+[node name="Miniboss" parent="." instance=ExtResource("28_gbovf")]
+position = Vector2(3319, 528)
+
+[node name="Enemy5" parent="." instance=ExtResource("27_qxcsr")]
+position = Vector2(3037, 573)
+
+[node name="Enemy6" parent="." instance=ExtResource("27_qxcsr")]
+position = Vector2(4392, 607)
+
+[node name="Boss" parent="." instance=ExtResource("29_78hvn")]
+position = Vector2(5674, 587)
+
+[node name="Enemy7" parent="." instance=ExtResource("27_qxcsr")]
+position = Vector2(4931, 607)
+
+[node name="Enemy8" parent="." instance=ExtResource("27_qxcsr")]
+position = Vector2(5300, 607)

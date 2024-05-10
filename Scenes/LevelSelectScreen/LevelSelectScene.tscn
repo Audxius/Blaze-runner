@@ -77,7 +77,6 @@ gunSelectScene = ExtResource("6_oq5tj")
 
 [node name="LevelSelectButton3" parent="MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("1_i7pu7")]
 layout_mode = 2
-disabled = true
 texture_normal = ExtResource("9_xw7ar")
 texture_hover = ExtResource("10_son5n")
 texture_disabled = ExtResource("10_kam5r")
