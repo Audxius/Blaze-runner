@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwvblf8ci7nn8"
+path="res://.godot/imported/LVL3 Audio.wav-532cc969d91776a886d7cadec1f6ec1d.sample"
+
+[deps]
+
+source_file="res://Music/LVL3 Audio.wav"
+dest_files=["res://.godot/imported/LVL3 Audio.wav-532cc969d91776a886d7cadec1f6ec1d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bdwehm8phu62t"
+path="res://.godot/imported/LVL2 Audio.wav-a7c04bb674b1774d32f08f5b56824904.sample"
+
+[deps]
+
+source_file="res://Music/LVL2 Audio.wav"
+dest_files=["res://.godot/imported/LVL2 Audio.wav-a7c04bb674b1774d32f08f5b56824904.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cpenw5jyp0ecj"]
+[gd_scene load_steps=32 format=3 uid="uid://cpenw5jyp0ecj"]
 
 [ext_resource type="Texture2D" uid="uid://d4ff7tk0k8jso" path="res://More art/Level2 background layers/pixil-layer-3.png" id="1_psxf6"]
 [ext_resource type="Texture2D" uid="uid://8vofgph63qfn" path="res://More art/Background layers/pixil-layer-0.png" id="1_ya2ca"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bk2lqhfop4kff" path="res://More art/LVL assets/Platform.png" id="19_pc5cy"]
 [ext_resource type="Texture2D" uid="uid://b5cyqxnos4jq3" path="res://More art/LVL assets/pixil-layer-4.png" id="20_703gh"]
 [ext_resource type="PackedScene" uid="uid://bw025bhj8ts86" path="res://LevelEndObjects/Level2End.tscn" id="21_o8nun"]
+[ext_resource type="AudioStream" uid="uid://bdwehm8phu62t" path="res://Music/LVL2 Audio.wav" id="22_xqspo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0m6uu"]
 size = Vector2(7886, 94)
@@ -400,3 +401,8 @@ speed = 0
 
 [node name="Level2End" parent="." instance=ExtResource("21_o8nun")]
 position = Vector2(7724, 552)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_xqspo")
+volume_db = -20.0
+autoplay = true

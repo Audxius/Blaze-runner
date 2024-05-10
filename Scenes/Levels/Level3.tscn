@@ -1,17 +1,108 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvh1sco4dfdp0"]
+[gd_scene load_steps=13 format=3 uid="uid://dvh1sco4dfdp0"]
 
 [ext_resource type="PackedScene" uid="uid://ci56xvd5f72us" path="res://Scenes/LevelSelectScreen/LevelSelectButton.tscn" id="1_7vfx0"]
+[ext_resource type="Texture2D" uid="uid://dmp2j2c35e6la" path="res://More art/3rd level background layers/layer-0.png" id="1_8s6jw"]
+[ext_resource type="PackedScene" uid="uid://buwt6ljlkp7c2" path="res://Scenes/Player.tscn" id="1_svgrq"]
+[ext_resource type="Texture2D" uid="uid://jay0o8adpubx" path="res://More art/3rd level background layers/layer-7.png" id="2_3ebsc"]
 [ext_resource type="Texture2D" uid="uid://cw4kgg8jtenti" path="res://Scenes/LevelSelectScreen/Buttons/uno.png" id="2_p5fep"]
+[ext_resource type="AudioStream" uid="uid://bwvblf8ci7nn8" path="res://Music/LVL3 Audio.wav" id="5_qjh6b"]
+[ext_resource type="Texture2D" uid="uid://nu75snvr7mno" path="res://More art/3rd level background layers/layer-3.png" id="6_6wgvy"]
+[ext_resource type="Texture2D" uid="uid://bq5tc26hctycj" path="res://More art/3rd level background layers/layer-5.png" id="7_tlmbw"]
+[ext_resource type="Texture2D" uid="uid://c5syim4nc47f4" path="res://More art/3rd level background layers/layer-4.png" id="8_k065f"]
+[ext_resource type="Texture2D" uid="uid://cxyy6wq7yg2yd" path="res://More art/3rd level background layers/layer-6.png" id="9_57ivl"]
+[ext_resource type="Texture2D" uid="uid://bx6iiavnfufck" path="res://More art/3rd level background layers/layer-8.png" id="10_5w1xm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0qj7"]
+size = Vector2(5454.5, 114)
 
 [node name="Level3" type="Node2D"]
-
-[node name="Label" type="Label" parent="."]
-offset_left = 491.0
-offset_top = 249.0
-offset_right = 531.0
-offset_bottom = 272.0
-text = "Level3"
 
 [node name="LevelSelectButton" parent="." instance=ExtResource("1_7vfx0")]
 texture_normal = ExtResource("2_p5fep")
 levelPath = NodePath("res://Scenes/LevelSelectScreen/LevelSelectScene.tscn")
+
+[node name="Player" parent="." instance=ExtResource("1_svgrq")]
+position = Vector2(200, 591)
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+position = Vector2(497, -159)
+zoom = Vector2(0.78, 0.78)
+
+[node name="Layer-7" type="Sprite2D" parent="."]
+position = Vector2(2678, 334)
+scale = Vector2(20.0772, 7.69118)
+texture = ExtResource("2_3ebsc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(68.2037, 562.256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2641.55, 147.744)
+shape = SubResource("RectangleShape2D_p0qj7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qjh6b")
+volume_db = -20.0
+autoplay = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(6000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2(805, 290)
+scale = Vector2(6.31046, 6.31046)
+texture = ExtResource("1_8s6jw")
+flip_v = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_offset = Vector2(0, -20)
+motion_mirroring = Vector2(6000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(676.556, 382.188)
+scale = Vector2(5.11356, 5.11356)
+texture = ExtResource("6_6wgvy")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.01, 0)
+motion_offset = Vector2(0, -20)
+motion_mirroring = Vector2(6000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(664, 385)
+scale = Vector2(5.04739, 5.04739)
+texture = ExtResource("7_tlmbw")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_offset = Vector2(0, -20)
+motion_mirroring = Vector2(1540, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(722.069, 385)
+scale = Vector2(5.69802, 2.81536)
+texture = ExtResource("9_57ivl")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_offset = Vector2(0, -20)
+motion_mirroring = Vector2(1560, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(760.472, 463.828)
+scale = Vector2(5.74653, 3.65788)
+texture = ExtResource("8_k065f")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+motion_offset = Vector2(0, -15)
+motion_mirroring = Vector2(1450, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2(724, -54)
+scale = Vector2(5.48693, 8.76307)
+texture = ExtResource("10_5w1xm")
