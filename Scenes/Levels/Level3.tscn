@@ -24,8 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://bcw3eamt03tkn" path="res://More art/LVL assets/garage_16.png" id="21_hsju6"]
 [ext_resource type="Texture2D" uid="uid://bxatyls4xxfkd" path="res://More art/LVL assets/pixil-frame-0.png" id="22_8datm"]
 [ext_resource type="Texture2D" uid="uid://l1tl5hbj61i4" path="res://More art/LVL assets/fence_05.png" id="23_jcdmy"]
-[ext_resource type="Texture2D" uid="uid://b3e7eed6pbyge" path="res://More art/LVL assets/pixil-layer-0.png" id="24_gohhj"]
-[ext_resource type="Texture2D" uid="uid://i4jecbi4xi6g" path="res://More art/LVL assets/pixil-layer-2.png" id="26_468ug"]
+[ext_resource type="Texture2D" uid="uid://bok28bot524p8" path="res://More art/LVL assets/pixil-layer-0.png" id="24_gohhj"]
+[ext_resource type="Texture2D" uid="uid://b76tnfvpkxkr7" path="res://More art/LVL assets/pixil-layer-2.png" id="26_468ug"]
 [ext_resource type="PackedScene" uid="uid://drsxbom2vjrpw" path="res://Scenes/Enemies/enemy.tscn" id="27_qxcsr"]
 [ext_resource type="PackedScene" uid="uid://cuvt4oosd5cd1" path="res://Scenes/Enemies/stronger enemy/miniboss.tscn" id="28_gbovf"]
 [ext_resource type="PackedScene" uid="uid://b27hk7hmk1325" path="res://Scenes/Enemies/boss/boss.tscn" id="29_78hvn"]
@@ -283,7 +283,6 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrel/StaticBody2D"]
 position = Vector2(59.3943, 42.662)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_i4scl")
 
 [node name="Barrel2" type="Sprite2D" parent="."]
@@ -296,7 +295,6 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrel2/StaticBody2D"]
 position = Vector2(59.3943, 42.662)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_i4scl")
 
 [node name="Barrel3" type="Sprite2D" parent="."]
@@ -309,7 +307,6 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrel3/StaticBody2D"]
 position = Vector2(59.3943, 42.662)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_i4scl")
 
 [node name="Barrel4" type="Sprite2D" parent="."]
@@ -322,7 +319,6 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrel4/StaticBody2D"]
 position = Vector2(59.3943, 42.662)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_i4scl")
 
 [node name="BlueBarrel" type="Sprite2D" parent="."]
