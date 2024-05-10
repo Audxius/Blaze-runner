@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://drsxbom2vjrpw"]
+[gd_scene load_steps=14 format=3 uid="uid://drsxbom2vjrpw"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/enemy.gd" id="1_scfla"]
 [ext_resource type="Script" path="res://Scenes/Enemies/enemyhp.gd" id="2_vfbs5"]
 [ext_resource type="Texture2D" uid="uid://bqn7p10idkapd" path="res://Scenes/Enemies/enemy/enemy_walk_sprite.png" id="4_apme3"]
 [ext_resource type="PackedScene" uid="uid://bcql748qrufws" path="res://Scenes/Weapons/submachinegun.tscn" id="4_vytwh"]
+[ext_resource type="AudioStream" uid="uid://d2jf27xilhhjd" path="res://Scenes/Enemies sounds/EnemyHit1.mp3" id="5_pv8do"]
+[ext_resource type="AudioStream" uid="uid://ddk48y7q6psfy" path="res://Scenes/Enemies sounds/EnemySpotsSound.mp3" id="6_rugjq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0sm8k"]
 height = 68.0
@@ -119,9 +121,21 @@ scale = Vector2(3, 3)
 texture = ExtResource("4_apme3")
 hframes = 8
 
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_pv8do")
+volume_db = -10.0
+max_polyphony = 100
+
+[node name="NoticeSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_rugjq")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.15
+
 [connection signal="body_entered" from="Notice area" to="." method="_on_notice_area_body_entered"]
 [connection signal="body_entered" from="Notice area" to="Placeholder" method="_on_notice_area_body_entered"]
 [connection signal="body_exited" from="Notice area" to="." method="_on_notice_area_body_exited"]
 [connection signal="body_exited" from="Notice area" to="Placeholder" method="_on_notice_area_body_exited"]
 [connection signal="area_entered" from="Hitbox" to="Healthbar" method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="Healthbar" method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="Timer" to="Healthbar" method="_on_timer_timeout"]

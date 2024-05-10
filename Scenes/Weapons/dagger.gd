@@ -30,6 +30,7 @@ func _on_body_entered(body):
 	if(inAnimation):
 		if body.get_node("Healthbar"):
 			body.get_node("Healthbar").take_damage(damage)
+			body.get_node("Healthbar").emit_hit_audio()
 
 
 func _on_area_entered(area):

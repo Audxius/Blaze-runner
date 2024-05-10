@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/EnemySpotsSound.mp3-1f41bc03098ca28e0c8276da7
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=120.0
 beat_count=0
 bar_beats=4

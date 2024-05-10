@@ -13,12 +13,15 @@ var direction = 1:
 var walking = 0
 var ogscale
 @onready var animationPlayer = $animationPlayer
-
+var noticeSound
+var canNoticeSoundPlay = true
 
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _ready():
+	noticeSound = get_node("NoticeSound")
 
 
 func _physics_process(delta: float) -> void:
@@ -53,8 +56,7 @@ func _physics_process(delta: float) -> void:
 func _on_notice_area_body_entered(body):
 	if body.name == "Player":
 		walking = 1
+		if canNoticeSoundPlay == true:
+			noticeSound.play(0.5)
+			canNoticeSoundPlay = false
 	print("seen")
-
-
-
-

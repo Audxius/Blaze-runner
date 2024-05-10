@@ -1,10 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://cuvt4oosd5cd1"]
+[gd_scene load_steps=16 format=3 uid="uid://cuvt4oosd5cd1"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/stronger enemy/miniboss.gd" id="1_p4sgp"]
 [ext_resource type="Script" path="res://Scenes/Enemies/stronger enemy/minibosshp.gd" id="2_t4qiq"]
 [ext_resource type="PackedScene" uid="uid://bcql748qrufws" path="res://Scenes/Weapons/submachinegun.tscn" id="3_yfdhc"]
 [ext_resource type="Texture2D" uid="uid://chnrwyk7inb3f" path="res://More art/Mini Boss/miniBoss_sprite.png" id="4_cb8jj"]
 [ext_resource type="Script" path="res://Scenes/Weapons/shoot.gd" id="4_ex2t5"]
+[ext_resource type="AudioStream" uid="uid://dgd4blepj15j4" path="res://Scenes/Enemies sounds/MiniBoss Hit sound.wav" id="6_arsoa"]
+[ext_resource type="AudioStream" uid="uid://ddk48y7q6psfy" path="res://Scenes/Enemies sounds/EnemySpotsSound.mp3" id="7_1g3u2"]
+[ext_resource type="AudioStream" uid="uid://qmq5ms5amwhk" path="res://Scenes/Enemies sounds/MiniBoss Death sound.wav" id="8_116ib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2sp3"]
 size = Vector2(30, 80)
@@ -109,8 +112,27 @@ hframes = 8
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 
+[node name="SoundTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="DeathSoundTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_arsoa")
+volume_db = -10.0
+max_polyphony = 100
+
+[node name="NoticeSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_1g3u2")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_116ib")
+
 [connection signal="body_entered" from="Notice area" to="." method="_on_notice_area_body_entered"]
 [connection signal="body_entered" from="Notice area" to="Placeholder" method="_on_notice_area_body_entered"]
 [connection signal="body_exited" from="Notice area" to="Placeholder" method="_on_notice_area_body_exited"]
 [connection signal="area_entered" from="Hitbox" to="Healthbar" method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="Timer" to="Placeholder" method="_on_timer_timeout"]
+[connection signal="timeout" from="SoundTimer" to="Healthbar" method="_on_sound_timer_timeout"]
+[connection signal="timeout" from="DeathSoundTimer" to="Healthbar" method="_on_death_sound_timer_timeout"]

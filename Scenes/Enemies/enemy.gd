@@ -8,9 +8,14 @@ var timeWalked=0
 var direction: = 1
 var walking = 0
 @onready var animationPlayer = $AnimationPlayer
+var noticeSound
+var canNoticeSoundPlay = true
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+func _ready():
+	noticeSound = get_node("NoticeSound")
 
 func _physics_process(delta: float) -> void:
 	var greitis = abs(get_real_velocity().x)
@@ -55,6 +60,9 @@ func replace_weapon(weaponPackedScene: PackedScene) -> void:
 func _on_notice_area_body_entered(body):
 	if body.name == "Player":
 		walking = 1
+		if canNoticeSoundPlay == true:
+			noticeSound.play(0.5)
+			canNoticeSoundPlay = false
 
 
 func _on_notice_area_body_exited(body):
