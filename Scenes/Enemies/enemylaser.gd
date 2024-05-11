@@ -28,3 +28,4 @@ func _physics_process(delta):
 func _on_hitbox_body_entered(body):
 	if body.name == "Player":
 		body.get_node("CanvasLayer").get_node("health").take_damage(damage)
+		queue_free() 

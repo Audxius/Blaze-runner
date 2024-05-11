@@ -4,11 +4,13 @@ var timer
 var shooting = 1
 var canShoot = true
 var kulka2 = preload("res://Scenes/Enemies/enemylaser.tscn")
+var shootingSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_parent().get_parent().get_node("Player")
 	timer = $"../Timer"
+	shootingSound = get_node("ShootingSound")
 	
 
 
@@ -22,6 +24,7 @@ func _process(delta):
 		timer.start()
 func bullet():
 	var instance = kulka2.instantiate()
+	shootingSound.play()
 	#instance.position.x = $Sprite2D/BarrelEnd.global_position.x
 	#instance.position.y = $Sprite2D/BarrelEnd.global_position.y
 	instance.position.x = get_parent().position.x

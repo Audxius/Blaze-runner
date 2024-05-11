@@ -49,6 +49,7 @@ func bullet():
 		#get_parent().add_sibling(instance)
 	else:
 		var instance = kulka2.instantiate()
+		shootingSound.play()
 		#instance.position.x = $Sprite2D/BarrelEnd.global_position.x
 		#instance.position.y = $Sprite2D/BarrelEnd.global_position.y
 		instance.position.x = get_parent().position.x
