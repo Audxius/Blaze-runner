@@ -66,7 +66,7 @@ func load_level2_scores():
 		index = index - 1
 
 func load_level3_scores():
-	var index = Global.dates2.size()-1
+	var index = Global.dates3.size()-1
 	for i in range(labelCount):
 		if(i < Global.dates3.size()):
 			dateLabels[i].text = Global.dates3[index]
