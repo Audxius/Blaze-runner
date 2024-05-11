@@ -28,6 +28,8 @@ func _ready():
 	spriteOriginalPos = sprite.position
 	barrelEndOriginalPos = $Sprite2D/BarrelEnd.position
 	handOriginalPos = $Sprite2D/Sprite2D2.position
+	if get_parent().name == "Player":
+		flip_weapon_2()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -39,25 +41,7 @@ func _process(delta):
 			reload(ammoLabel)
 		look_at(get_global_mouse_position())
 		
-		mpos = get_global_mouse_position()
-		pos = global_position
-		rot = rad_to_deg((mpos - pos).angle())
-		if(rot >= -90 and rot <= 90):
-			sprite.flip_v = false
-			if not flipped:
-				flipped = true
-				sprite.position = spriteOriginalPos
-				$Sprite2D/BarrelEnd.position = barrelEndOriginalPos
-				$Sprite2D/Sprite2D2.position = handOriginalPos
-				$Sprite2D/Sprite2D2.flip_v = false
-		else:
-			sprite.flip_v = true
-			if flipped:
-				sprite.position.y -= 20
-				$Sprite2D/BarrelEnd.position.y *=-1
-				$Sprite2D/Sprite2D2.position.y -= 10
-				$Sprite2D/Sprite2D2.flip_v = true
-				flipped = false
+		flip_weapon_1()
 	
 	else:
 		look_at(player.position)
@@ -117,3 +101,45 @@ func _on_notice_area_body_exited(body):
 
 func _on_shoot_timer_timeout():
 	canShoot = true
+
+func flip_weapon_1():
+	mpos = get_global_mouse_position()
+	pos = global_position
+	rot = rad_to_deg((mpos - pos).angle())
+	if(rot >= -90 and rot <= 90):
+		sprite.flip_v = false
+		if not flipped:
+			flipped = true
+			sprite.position = spriteOriginalPos
+			$Sprite2D/BarrelEnd.position = barrelEndOriginalPos
+			$Sprite2D/Sprite2D2.position = handOriginalPos
+			$Sprite2D/Sprite2D2.flip_v = false
+	else:
+		sprite.flip_v = true
+		if flipped:
+			sprite.position.y -= 20
+			$Sprite2D/BarrelEnd.position.y *=-1
+			$Sprite2D/Sprite2D2.position.y -= 10
+			$Sprite2D/Sprite2D2.flip_v = true
+			flipped = false
+
+func flip_weapon_2():
+	mpos = get_global_mouse_position()
+	pos = global_position
+	rot = rad_to_deg((mpos - pos).angle())
+	if(rot >= -90 and rot <= 90):
+		sprite.flip_v = false
+		if flipped:
+			flipped = true
+			sprite.position = spriteOriginalPos
+			$Sprite2D/BarrelEnd.position = barrelEndOriginalPos
+			$Sprite2D/Sprite2D2.position = handOriginalPos
+			$Sprite2D/Sprite2D2.flip_v = false
+	else:
+		sprite.flip_v = true
+		if not flipped:
+			sprite.position.y -= 20
+			$Sprite2D/BarrelEnd.position.y *=-1
+			$Sprite2D/Sprite2D2.position.y -= 10
+			$Sprite2D/Sprite2D2.flip_v = true
+			flipped = false
