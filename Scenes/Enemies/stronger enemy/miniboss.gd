@@ -59,4 +59,3 @@ func _on_notice_area_body_entered(body):
 		if canNoticeSoundPlay == true:
 			noticeSound.play(0.5)
 			canNoticeSoundPlay = false
-	print("seen")

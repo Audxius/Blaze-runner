@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dvh1sco4dfdp0"]
+[gd_scene load_steps=41 format=3 uid="uid://dvh1sco4dfdp0"]
 
 [ext_resource type="PackedScene" uid="uid://ci56xvd5f72us" path="res://Scenes/LevelSelectScreen/LevelSelectButton.tscn" id="1_7vfx0"]
 [ext_resource type="Texture2D" uid="uid://dmp2j2c35e6la" path="res://More art/3rd level background layers/layer-0.png" id="1_8s6jw"]
@@ -24,17 +24,19 @@
 [ext_resource type="Texture2D" uid="uid://bcw3eamt03tkn" path="res://More art/LVL assets/garage_16.png" id="21_hsju6"]
 [ext_resource type="Texture2D" uid="uid://bxatyls4xxfkd" path="res://More art/LVL assets/pixil-frame-0.png" id="22_8datm"]
 [ext_resource type="Texture2D" uid="uid://l1tl5hbj61i4" path="res://More art/LVL assets/fence_05.png" id="23_jcdmy"]
-[ext_resource type="Texture2D" uid="uid://bok28bot524p8" path="res://More art/LVL assets/pixil-layer-0.png" id="24_gohhj"]
-[ext_resource type="Texture2D" uid="uid://b76tnfvpkxkr7" path="res://More art/LVL assets/pixil-layer-2.png" id="26_468ug"]
+[ext_resource type="Texture2D" uid="uid://b3e7eed6pbyge" path="res://More art/LVL assets/pixil-layer-0.png" id="24_gohhj"]
+[ext_resource type="Texture2D" uid="uid://i4jecbi4xi6g" path="res://More art/LVL assets/pixil-layer-2.png" id="26_468ug"]
 [ext_resource type="PackedScene" uid="uid://drsxbom2vjrpw" path="res://Scenes/Enemies/enemy.tscn" id="27_qxcsr"]
 [ext_resource type="PackedScene" uid="uid://cuvt4oosd5cd1" path="res://Scenes/Enemies/stronger enemy/miniboss.tscn" id="28_gbovf"]
 [ext_resource type="PackedScene" uid="uid://b27hk7hmk1325" path="res://Scenes/Enemies/boss/boss.tscn" id="29_78hvn"]
+[ext_resource type="Script" path="res://Scenes/cameralimit.gd" id="30_aypcu"]
+[ext_resource type="AudioStream" uid="uid://6rssjcfn7ujt" path="res://Music/boss music.mp3" id="31_deot4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0qj7"]
-size = Vector2(5961.5, 114)
+size = Vector2(7112.7, 114)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lg0vc"]
-size = Vector2(68.5, 850.5)
+size = Vector2(88.25, 727.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67t4y"]
 size = Vector2(89, 7)
@@ -54,12 +56,15 @@ size = Vector2(16.0845, 26.2253)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eajk5"]
 size = Vector2(37, 60)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdmyy"]
+size = Vector2(20, 216)
+
 [node name="Level3" type="Node2D"]
 position = Vector2(5, -1)
 
 [node name="Player" parent="." instance=ExtResource("1_svgrq")]
 top_level = true
-position = Vector2(442, 600)
+position = Vector2(348, 590)
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2(497, -159)
@@ -79,7 +84,7 @@ texture = ExtResource("2_3ebsc")
 position = Vector2(68, 567)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2895.05, 147.744)
+position = Vector2(3470.65, 147.744)
 shape = SubResource("RectangleShape2D_p0qj7")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -377,7 +382,7 @@ flip_h = true
 position = Vector2(5675, 9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(235.75, 230.25)
+position = Vector2(1223, 702)
 shape = SubResource("RectangleShape2D_lg0vc")
 
 [node name="LootBox12" parent="." instance=ExtResource("21_gylci")]
@@ -434,10 +439,32 @@ position = Vector2(3037, 573)
 position = Vector2(4392, 607)
 
 [node name="Boss" parent="." instance=ExtResource("29_78hvn")]
-position = Vector2(5674, 587)
+position = Vector2(6889, 290)
 
 [node name="Enemy7" parent="." instance=ExtResource("27_qxcsr")]
 position = Vector2(4931, 607)
 
 [node name="Enemy8" parent="." instance=ExtResource("27_qxcsr")]
 position = Vector2(5300, 607)
+
+[node name="Pixil-frame-1" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(7047, 590)
+scale = Vector2(1.534, 1.534)
+texture = ExtResource("22_8datm")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(6357.21, 643)
+script = ExtResource("30_aypcu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -98)
+shape = SubResource("RectangleShape2D_pdmyy")
+
+[node name="bossmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_deot4")
+volume_db = -10.0
+
+[connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Boss" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

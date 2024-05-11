@@ -14,6 +14,10 @@ var shootingSound
 func _ready():
 	player = get_parent().get_parent().get_node("Player")
 	timer = $ShootTimer
+	if timer == null:
+		timer =  $"../ShootTimer"
+
+	
 	shootingSound = get_node("ShootingSound")
 	#ammo = Global.submachineGunAmmo
 

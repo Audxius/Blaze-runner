@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://4r34svry65q0"]
+[gd_scene load_steps=8 format=3 uid="uid://dxwd3jgvxy8fu"]
 
-[ext_resource type="Script" path="res://Scenes/Weapons/bomb/explosion.gd" id="1_ln6ny"]
-[ext_resource type="AudioStream" uid="uid://ckvu2e5alxmdi" path="res://Scenes/Weapons/bomb/explosion.wav" id="2_gpjgp"]
+[ext_resource type="Script" path="res://Scenes/Weapons/bomb/explosion.gd" id="1_nt1ck"]
+[ext_resource type="AudioStream" uid="uid://ckvu2e5alxmdi" path="res://Scenes/Weapons/bomb/explosion.wav" id="2_io1ah"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kwcv3"]
 load_path = "res://.godot/imported/explosion.png-8f4c7d4fbc74f25bd079a4376704cb46.ctex"
@@ -96,7 +96,7 @@ _data = {
 size = Vector2(119, 305)
 
 [node name="Explosion" type="Node2D"]
-script = ExtResource("1_ln6ny")
+script = ExtResource("1_nt1ck")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -120,7 +120,7 @@ wait_time = 0.5
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_gpjgp")
+stream = ExtResource("2_io1ah")
 autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

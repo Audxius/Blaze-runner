@@ -1,19 +1,20 @@
-[gd_scene load_steps=19 format=3 uid="uid://jmdmmnenwcdn"]
+[gd_scene load_steps=20 format=3 uid="uid://jmdmmnenwcdn"]
 
 [ext_resource type="PackedScene" uid="uid://buwt6ljlkp7c2" path="res://Scenes/Player.tscn" id="1_848j0"]
-[ext_resource type="Texture2D" uid="uid://uir8sds7vem3" path="res://More art/Background layers/pixil-layer-0.png" id="1_aswjm"]
+[ext_resource type="Texture2D" uid="uid://8vofgph63qfn" path="res://More art/Background layers/pixil-layer-0.png" id="1_aswjm"]
 [ext_resource type="AudioStream" uid="uid://omtnaa2yq8n5" path="res://Music/intense music (just for fun, will get replaced later).mp3" id="2_5q8fg"]
-[ext_resource type="Texture2D" uid="uid://bhghpjytfelqj" path="res://More art/Background layers/pixil-layer-1.png" id="2_kgfhh"]
-[ext_resource type="Texture2D" uid="uid://cqw0tkd34l5sy" path="res://More art/Background layers/pixil-layer-2.png" id="3_mr643"]
-[ext_resource type="Texture2D" uid="uid://c8iyo2bs0evgs" path="res://More art/Background layers/pixil-layer-3.png" id="4_vvhfa"]
-[ext_resource type="Texture2D" uid="uid://bw4kdiqdb573d" path="res://More art/Background layers/pixil-layer-4.png" id="5_dmqtn"]
+[ext_resource type="Texture2D" uid="uid://du8on8fo48apj" path="res://More art/Background layers/pixil-layer-1.png" id="2_kgfhh"]
+[ext_resource type="Texture2D" uid="uid://d1hgjhcr2abh8" path="res://More art/Background layers/pixil-layer-2.png" id="3_mr643"]
+[ext_resource type="Texture2D" uid="uid://cdb444mopgt34" path="res://More art/Background layers/pixil-layer-3.png" id="4_vvhfa"]
+[ext_resource type="Texture2D" uid="uid://dhwy4rt6r8o4r" path="res://More art/Background layers/pixil-layer-4.png" id="5_dmqtn"]
 [ext_resource type="PackedScene" uid="uid://q2lyxew84fe4" path="res://Scenes/LootBox/LootBox.tscn" id="5_tfrbr"]
-[ext_resource type="Texture2D" uid="uid://cepsnl8h30cyy" path="res://More art/Background layers/pixil-layer-5.png" id="6_6f3eu"]
-[ext_resource type="Texture2D" uid="uid://cyfodix531u18" path="res://More art/Background layers/pixil-layer-6.png" id="7_61hx4"]
-[ext_resource type="Texture2D" uid="uid://c31tr1vupiqep" path="res://More art/Background layers/pixil-layer-7.png" id="8_pno6s"]
-[ext_resource type="PackedScene" uid="uid://dw5ptij0jmeky" path="res://Scenes/Weapons/bomb/bomb.tscn" id="13_kc87i"]
-[ext_resource type="Texture2D" uid="uid://b6p2uoh0o0nvu" path="res://More art/LVL assets/pixil-layer-4.png" id="13_yfxff"]
+[ext_resource type="Texture2D" uid="uid://dogaq0nsedmds" path="res://More art/Background layers/pixil-layer-5.png" id="6_6f3eu"]
+[ext_resource type="Texture2D" uid="uid://bet0ixoux5dyo" path="res://More art/Background layers/pixil-layer-6.png" id="7_61hx4"]
+[ext_resource type="Texture2D" uid="uid://ndx3w4ld5xh5" path="res://More art/Background layers/pixil-layer-7.png" id="8_pno6s"]
+[ext_resource type="Script" path="res://Scenes/cameralimit.gd" id="13_kberj"]
+[ext_resource type="Texture2D" uid="uid://b5cyqxnos4jq3" path="res://More art/LVL assets/pixil-layer-4.png" id="13_yfxff"]
 [ext_resource type="PackedScene" uid="uid://b27hk7hmk1325" path="res://Scenes/Enemies/boss/boss.tscn" id="14_mm8wc"]
+[ext_resource type="PackedScene" uid="uid://dcedgc13ghwhe" path="res://Scenes/Weapons/bomb/bombspawn.tscn" id="15_ga70u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gxrr8"]
 size = Vector2(2766, 94)
@@ -127,7 +128,7 @@ position = Vector2(2743, 319)
 shape = SubResource("RectangleShape2D_3i1ve")
 
 [node name="Player" parent="." instance=ExtResource("1_848j0")]
-position = Vector2(331, 207)
+position = Vector2(446, 462)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_5q8fg")
@@ -171,25 +172,23 @@ shape = SubResource("RectangleShape2D_l81up")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1369, 552)
+script = ExtResource("13_kberj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 visible = false
 position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1mblc")
 
-[node name="Bomb" parent="." instance=ExtResource("13_kc87i")]
-position = Vector2(319, 55)
-
-[node name="Bomb2" parent="." instance=ExtResource("13_kc87i")]
-position = Vector2(124, -83)
-
-[node name="Bomb3" parent="." instance=ExtResource("13_kc87i")]
-position = Vector2(441, -216)
-
-[node name="Bomb4" parent="." instance=ExtResource("13_kc87i")]
-position = Vector2(284, -373)
-
 [node name="Boss" parent="." instance=ExtResource("14_mm8wc")]
+visible = false
 position = Vector2(1849, 242)
 
+[node name="Bombspawn" parent="." instance=ExtResource("15_ga70u")]
+position = Vector2(519, 518)
+
+[node name="Bombspawn2" parent="." instance=ExtResource("15_ga70u")]
+position = Vector2(259, 521)
+
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Boss" method="_on_area_2d_body_entered"]

@@ -7,35 +7,20 @@ var loadedWeapon
 var timeWalked=0
 var direction: = 1
 var walking = 0
-@onready var animationPlayer = $AnimationPlayer
+
 var noticeSound
 var canNoticeSoundPlay = true
+@onready var laugh = $AudioStreamPlayer
+@onready var start = $start
+var fighting = false
 
 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	noticeSound = get_node("NoticeSound")
 
-func _physics_process(delta: float) -> void:
-	var greitis = abs(get_real_velocity().x)
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
-	if walking == 0:
-		animationPlayer.play("Walking")
-		#walks left and right
-		timeWalked+=delta
-		if(greitis > speed-10):
-			timeWalked=walkingTime+10
-		if timeWalked>walkingTime:
-			timeWalked=0
-			direction*=-1
-			scale.x*=-1
-		position.x += speed*direction*delta
-		move_and_slide()
-	else:
-		animationPlayer.play("Idle")
+
+
 		
 
 
@@ -69,4 +54,9 @@ func _on_notice_area_body_exited(body):
 		walking = 0
 
 
+
+
+
+func _on_area_2d_body_entered(body):
+	fighting = true
 
