@@ -406,6 +406,3 @@ position = Vector2(7724, 552)
 stream = ExtResource("22_xqspo")
 volume_db = -20.0
 autoplay = true
-
-[node name="Miniboss3" parent="." instance=ExtResource("18_fm0l1")]
-position = Vector2(399, 490)

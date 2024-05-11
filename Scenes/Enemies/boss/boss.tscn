@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://b27hk7hmk1325"]
+[gd_scene load_steps=10 format=3 uid="uid://b27hk7hmk1325"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/boss/boss.gd" id="1_67hkp"]
-[ext_resource type="Texture2D" uid="uid://ox4w1lodsptq" path="res://More art/final Boss JOKER/joker sprite.png" id="1_jyi7h"]
+[ext_resource type="Texture2D" uid="uid://8dgk3iohjof6" path="res://More art/final Boss JOKER/joker sprite.png" id="1_jyi7h"]
 [ext_resource type="Script" path="res://Scenes/Enemies/boss/bosshp.gd" id="2_x4kcq"]
 [ext_resource type="Texture2D" uid="uid://d3q0gpww6kpn0" path="res://More art/Guns/machine gun.png" id="5_dci5a"]
 [ext_resource type="AudioStream" uid="uid://bi3gdfawf6okh" path="res://Scenes/Enemies sounds/MiniBoss Sinister laugh.wav" id="6_nqs6w"]
 [ext_resource type="Script" path="res://Scenes/Enemies/boss/bossshoot.gd" id="6_qmqyo"]
+[ext_resource type="AudioStream" uid="uid://da1iw22okrs0s" path="res://Music/MachineGunSingle.wav" id="7_q72wv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f2dvs"]
 size = Vector2(1089, 355)
@@ -45,6 +46,10 @@ position = Vector2(-5, 21)
 texture = ExtResource("5_dci5a")
 flip_v = true
 script = ExtResource("6_qmqyo")
+
+[node name="ShootingSound" type="AudioStreamPlayer" parent="gun"]
+stream = ExtResource("7_q72wv")
+volume_db = -5.0
 
 [node name="shootfor" type="Timer" parent="."]
 wait_time = 1.5

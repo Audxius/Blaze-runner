@@ -39,6 +39,7 @@ func _process(delta):
 
 func bullet():
 	var instance = kulka2.instantiate()
+	shootingSound.play()
 	instance.position.x = get_parent().position.x
 	instance.position.y = get_parent().position.y
 	get_parent().add_sibling(instance)
