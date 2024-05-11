@@ -6,10 +6,10 @@ var timer = 1; #kiek laiko zaidejas turi iki scenos restarto
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	scale.x = hp*0.01
-	if Input.is_key_pressed(KEY_J):
-		take_damage(5)
-	if Input.is_key_pressed(KEY_K):
-		heal(5)
+	#if Input.is_key_pressed(KEY_J):
+		#take_damage(5)
+	#if Input.is_key_pressed(KEY_K):
+		#heal(5)
 	#Jei zaidejas nebeturi gyvybes tasku scenai padaro restarta
 	if hp <=0:
 		get_parent().queue_free()

@@ -15,10 +15,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	scale.x = hp*0.001
-	if Input.is_key_pressed(KEY_J):
-		take_damage(5)
-	if Input.is_key_pressed(KEY_K):
-		heal(5)
+	#if Input.is_key_pressed(KEY_J):
+		#take_damage(5)
+	#if Input.is_key_pressed(KEY_K):
+		#heal(5)
 	#Jei zaidejas nebeturi gyvybes tasku scenai padaro restarta
 	if hp <=0:
 		get_parent().get_parent().get_node("Player").get_node("CanvasLayer").get_node("score").add_score(2000)

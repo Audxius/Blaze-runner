@@ -12,7 +12,6 @@ var loadedWeapon
 
 @onready var uiWeaponTextureRect = $CanvasLayer/WeaponTextureRect
 @onready var uiAmmoLabel = $CanvasLayer/AmmoLabel
-
 @onready var animationPlayer = $AnimationPlayer
 
 var sprite
@@ -64,9 +63,11 @@ func _physics_process(delta):
 	var direction
 	if Input.is_key_pressed(KEY_A):
 		direction = -1;
-		animationPlayer.play("Walking")
+		if is_on_floor():
+			animationPlayer.play("Walking")
 	elif Input.is_key_pressed(KEY_D):
-		animationPlayer.play("Walking")
+		if is_on_floor():
+			animationPlayer.play("Walking")
 		direction = 1;
 	else:
 		direction = 0;
