@@ -44,8 +44,13 @@ func load_level1_scores():
 		if(i < Global.dates1.size()):
 			dateLabels[i].text = Global.dates1[index]
 			timeLabels[i].text = Global.time1[index]
-			scoreLabels[i].text = Global.highScoresStr1[index]
-			#scoreLabels[i].text = str(int(Global.time1[index]))
+			#scoreLabels[i].text = Global.highScoresStr1[index]
+			if(int(Global.time1[index])<100):
+				scoreLabels[i].text = str(int(Global.highScoresStr1[index])*2)
+			elif(int(Global.time1[index])<130):
+				scoreLabels[i].text = str(int(Global.highScoresStr1[index])*1.5)
+			else:
+				scoreLabels[i].text = str(int(Global.highScoresStr1[index])*1)
 		else:
 			dateLabels[i].text = " "
 			timeLabels[i].text = " "
@@ -58,7 +63,13 @@ func load_level2_scores():
 		if(i < Global.dates2.size()):
 			dateLabels[i].text = Global.dates2[index]
 			timeLabels[i].text = Global.time2[index]
-			scoreLabels[i].text = Global.highScoresStr2[index]
+			#scoreLabels[i].text = Global.highScoresStr2[index]
+			if(int(Global.time1[index])<100):
+				scoreLabels[i].text = str(int(Global.highScoresStr2[index])*2)
+			elif(int(Global.time1[index])<130):
+				scoreLabels[i].text = str(int(Global.highScoresStr2[index])*1.5)
+			else:
+				scoreLabels[i].text = str(int(Global.highScoresStr2[index])*1)
 		else:
 			dateLabels[i].text = " "
 			timeLabels[i].text = " "
@@ -71,7 +82,13 @@ func load_level3_scores():
 		if(i < Global.dates3.size()):
 			dateLabels[i].text = Global.dates3[index]
 			timeLabels[i].text = Global.time3[index]
-			scoreLabels[i].text = Global.highScoresStr3[index]
+			#scoreLabels[i].text = Global.highScoresStr3[index]
+			if(int(Global.time1[index])<100):
+				scoreLabels[i].text = str(int(Global.highScoresStr3[index])*2)
+			elif(int(Global.time1[index])<130):
+				scoreLabels[i].text = str(int(Global.highScoresStr3[index])*1.5)
+			else:
+				scoreLabels[i].text = str(int(Global.highScoresStr3[index])*1)
 		else:
 			dateLabels[i].text = " "
 			timeLabels[i].text = " "
