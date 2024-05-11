@@ -45,7 +45,7 @@ func _on_play_pressed():
 
 
 func _on_settings_pressed():
-	print("nepadaryta")
+	pass
 
 
 func _on_exit_pressed():

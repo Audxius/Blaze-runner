@@ -9,7 +9,7 @@ const BOMB = preload("res://Scenes/Weapons/bomb/bomb.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(timer.time_left <=0):
-		print("end")
+		
 		
 		var spawn = BOMB.instantiate()
 		spawn.position.x = position.x

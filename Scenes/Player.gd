@@ -131,7 +131,4 @@ func _on_area_2d_body_entered(body):
 # Set the limit_left property of the Camera2D node
 	camera.limit_left = limit_left
 	camera.limit_right = limit_right
-	#var rng = RandomNumberGenerator.new()
-	#var my_random_number = floor(rng.randf_range(-10.0, 10.0))
-	#print(my_random_number)
 
