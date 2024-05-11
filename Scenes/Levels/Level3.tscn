@@ -439,7 +439,7 @@ position = Vector2(3037, 573)
 position = Vector2(4392, 607)
 
 [node name="Boss" parent="." instance=ExtResource("29_78hvn")]
-position = Vector2(6889, 290)
+position = Vector2(6871, 368)
 
 [node name="Enemy7" parent="." instance=ExtResource("27_qxcsr")]
 position = Vector2(4931, 607)
@@ -449,8 +449,8 @@ position = Vector2(5300, 607)
 
 [node name="Pixil-frame-1" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(7047, 590)
-scale = Vector2(1.534, 1.534)
+position = Vector2(7067, 747)
+scale = Vector2(2.001, 2.001)
 texture = ExtResource("22_8datm")
 
 [node name="Area2D" type="Area2D" parent="."]

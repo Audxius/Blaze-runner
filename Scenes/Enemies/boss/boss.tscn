@@ -30,9 +30,9 @@ shape = SubResource("RectangleShape2D_f2dvs")
 
 [node name="Healthbar" type="ColorRect" parent="."]
 offset_left = -47.0
-offset_top = 84.0
+offset_top = -65.455
 offset_right = -27.0
-offset_bottom = 107.0
+offset_bottom = -42.455
 color = Color(1, 0.180392, 0.180392, 1)
 script = ExtResource("2_x4kcq")
 
