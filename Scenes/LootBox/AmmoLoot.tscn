@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/LootBox/AmmoLoot.gd" id="1_e3a0s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bvjh"]
-size = Vector2(31, 26)
+size = Vector2(24, 24)
 
 [node name="AmmoLoot" type="Node2D"]
 scale = Vector2(1.5, 1.5)
