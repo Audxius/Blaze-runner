@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="Blaze runner"
-run/main_scene="res://Scenes/Title screen.tscn"
+config/description="very good game"
+run/main_scene="res://Title screen.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://Scenes/Weapons/dagger.png"
 
