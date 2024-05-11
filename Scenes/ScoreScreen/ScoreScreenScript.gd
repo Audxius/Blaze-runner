@@ -45,6 +45,7 @@ func load_level1_scores():
 			dateLabels[i].text = Global.dates1[index]
 			timeLabels[i].text = Global.time1[index]
 			scoreLabels[i].text = Global.highScoresStr1[index]
+			#scoreLabels[i].text = str(int(Global.time1[index]))
 		else:
 			dateLabels[i].text = " "
 			timeLabels[i].text = " "

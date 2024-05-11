@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://buwt6ljlkp7c2"]
+[gd_scene load_steps=23 format=3 uid="uid://buwt6ljlkp7c2"]
 
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_lpi2i"]
 [ext_resource type="Script" path="res://Scenes/hp.gd" id="2_7yimy"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://c0vvonks7mibj" path="res://Scenes/Player/idle_sprite.png" id="6_ufkpa"]
 [ext_resource type="Texture2D" uid="uid://i2a61bbov4b8" path="res://Scenes/Player/walk_sprite.png" id="8_jjju8"]
 [ext_resource type="Texture2D" uid="uid://2asiv1oah184" path="res://More art/Score/scoreSpace.png" id="9_5p6kp"]
+[ext_resource type="Texture2D" uid="uid://ci8bxmkk8vio1" path="res://More art/Time/time.png" id="9_agqmf"]
+[ext_resource type="Script" path="res://Scenes/time.gd" id="10_csml8"]
+[ext_resource type="FontFile" uid="uid://bcs5ku7dmm01i" path="res://maybenewfont.pfb" id="10_llkja"]
 [ext_resource type="Texture2D" uid="uid://d0xjwmoa18vjh" path="res://More art/Score/score2.png" id="11_j62is"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffpd2"]
@@ -297,6 +300,23 @@ offset_bottom = 67.0
 label_settings = SubResource("LabelSettings_tfynt")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(185.429, 186.93)
+scale = Vector2(5.7, 5.7)
+texture = ExtResource("9_agqmf")
+
+[node name="Label" type="Label" parent="CanvasLayer/Sprite2D"]
+offset_left = -1.47876
+offset_top = -6.30356
+offset_right = 415.521
+offset_bottom = 93.6964
+scale = Vector2(0.08, 0.08)
+theme_override_colors/font_color = Color(0.984314, 0.698039, 0, 1)
+theme_override_fonts/font = ExtResource("10_llkja")
+theme_override_font_sizes/font_size = 100
+text = "0"
+script = ExtResource("10_csml8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
