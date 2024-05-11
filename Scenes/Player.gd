@@ -15,8 +15,24 @@ var loadedWeapon
 
 @onready var animationPlayer = $AnimationPlayer
 
+var sprite
+var mpos = Vector2()
+var pos = Vector2()
+var rot  
+
+func _ready():
+	sprite = get_node("Sprite2D")
 
 func _physics_process(delta):
+	mpos = get_global_mouse_position()
+	pos = global_position
+	rot = rad_to_deg((mpos - pos).angle())
+	print(rot)
+	if(rot >= -90 and rot <= 90):
+		sprite.flip_h = false
+	else:
+		sprite.flip_h = true
+	
 	
 	# Add the gravity.
 	if not is_on_floor():

@@ -10,11 +10,24 @@ var maxAmmo = 10
 #var ammo = maxAmmo
 var shootingSound
 
+var sprite
+var mpos = Vector2()
+var pos = Vector2()
+var rot  
+var flipped = false
+var spriteOriginalPos
+var barrelEndOriginalPos
+var handOriginalPos
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_parent().get_parent().get_node("Player")
 	timer = $ShootTimer
 	shootingSound = get_node("ShootingSound")
+	sprite = get_node("Sprite2D")
+	spriteOriginalPos = sprite.position
+	barrelEndOriginalPos = $Sprite2D/BarrelEnd.position
+	handOriginalPos = $Sprite2D/Sprite2D2.position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -25,6 +38,26 @@ func _process(delta):
 		if Input.is_action_just_pressed("reload") and Global.currentPistolAmmo < maxAmmo and Global.totalPistolAmmo/maxAmmo != 0:
 			reload(ammoLabel)
 		look_at(get_global_mouse_position())
+		
+		mpos = get_global_mouse_position()
+		pos = global_position
+		rot = rad_to_deg((mpos - pos).angle())
+		if(rot >= -90 and rot <= 90):
+			sprite.flip_v = false
+			if not flipped:
+				flipped = true
+				sprite.position = spriteOriginalPos
+				$Sprite2D/BarrelEnd.position = barrelEndOriginalPos
+				$Sprite2D/Sprite2D2.position = handOriginalPos
+				$Sprite2D/Sprite2D2.flip_v = false
+		else:
+			sprite.flip_v = true
+			if flipped:
+				sprite.position.y -= 10
+				$Sprite2D/BarrelEnd.position.y *=-1
+				$Sprite2D/Sprite2D2.position.y -= 90
+				$Sprite2D/Sprite2D2.flip_v = true
+				flipped = false
 	
 	else:
 		look_at(player.position)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cb3uhgu04ks5d"]
+[gd_scene load_steps=5 format=3 uid="uid://cb3uhgu04ks5d"]
 
 [ext_resource type="Script" path="res://Scenes/Weapons/silent pistol/silentpistol.gd" id="1_dfqeo"]
 [ext_resource type="Texture2D" uid="uid://b2xe15xyiipjd" path="res://More art/Guns/silent pistol.png" id="2_qy42q"]
+[ext_resource type="Texture2D" uid="uid://7l15esqsfdpy" path="res://Scenes/Player/rankutes/pixil-layer-4.png" id="3_71u34"]
 [ext_resource type="AudioStream" uid="uid://dgkj0yk0ei4bi" path="res://Music/Silenced Pistol.wav" id="3_gu7sq"]
 
 [node name="SilentPistol" type="Node2D"]
@@ -15,6 +16,12 @@ texture = ExtResource("2_qy42q")
 [node name="BarrelEnd" type="Node2D" parent="Sprite2D"]
 position = Vector2(148.417, -40.0061)
 scale = Vector2(10.0211, 10.0211)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-169.931, 48.5516)
+rotation = 0.0824602
+scale = Vector2(13.9055, 17.9472)
+texture = ExtResource("3_71u34")
 
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 0.35
