@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://duhtrycjv3g1o"]
+[gd_scene load_steps=19 format=3 uid="uid://duhtrycjv3g1o"]
 
 [ext_resource type="Script" path="res://Scenes/ScoreScreen/ScoreScreenScript.gd" id="1_dnt1q"]
 [ext_resource type="FontFile" uid="uid://cja6vbwfj20uq" path="res://customfont.pfb" id="1_sqnh2"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Scenes/ScoreScreen/MenuButtonScript.gd" id="9_i6qou"]
 [ext_resource type="Texture2D" uid="uid://c4k7fxkwee6ii" path="res://Scenes/ScoreScreen/button1 highlight.png" id="9_q1hti"]
 [ext_resource type="Script" path="res://Scenes/ScoreScreen/NextLevelButtonScript.gd" id="12_ax7hm"]
+[ext_resource type="Texture2D" uid="uid://wgiioyrdjycl" path="res://Scenes/ScoreScreen/button1 disabled.png" id="13_f1ykc"]
 [ext_resource type="Texture2D" uid="uid://du87ufye38iv6" path="res://Scenes/ScoreScreen/date text.png" id="14_yoox5"]
 [ext_resource type="Texture2D" uid="uid://b6i2bockqo3ju" path="res://Scenes/ScoreScreen/time text.png" id="15_mecsv"]
 [ext_resource type="Texture2D" uid="uid://m5pcgly76f1o" path="res://Scenes/ScoreScreen/score text.png" id="16_5kcjm"]
@@ -196,6 +197,7 @@ script = ExtResource("9_i6qou")
 layout_mode = 2
 texture_normal = ExtResource("6_ayfco")
 texture_hover = ExtResource("9_q1hti")
+texture_disabled = ExtResource("13_f1ykc")
 script = ExtResource("12_ax7hm")
 level2ScenePath = NodePath("res://Scenes/Levels/Level2.tscn")
 level3ScenePath = NodePath("res://Scenes/Levels/Level3.tscn")

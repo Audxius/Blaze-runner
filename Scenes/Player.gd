@@ -26,7 +26,6 @@ func _physics_process(delta):
 	mpos = get_global_mouse_position()
 	pos = global_position
 	rot = rad_to_deg((mpos - pos).angle())
-	print(rot)
 	if(rot >= -90 and rot <= 90):
 		sprite.flip_h = false
 	else:
