@@ -265,10 +265,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -369.0
-offset_top = -75.0
-offset_right = 365.0
-offset_bottom = 175.0
+offset_left = -374.0
+offset_top = -91.0
+offset_right = 360.0
+offset_bottom = 164.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -280,42 +280,42 @@ alignment = 1
 [node name="VBoxContainerDates" type="VBoxContainer" parent="MarginContainerTable/HBoxContainer"]
 custom_minimum_size = Vector2(240, 250)
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 15
 
 [node name="DateLabel1" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerDates"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "2024/05/06"
+text = "2024/05/06  "
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="DateLabel2" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerDates"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "2024/05/06"
+text = "2024/05/06 "
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="DateLabel3" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerDates"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "2024/05/06"
+text = "2024/05/06 "
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="DateLabel4" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerDates"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "2024/05/06"
+text = "2024/05/06 "
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="DateLabel5" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerDates"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "2024/05/06"
+text = "2024/05/06 "
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="VBoxContainer2Time" type="VBoxContainer" parent="MarginContainerTable/HBoxContainer"]
 custom_minimum_size = Vector2(100, 250)
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 15
 
 [node name="HBoxContainer1" type="HBoxContainer" parent="MarginContainerTable/HBoxContainer/VBoxContainer2Time"]
 layout_mode = 2
@@ -324,7 +324,7 @@ alignment = 1
 [node name="TimeLabel1" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainer2Time/HBoxContainer1"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "0001"
+text = "01:10"
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainerTable/HBoxContainer/VBoxContainer2Time"]
@@ -334,7 +334,7 @@ alignment = 1
 [node name="TimeLabel2" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainer2Time/HBoxContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "0050"
+text = "00:50"
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainerTable/HBoxContainer/VBoxContainer2Time"]
@@ -344,7 +344,7 @@ alignment = 1
 [node name="TimeLabel3" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainer2Time/HBoxContainer3"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "0100"
+text = "01:00"
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainerTable/HBoxContainer/VBoxContainer2Time"]
@@ -354,7 +354,7 @@ alignment = 1
 [node name="TimeLabel4" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainer2Time/HBoxContainer4"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "5252"
+text = "52:52"
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainerTable/HBoxContainer/VBoxContainer2Time"]
@@ -364,13 +364,13 @@ alignment = 1
 [node name="TimeLabel5" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainer2Time/HBoxContainer5"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "2460"
+text = "24:60"
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="VBoxContainerScore" type="VBoxContainer" parent="MarginContainerTable/HBoxContainer"]
 custom_minimum_size = Vector2(150, 250)
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 15
 
 [node name="HBoxContainer1" type="HBoxContainer" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore"]
 layout_mode = 2
@@ -379,7 +379,7 @@ alignment = 1
 [node name="ScoreLabel1" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore/HBoxContainer1"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "20"
+text = "20 "
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore"]
@@ -389,7 +389,7 @@ alignment = 1
 [node name="ScoreLabel2" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore/HBoxContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "200"
+text = "200 "
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore"]
@@ -399,7 +399,7 @@ alignment = 1
 [node name="ScoreLabel3" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore/HBoxContainer3"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "2000"
+text = "2000 "
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore"]
@@ -409,7 +409,7 @@ alignment = 1
 [node name="ScoreLabel4" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore/HBoxContainer4"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "20000"
+text = "20000 "
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore"]
@@ -419,7 +419,7 @@ alignment = 1
 [node name="ScoreLabel5" type="Label" parent="MarginContainerTable/HBoxContainer/VBoxContainerScore/HBoxContainer5"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sqnh2")
-text = "20000"
+text = "20000 "
 label_settings = SubResource("LabelSettings_b78my")
 
 [node name="DateText" type="TextureRect" parent="."]
@@ -433,18 +433,18 @@ stretch_mode = 2
 
 [node name="TimeText" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 587.0
+offset_left = 581.0
 offset_top = 205.0
-offset_right = 650.0
+offset_right = 644.0
 offset_bottom = 245.0
 texture = ExtResource("15_mecsv")
 stretch_mode = 2
 
 [node name="ScoreText" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 757.0
+offset_left = 748.0
 offset_top = 203.0
-offset_right = 851.0
+offset_right = 842.0
 offset_bottom = 243.0
 texture = ExtResource("16_5kcjm")
 stretch_mode = 2
