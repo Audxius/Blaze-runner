@@ -397,10 +397,6 @@ one_way_collision = true
 [node name="Player10" parent="." instance=ExtResource("17_fwaku")]
 position = Vector2(1498, 512)
 
-[node name="Player11" parent="." instance=ExtResource("17_fwaku")]
-position = Vector2(6061, 405)
-speed = 0
-
 [node name="Level2End" parent="." instance=ExtResource("21_o8nun")]
 position = Vector2(7724, 552)
 
@@ -414,3 +410,6 @@ position = Vector2(7619, 517)
 scale = Vector2(0.331, 0.331)
 texture = ExtResource("23_11ucc")
 script = ExtResource("24_1j23s")
+
+[node name="Player11" parent="." instance=ExtResource("17_fwaku")]
+position = Vector2(5438, 503)
